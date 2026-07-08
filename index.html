@@ -1034,6 +1034,86 @@ grammarNotesBank["Lesson 9"] = [
   {title:"4. Va a + infinitive", body:"Use va a before an infinitive to talk about a near future prediction.", pattern:"Va a + infinitive", example:"Va a llover esta noche.", meaning:"It is going to rain tonight."}
 ];
 
+lessonInfo["Lesson 10"] = {
+  title:"Likes and Dislikes — Using Gustar",
+  level:"A1",
+  vocabulary:"gustar phrases + hobbies and interests",
+  grammar:"me gusta / me gustan / no me gusta / mucho / nada / también / tampoco",
+  listening:"talking about likes, dislikes, and hobbies",
+  goal:"After this lesson, you can say what you like and dislike, ask a friend what they like, agree or disagree using también and tampoco, and talk about simple hobbies.",
+  core:[
+    {spanish:"Me gusta el fútbol.", english:"I like soccer."},
+    {spanish:"Me gustan los animales.", english:"I like animals."},
+    {spanish:"No me gusta nada el frío.", english:"I don't like the cold at all."},
+    {spanish:"¿Qué te gusta hacer?", english:"What do you like to do?"}
+  ]
+};
+
+baseItems.push(
+  {lesson:"Lesson 10",topic:"Gustar basics",spanish:"gustar",english:"to like / to be pleasing to",vi:"thích",example:"Me gusta viajar.",exampleEn:"I like to travel.",approx:"gus-tar",explain:"Gustar literally means to be pleasing to. The subject of the sentence is the thing liked, not the person.",visual:"❤️"},
+  {lesson:"Lesson 10",topic:"Gustar basics",spanish:"me gusta",english:"I like (singular)",vi:"tôi thích (số ít)",example:"Me gusta el café.",exampleEn:"I like coffee.",approx:"me gus-ta",explain:"Use me gusta before a singular noun or an infinitive verb.",visual:"👍"},
+  {lesson:"Lesson 10",topic:"Gustar basics",spanish:"me gustan",english:"I like (plural)",vi:"tôi thích (số nhiều)",example:"Me gustan los animales.",exampleEn:"I like animals.",approx:"me gus-tan",explain:"Use me gustan before a plural noun because gustar agrees with the thing liked, not with me.",visual:"🐾"},
+  {lesson:"Lesson 10",topic:"Gustar basics",spanish:"te gusta",english:"you like (singular)",vi:"bạn thích (số ít)",example:"¿Te gusta el chocolate?",exampleEn:"Do you like chocolate?",approx:"te gus-ta",explain:"Use te gusta to ask or talk about what a friend likes.",visual:"🍫"},
+  {lesson:"Lesson 10",topic:"Gustar basics",spanish:"no me gusta",english:"I don't like",vi:"tôi không thích",example:"No me gusta la lluvia.",exampleEn:"I don't like the rain.",approx:"no me gus-ta",explain:"Add no before me gusta to say you dislike something.",visual:"🚫"},
+  {lesson:"Lesson 10",topic:"Intensity words",spanish:"mucho",english:"a lot / very much",vi:"rất nhiều",example:"Me gusta mucho el fútbol.",exampleEn:"I like soccer a lot.",approx:"mu-cho",explain:"Add mucho after me gusta to strengthen how much you like something.",visual:"💯"},
+  {lesson:"Lesson 10",topic:"Intensity words",spanish:"nada",english:"nothing / not at all",vi:"không chút nào",example:"No me gusta nada el frío.",exampleEn:"I don't like the cold at all.",approx:"na-da",explain:"Use no...nada together to strongly emphasize a dislike.",visual:"❌"},
+  {lesson:"Lesson 10",topic:"Agreement and disagreement",spanish:"también",english:"also / me too",vi:"cũng vậy (đồng ý)",example:"Me gusta el café. A mí también.",exampleEn:"I like coffee. Me too.",approx:"tam-bien",explain:"Use también to agree with something someone likes.",visual:"➕"},
+  {lesson:"Lesson 10",topic:"Agreement and disagreement",spanish:"tampoco",english:"neither / me neither",vi:"cũng không (đồng ý phủ định)",example:"No me gusta la lluvia. A mí tampoco.",exampleEn:"I don't like the rain. Me neither.",approx:"tam-po-ko",explain:"Use tampoco to agree with something someone dislikes.",visual:"➖"},
+  {lesson:"Lesson 10",topic:"Hobbies",spanish:"el fútbol",english:"soccer",vi:"bóng đá",example:"Me gusta el fútbol.",exampleEn:"I like soccer.",approx:"el fut-bol",explain:"Fútbol is masculine: el fútbol.",visual:"⚽"},
+  {lesson:"Lesson 10",topic:"Hobbies",spanish:"la música",english:"music",vi:"âm nhạc",example:"Me gusta la música.",exampleEn:"I like music.",approx:"la mu-si-ka",explain:"Música is feminine: la música.",visual:"🎵"},
+  {lesson:"Lesson 10",topic:"Hobbies",spanish:"bailar",english:"to dance",vi:"nhảy múa",example:"Me gusta bailar.",exampleEn:"I like to dance.",approx:"bai-lar",explain:"Use gustar + infinitive to say you like doing an activity.",visual:"💃"},
+  {lesson:"Lesson 10",topic:"Things you like",spanish:"la comida",english:"food",vi:"đồ ăn",example:"Me gusta la comida española.",exampleEn:"I like Spanish food.",approx:"la ko-mi-da",explain:"Comida is feminine: la comida.",visual:"🍽️"},
+  {lesson:"Lesson 10",topic:"Things you like",spanish:"los animales",english:"animals",vi:"động vật",example:"Me gustan los animales.",exampleEn:"I like animals.",approx:"los a-ni-ma-les",explain:"Animales is plural, so use me gustan, not me gusta.",visual:"🐶"},
+  {lesson:"Lesson 10",topic:"Things you like",spanish:"el perro",english:"dog",vi:"con chó",example:"Me gustan los perros.",exampleEn:"I like dogs.",approx:"el pe-rro",explain:"Perro means dog. Practice the rolled double r sound.",visual:"🐕"},
+  {lesson:"Lesson 10",topic:"Questions",spanish:"¿qué te gusta?",english:"what do you like?",vi:"bạn thích gì?",example:"¿Qué te gusta hacer?",exampleEn:"What do you like to do?",approx:"ke te gus-ta",explain:"Use ¿Qué te gusta...? to ask a friend what they like.",visual:"❓"}
+);
+
+grammarBank["Lesson 10"] = [
+  {q:"Me ___ el fútbol.",choices:["gusta","gustan","gusto"],a:"gusta",why:"Fútbol is singular, so use gusta."},
+  {q:"Me ___ los animales.",choices:["gusta","gustan","gusto"],a:"gustan",why:"Animales is plural, so gustar agrees with it: gustan."},
+  {q:"No me gusta ___ el frío.",choices:["nada","mucho","también"],a:"nada",why:"No...nada emphasizes a strong dislike."},
+  {q:"Me gusta el café. A mí ___.",choices:["también","tampoco","mucho"],a:"también",why:"Use también to agree with a positive statement."},
+  {q:"No me gusta la lluvia. A mí ___.",choices:["tampoco","también","nada"],a:"tampoco",why:"Use tampoco to agree with a negative statement."}
+];
+
+listeningBank["Lesson 10"] = {
+  text:"¿Qué te gusta hacer? Me gusta mucho la música y me gusta bailar. También me gusta el fútbol, pero no me gusta nada el frío. Me gustan los animales, especialmente los perros.",
+  meaning:"What do you like to do? I like music a lot and I like to dance. I also like soccer, but I don't like the cold at all. I like animals, especially dogs.",
+  dictation:["Me gusta mucho la música.","No me gusta nada el frío."],
+  questions:[
+    {q:"What does the person like a lot?", a:["la musica","música","la música"], hint:"Listen for: me gusta mucho..."},
+    {q:"What activity do they like?", a:["bailar"], hint:"Listen for: me gusta..."},
+    {q:"What don't they like at all?", a:["el frio","frío","el frío"], hint:"Listen for: no me gusta nada..."},
+    {q:"What animals do they especially like?", a:["perros","los perros"], hint:"Listen at the end."}
+  ]
+};
+
+quizBank["Lesson 10"] = [
+  {q:"to like = ?", a:["gustar"], hint:"infinitive verb"},
+  {q:"I like (singular) = ?", a:["me gusta"], hint:"before a singular noun or infinitive"},
+  {q:"I like (plural) = ?", a:["me gustan"], hint:"before a plural noun"},
+  {q:"Do you like...? = ?", a:["¿te gusta?","te gusta"], hint:"asking a friend"},
+  {q:"I don't like = ?", a:["no me gusta"], hint:"negative"},
+  {q:"a lot = ?", a:["mucho"], hint:"intensifier"},
+  {q:"not at all / nothing = ?", a:["nada"], hint:"strong negative"},
+  {q:"also / me too = ?", a:["también","tambien"], hint:"positive agreement"},
+  {q:"neither / me neither = ?", a:["tampoco"], hint:"negative agreement"},
+  {q:"soccer = ?", a:["el fútbol","fútbol","el futbol","futbol"], hint:"sport"},
+  {q:"music = ?", a:["la música","música","la musica","musica"], hint:"hobby"},
+  {q:"to dance = ?", a:["bailar"], hint:"activity verb"},
+  {q:"food = ?", a:["la comida","comida"], hint:"noun"},
+  {q:"animals = ?", a:["los animales","animales"], hint:"plural noun"},
+  {q:"dog = ?", a:["el perro","perro"], hint:"animal"},
+  {q:"What do you like to do? = ?", a:["¿qué te gusta hacer?","que te gusta hacer","qué te gusta hacer"], hint:"question about hobbies"}
+];
+
+grammarNotesBank["Lesson 10"] = [
+  {title:"1. Gustar agrees with the thing liked", body:"Unlike English, the subject of gustar is the thing being liked, not the person. Use gusta for a singular noun or infinitive, and gustan for a plural noun.", pattern:"me/te gusta + singular noun/infinitive; me/te gustan + plural noun", example:"Me gusta el fútbol. Me gustan los animales.", meaning:"I like soccer. I like animals."},
+  {title:"2. Negating with no", body:"Place no directly before me gusta or me gustan to say you dislike something.", pattern:"No + me/te gusta(n) + noun", example:"No me gusta la lluvia.", meaning:"I don't like the rain."},
+  {title:"3. Intensifying with mucho and nada", body:"Add mucho to strengthen a like, and use no...nada together to strongly emphasize a dislike.", pattern:"me gusta mucho / no me gusta nada", example:"Me gusta mucho el chocolate. No me gusta nada el frío.", meaning:"I like chocolate a lot. I don't like the cold at all."},
+  {title:"4. Agreeing with también and tampoco", body:"Use también to agree with a positive statement, and tampoco to agree with a negative statement.", pattern:"A mí también (agree positive) / A mí tampoco (agree negative)", example:"Me gusta la música. A mí también. No me gusta el frío. A mí tampoco.", meaning:"I like music. Me too. I don't like the cold. Me neither."}
+];
+
 let customItems = JSON.parse(localStorage.getItem("spanish_custom_items_v2") || "[]");
 let notes = JSON.parse(localStorage.getItem("spanish_notes_v2") || "[]");
 let flashIndex = 0;
