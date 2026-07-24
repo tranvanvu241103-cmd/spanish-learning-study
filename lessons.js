@@ -804,6 +804,296 @@ grammarNotesBank["Lesson 11"] = [
   {title:"4. Learn every noun with its article", body:"Instead of memorizing a noun alone, always learn it together with el or la. This helps you remember its gender correctly, especially for nouns that don't end in -o.", pattern:"el/la + noun (learn together)", example:"el tren, el doctor, el animal", meaning:"the train, the doctor, the animal"}
 ];
 
+lessonInfo["Lesson 12"] = {
+  title:"Nouns and Gender — Masculine Nouns Ending in -a / -ma",
+  level:"A1",
+  vocabulary:"masculine nouns ending in -a or -ma",
+  grammar:"el + masculine nouns that end in -a or -ma (exception to the usual -o pattern)",
+  listening:"identifying masculine -a/-ma nouns in context",
+  goal:"After this lesson, you can recognize and use masculine nouns that end in -a or -ma, an exception to the usual -o masculine ending.",
+  core:[
+    {spanish:"El día está bueno y el clima es agradable.", english:"The day is good and the climate is pleasant."},
+    {spanish:"Tengo un problema con el sistema.", english:"I have a problem with the system."},
+    {spanish:"El mapa muestra el planeta.", english:"The map shows the planet."},
+    {spanish:"Me gusta el idioma y el poema.", english:"I like the language and the poem."}
+  ]
+};
+
+baseItems.push(
+  {lesson:"Lesson 12",topic:"Nature",spanish:"el clima",english:"the climate",vi:"khí hậu",example:"El clima es agradable.",exampleEn:"The climate is pleasant.",approx:"el kli-ma",ipa:"el ˈklima",explain:"Clima ends in -ma, one of the Greek-origin -ma nouns that are masculine despite ending in -a.",visual:"🌍"},
+  {lesson:"Lesson 12",topic:"Time",spanish:"el día",english:"the day",vi:"ngày",example:"Hoy es un buen día.",exampleEn:"Today is a good day.",approx:"el di-a",ipa:"el ˈdia",explain:"Día does not end in -ma, but it is still one of the masculine exceptions ending in -a.",visual:"📅"},
+  {lesson:"Lesson 12",topic:"Entertainment",spanish:"el drama",english:"the drama",vi:"bi kịch",example:"El drama es interesante.",exampleEn:"The drama is interesting.",approx:"el dra-ma",ipa:"el ˈdrama",explain:"Drama ends in -ma, one of the Greek-origin -ma nouns that are masculine despite ending in -a.",visual:"🎭"},
+  {lesson:"Lesson 12",topic:"Communication",spanish:"el idioma",english:"the language",vi:"ngôn ngữ",example:"El idioma español es bonito.",exampleEn:"The Spanish language is beautiful.",approx:"el i-dio-ma",ipa:"el iˈdjoma",explain:"Idioma ends in -ma, one of the Greek-origin -ma nouns that are masculine despite ending in -a.",visual:"🗣️"},
+  {lesson:"Lesson 12",topic:"Objects",spanish:"el mapa",english:"the map",vi:"bản đồ",example:"Quiero el mapa.",exampleEn:"I want the map.",approx:"el ma-pa",ipa:"el ˈmapa",explain:"Mapa does not end in -ma, but it is still one of the masculine exceptions ending in -a.",visual:"🗺️"},
+  {lesson:"Lesson 12",topic:"Nature",spanish:"el planeta",english:"the planet",vi:"hành tinh",example:"El planeta es grande.",exampleEn:"The planet is big.",approx:"el pla-ne-ta",ipa:"el plaˈneta",explain:"Planeta does not end in -ma, but it is still one of the masculine exceptions ending in -a.",visual:"🪐"},
+  {lesson:"Lesson 12",topic:"Entertainment",spanish:"el poema",english:"the poem",vi:"bài thơ",example:"El poema es corto.",exampleEn:"The poem is short.",approx:"el po-e-ma",ipa:"el poˈema",explain:"Poema ends in -ma, one of the Greek-origin -ma nouns that are masculine despite ending in -a.",visual:"📜"},
+  {lesson:"Lesson 12",topic:"Abstract ideas",spanish:"el problema",english:"the problem",vi:"vấn đề",example:"Tengo un problema.",exampleEn:"I have a problem.",approx:"el pro-ble-ma",ipa:"el proˈβlema",explain:"Problema ends in -ma, one of the Greek-origin -ma nouns that are masculine despite ending in -a.",visual:"❗"},
+  {lesson:"Lesson 12",topic:"Entertainment",spanish:"el programa",english:"the program",vi:"chương trình",example:"El programa es bueno.",exampleEn:"The program is good.",approx:"el pro-gra-ma",ipa:"el proˈɣrama",explain:"Programa ends in -ma, one of the Greek-origin -ma nouns that are masculine despite ending in -a.",visual:"📺"},
+  {lesson:"Lesson 12",topic:"Abstract ideas",spanish:"el sistema",english:"the system",vi:"hệ thống",example:"El sistema es nuevo.",exampleEn:"The system is new.",approx:"el sis-te-ma",ipa:"el sisˈtema",explain:"Sistema ends in -ma, one of the Greek-origin -ma nouns that are masculine despite ending in -a.",visual:"⚙️"}
+);
+
+grammarBank["Lesson 12"] = [
+  {q:"____ clima es agradable.",choices:["El","La","Los"],a:"El",why:"Clima ends in -ma but is masculine, so use el."},
+  {q:"____ problema es grave.",choices:["El","La","Un"],a:"El",why:"Problema is one of the Greek-origin -ma nouns that are masculine."},
+  {q:"Tengo ____ mapa.",choices:["el","la","los"],a:"el",why:"Mapa ends in -a but is masculine: el mapa."},
+  {q:"Which noun is masculine even though it ends in -a?",choices:["día","amiga","mesa"],a:"día",why:"Día ends in -a but is masculine: el día."},
+  {q:"El sistema es ____.",choices:["nuevo","nueva","nuevas"],a:"nuevo",why:"Sistema is masculine, so adjectives describing it use the masculine form."}
+];
+
+listeningBank["Lesson 12"] = {
+  text:"El clima es agradable hoy. Tengo un problema con el sistema. El mapa muestra el planeta. Me gusta el idioma y el poema. El programa empieza a las ocho.",
+  meaning:"The climate is pleasant today. I have a problem with the system. The map shows the planet. I like the language and the poem. The program starts at eight.",
+  dictation:["El clima es agradable hoy.","Tengo un problema con el sistema."],
+  questions:[
+    {q:"What is pleasant today?", a:["el clima","clima"], hint:"Listen for: ... es agradable hoy."},
+    {q:"What does the speaker have a problem with?", a:["el sistema","sistema"], hint:"Listen for: tengo un problema con..."},
+    {q:"What does the map show?", a:["el planeta","planeta"], hint:"Listen for: el mapa muestra..."},
+    {q:"What does the speaker like besides the language?", a:["el poema","poema"], hint:"Listen for: me gusta el idioma y..."},
+    {q:"When does the program start?", a:["a las ocho","las ocho","ocho"], hint:"Listen at the end."}
+  ]
+};
+
+quizBank["Lesson 12"] = [
+  {q:"climate = ?", a:["el clima","clima"], hint:"masculine noun ending in -ma"},
+  {q:"day = ?", a:["el día","día","el dia","dia"], hint:"masculine noun ending in -a (exception)"},
+  {q:"drama = ?", a:["el drama","drama"], hint:"masculine noun ending in -ma"},
+  {q:"language = ?", a:["el idioma","idioma"], hint:"masculine noun ending in -ma"},
+  {q:"map = ?", a:["el mapa","mapa"], hint:"masculine noun ending in -a (exception)"},
+  {q:"planet = ?", a:["el planeta","planeta"], hint:"masculine noun ending in -a (exception)"},
+  {q:"poem = ?", a:["el poema","poema"], hint:"masculine noun ending in -ma"},
+  {q:"problem = ?", a:["el problema","problema"], hint:"masculine noun ending in -ma"},
+  {q:"program = ?", a:["el programa","programa"], hint:"masculine noun ending in -ma"},
+  {q:"system = ?", a:["el sistema","sistema"], hint:"masculine noun ending in -ma"}
+];
+
+grammarNotesBank["Lesson 12"] = [
+  {title:"1. Masculine nouns can end in -a or -ma", body:"A small group of masculine nouns ends in -a or -ma instead of the usual -o. Most come from Greek and describe abstract or technical things.", pattern:"el + noun ending in -a/-ma", example:"El clima. El problema.", meaning:"The climate. The problem."},
+  {title:"2. Greek-origin -ma nouns", body:"Nouns like clima, drama, idioma, poema, problema, programa, and sistema all end in -ma and are masculine.", pattern:"noun ending in -ma → masculine → el", example:"El idioma. El sistema.", meaning:"The language. The system."},
+  {title:"3. A few masculine nouns end in -a without -ma", body:"Día, mapa, and planeta end in -a but are still masculine — they don't follow the usual 'ends in -a = feminine' pattern.", pattern:"el + día/mapa/planeta", example:"El día. El mapa. El planeta.", meaning:"The day. The map. The planet."},
+  {title:"4. Don't assume gender from the ending alone", body:"Since these nouns look feminine (ending in -a) but are masculine, always learn them together with el, the same habit you used for masculine nouns that don't end in -o.", pattern:"el + noun (learn together)", example:"el clima, el mapa, el sistema", meaning:"the climate, the map, the system"}
+];
+
+lessonInfo["Lesson 13"] = {
+  title:"Nouns and Gender — La + Feminine Nouns Ending in -a",
+  level:"A1",
+  vocabulary:"everyday feminine nouns + the definite article la",
+  grammar:"la + feminine noun / most nouns ending in -a are feminine",
+  listening:"identifying everyday people, places, and objects using la",
+  goal:"After this lesson, you can name common people, places, and objects using the feminine article la, since most nouns ending in -a are feminine.",
+  core:[
+    {spanish:"Mi hermana está en la casa.", english:"My sister is at the house."},
+    {spanish:"Quiero la silla y la mesa.", english:"I want the chair and the table."},
+    {spanish:"La niña está en la iglesia.", english:"The little girl is at the church."},
+    {spanish:"Me gusta la planta en la ventana.", english:"I like the plant in the window."}
+  ]
+};
+
+baseItems.push(
+  {lesson:"Lesson 13",topic:"People",spanish:"la amiga",english:"the friend",vi:"người bạn (nữ)",example:"Mi amiga está aquí.",exampleEn:"My friend is here.",approx:"la a-mi-ga",ipa:"la aˈmiɣa",explain:"Amiga ends in -a, the typical feminine ending, so it takes la.",visual:"🤝"},
+  {lesson:"Lesson 13",topic:"Objects",spanish:"la blusa",english:"the blouse",vi:"áo cánh",example:"Quiero la blusa.",exampleEn:"I want the blouse.",approx:"la blu-sa",ipa:"la ˈblusa",explain:"Blusa ends in -a, the typical feminine ending, so it takes la.",visual:"👚"},
+  {lesson:"Lesson 13",topic:"Objects",spanish:"la bolsa",english:"the bag",vi:"túi xách",example:"La bolsa es grande.",exampleEn:"The bag is big.",approx:"la bol-sa",ipa:"la ˈbolsa",explain:"Bolsa ends in -a, the typical feminine ending, so it takes la.",visual:"👜"},
+  {lesson:"Lesson 13",topic:"Objects",spanish:"la cama",english:"the bed",vi:"giường",example:"La cama es cómoda.",exampleEn:"The bed is comfortable.",approx:"la ka-ma",ipa:"la ˈkama",explain:"Cama ends in -a, the typical feminine ending, so it takes la.",visual:"🛏️"},
+  {lesson:"Lesson 13",topic:"Places",spanish:"la casa",english:"the house",vi:"ngôi nhà",example:"La casa es grande.",exampleEn:"The house is big.",approx:"la ka-sa",ipa:"la ˈkasa",explain:"Casa ends in -a, the typical feminine ending, so it takes la.",visual:"🏠"},
+  {lesson:"Lesson 13",topic:"Food and drink",spanish:"la cerveza",english:"the beer",vi:"bia",example:"Quiero una cerveza, por favor.",exampleEn:"I want a beer, please.",approx:"la ser-be-sa",ipa:"la seɾˈβesa",explain:"Cerveza ends in -a, the typical feminine ending, so it takes la.",visual:"🍺"},
+  {lesson:"Lesson 13",topic:"Food and drink",spanish:"la comida",english:"the food / the meal",vi:"đồ ăn",example:"La comida está lista.",exampleEn:"The food is ready.",approx:"la ko-mi-da",ipa:"la koˈmiða",explain:"Comida ends in -a, the typical feminine ending, so it takes la.",visual:"🍽️"},
+  {lesson:"Lesson 13",topic:"People",spanish:"la hermana",english:"the sister",vi:"chị/em gái",example:"Mi hermana está aquí.",exampleEn:"My sister is here.",approx:"la er-ma-na",ipa:"la eɾˈmana",explain:"Hermana ends in -a, the typical feminine ending, so it takes la.",visual:"👩"},
+  {lesson:"Lesson 13",topic:"Places",spanish:"la iglesia",english:"the church",vi:"nhà thờ",example:"La iglesia está aquí.",exampleEn:"The church is here.",approx:"la i-gle-sia",ipa:"la iˈɣlesja",explain:"Iglesia ends in -a, the typical feminine ending, so it takes la.",visual:"⛪"},
+  {lesson:"Lesson 13",topic:"Objects",spanish:"la lámpara",english:"the lamp",vi:"đèn",example:"La lámpara es bonita.",exampleEn:"The lamp is pretty.",approx:"la lam-pa-ra",ipa:"la ˈlampaɾa",explain:"Lámpara ends in -a, the typical feminine ending, so it takes la.",visual:"💡"},
+  {lesson:"Lesson 13",topic:"Objects",spanish:"la mesa",english:"the table",vi:"cái bàn",example:"La mesa está aquí.",exampleEn:"The table is here.",approx:"la me-sa",ipa:"la ˈmesa",explain:"Mesa ends in -a, the typical feminine ending, so it takes la.",visual:"🪑"},
+  {lesson:"Lesson 13",topic:"People",spanish:"la muchacha",english:"the girl",vi:"cô gái",example:"La muchacha es mi amiga.",exampleEn:"The girl is my friend.",approx:"la mu-cha-cha",ipa:"la muˈtʃatʃa",explain:"Muchacha ends in -a, the typical feminine ending, so it takes la.",visual:"🧑‍🎓"},
+  {lesson:"Lesson 13",topic:"People",spanish:"la niña",english:"the little girl",vi:"bé gái",example:"La niña es pequeña.",exampleEn:"The little girl is small.",approx:"la ni-nya",ipa:"la ˈniɲa",explain:"Niña ends in -a, the typical feminine ending, so it takes la.",visual:"👧"},
+  {lesson:"Lesson 13",topic:"People",spanish:"la persona",english:"the person",vi:"con người",example:"La persona está aquí.",exampleEn:"The person is here.",approx:"la per-so-na",ipa:"la peɾˈsona",explain:"Persona ends in -a, the typical feminine ending, so it takes la.",visual:"🧍"},
+  {lesson:"Lesson 13",topic:"Nature",spanish:"la planta",english:"the plant",vi:"cây",example:"La planta es verde.",exampleEn:"The plant is green.",approx:"la plan-ta",ipa:"la ˈplanta",explain:"Planta ends in -a, the typical feminine ending, so it takes la.",visual:"🪴"},
+  {lesson:"Lesson 13",topic:"Objects",spanish:"la silla",english:"the chair",vi:"cái ghế",example:"Quiero la silla.",exampleEn:"I want the chair.",approx:"la si-ya",ipa:"la ˈsiʝa",explain:"Silla ends in -a, the typical feminine ending, so it takes la.",visual:"🪑"},
+  {lesson:"Lesson 13",topic:"Places",spanish:"la tienda",english:"the store",vi:"cửa hàng",example:"La tienda está aquí.",exampleEn:"The store is here.",approx:"la tien-da",ipa:"la ˈtjenda",explain:"Tienda ends in -a, the typical feminine ending, so it takes la.",visual:"🏬"},
+  {lesson:"Lesson 13",topic:"Objects",spanish:"la ventana",english:"the window",vi:"cửa sổ",example:"La ventana está abierta.",exampleEn:"The window is open.",approx:"la ben-ta-na",ipa:"la benˈtana",explain:"Ventana ends in -a, the typical feminine ending, so it takes la.",visual:"🪟"}
+);
+
+grammarBank["Lesson 13"] = [
+  {q:"____ casa es grande.",choices:["La","El","Los"],a:"La",why:"Casa ends in -a, the typical feminine ending, so use la."},
+  {q:"____ hermana está aquí.",choices:["La","El","Un"],a:"La",why:"Hermana is feminine: la hermana."},
+  {q:"Quiero ____ silla.",choices:["la","el","los"],a:"la",why:"Silla ends in -a and is feminine."},
+  {q:"Which noun is feminine?",choices:["mesa","día","problema"],a:"mesa",why:"Mesa ends in -a and follows the regular feminine pattern, unlike día and problema."},
+  {q:"La ventana está ____.",choices:["abierta","abierto","abiertos"],a:"abierta",why:"Ventana is feminine, so adjectives describing it use the feminine form."}
+];
+
+listeningBank["Lesson 13"] = {
+  text:"Mi hermana está en la casa. La niña está en la iglesia. Quiero la silla y la mesa. Me gusta la planta en la ventana. La comida está en la mesa.",
+  meaning:"My sister is at the house. The little girl is at the church. I want the chair and the table. I like the plant in the window. The food is on the table.",
+  dictation:["Mi hermana está en la casa.","Me gusta la planta en la ventana."],
+  questions:[
+    {q:"Where is the sister?", a:["la casa","casa"], hint:"Listen for: mi hermana está en..."},
+    {q:"Where is the little girl?", a:["la iglesia","iglesia"], hint:"Listen for: la niña está en..."},
+    {q:"What two things does the speaker want?", a:["la silla y la mesa","silla y mesa"], hint:"Listen for: quiero..."},
+    {q:"Where is the plant?", a:["en la ventana","la ventana","ventana"], hint:"Listen for: me gusta la planta en..."},
+    {q:"Where is the food?", a:["en la mesa","la mesa","mesa"], hint:"Listen at the end."}
+  ]
+};
+
+quizBank["Lesson 13"] = [
+  {q:"friend (female) = ?", a:["la amiga","amiga"], hint:"feminine noun ending in -a"},
+  {q:"blouse = ?", a:["la blusa","blusa"], hint:"feminine noun ending in -a"},
+  {q:"bag = ?", a:["la bolsa","bolsa"], hint:"feminine noun ending in -a"},
+  {q:"bed = ?", a:["la cama","cama"], hint:"feminine noun ending in -a"},
+  {q:"house = ?", a:["la casa","casa"], hint:"feminine noun ending in -a"},
+  {q:"beer = ?", a:["la cerveza","cerveza"], hint:"feminine noun ending in -a"},
+  {q:"food / meal = ?", a:["la comida","comida"], hint:"feminine noun ending in -a"},
+  {q:"sister = ?", a:["la hermana","hermana"], hint:"feminine noun ending in -a"},
+  {q:"church = ?", a:["la iglesia","iglesia"], hint:"feminine noun ending in -a"},
+  {q:"lamp = ?", a:["la lámpara","lámpara","la lampara","lampara"], hint:"feminine noun ending in -a"},
+  {q:"table = ?", a:["la mesa","mesa"], hint:"feminine noun ending in -a"},
+  {q:"girl = ?", a:["la muchacha","muchacha"], hint:"feminine noun ending in -a"},
+  {q:"little girl = ?", a:["la niña","niña","la nina","nina"], hint:"feminine noun ending in -a"},
+  {q:"person = ?", a:["la persona","persona"], hint:"feminine noun ending in -a"},
+  {q:"plant = ?", a:["la planta","planta"], hint:"feminine noun ending in -a"},
+  {q:"chair = ?", a:["la silla","silla"], hint:"feminine noun ending in -a"},
+  {q:"store = ?", a:["la tienda","tienda"], hint:"feminine noun ending in -a"},
+  {q:"window = ?", a:["la ventana","ventana"], hint:"feminine noun ending in -a"}
+];
+
+grammarNotesBank["Lesson 13"] = [
+  {title:"1. “La” for feminine singular nouns", body:"Use la before a singular feminine noun. It is the Spanish equivalent of 'the' for feminine words.", pattern:"la + feminine noun", example:"La casa. La mesa.", meaning:"The house. The table."},
+  {title:"2. Most nouns ending in -a are feminine", body:"Nouns like amiga, blusa, bolsa, cama, casa, cerveza, comida, hermana, iglesia, lámpara, mesa, muchacha, niña, persona, planta, silla, tienda, and ventana all end in -a and are feminine.", pattern:"noun ending in -a → usually feminine → la", example:"La tienda. La ventana.", meaning:"The store. The window."},
+  {title:"3. Compare with masculine -a/-ma exceptions", body:"Remember from the previous lesson that a few masculine nouns (día, mapa, planeta, clima, problema...) also end in -a but still take el. The -a ending is a strong hint for feminine, not a guarantee.", pattern:"most -a nouns → la, a few exceptions → el", example:"La casa (feminine) vs. el día (masculine)", meaning:"The house vs. the day"},
+  {title:"4. Learn every noun with its article", body:"Keep pairing each new noun with la or el as you learn it, rather than memorizing the word alone.", pattern:"la/el + noun (learn together)", example:"la casa, la mesa, la ventana", meaning:"the house, the table, the window"}
+];
+
+lessonInfo["Lesson 14"] = {
+  title:"Nouns and Gender — Feminine Nouns Ending in -ción/-sión/-dad/-tad/-tud",
+  level:"A1",
+  vocabulary:"feminine nouns ending in -ción, -sión, -dad, -tad, or -tud",
+  grammar:"la + nouns ending in -ción/-sión/-dad/-tad/-tud (always feminine)",
+  listening:"identifying feminine nouns with these endings in context",
+  goal:"After this lesson, you can recognize that nouns ending in -ción, -sión, -dad, -tad, or -tud are always feminine and use la with them confidently.",
+  core:[
+    {spanish:"La lección es sobre la ciudad.", english:"The lesson is about the city."},
+    {spanish:"Me gusta la canción y la televisión.", english:"I like the song and television."},
+    {spanish:"La verdad y la amistad son importantes.", english:"The truth and friendship are important."},
+    {spanish:"Tengo una buena actitud en la conversación.", english:"I have a good attitude in the conversation."}
+  ]
+};
+
+baseItems.push(
+  {lesson:"Lesson 14",topic:"Communication",spanish:"la canción",english:"the song",vi:"bài hát",example:"Me gusta la canción.",exampleEn:"I like the song.",approx:"la kan-sion",ipa:"la kanˈsjon",explain:"Canción ends in -ción, one of the endings that are always feminine.",visual:"🎵"},
+  {lesson:"Lesson 14",topic:"Communication",spanish:"la conversación",english:"the conversation",vi:"cuộc trò chuyện",example:"La conversación es interesante.",exampleEn:"The conversation is interesting.",approx:"la kon-ber-sa-sion",ipa:"la konbeɾsaˈsjon",explain:"Conversación ends in -ción, one of the endings that are always feminine.",visual:"💬"},
+  {lesson:"Lesson 14",topic:"Communication",spanish:"la invitación",english:"the invitation",vi:"lời mời",example:"Quiero la invitación.",exampleEn:"I want the invitation.",approx:"la im-bi-ta-sion",ipa:"la imbitaˈsjon",explain:"Invitación ends in -ción, one of the endings that are always feminine.",visual:"✉️"},
+  {lesson:"Lesson 14",topic:"Communication",spanish:"la lección",english:"the lesson",vi:"bài học",example:"La lección es fácil.",exampleEn:"The lesson is easy.",approx:"la lek-sion",ipa:"la lekˈsjon",explain:"Lección ends in -ción, one of the endings that are always feminine.",visual:"📖"},
+  {lesson:"Lesson 14",topic:"Abstract ideas",spanish:"la ilusión",english:"the illusion",vi:"ảo tưởng",example:"Es solo una ilusión.",exampleEn:"It is only an illusion.",approx:"la i-lu-sion",ipa:"la iluˈsjon",explain:"Ilusión ends in -sión, one of the endings that are always feminine.",visual:"✨"},
+  {lesson:"Lesson 14",topic:"Entertainment",spanish:"la televisión",english:"the television",vi:"tivi",example:"Me gusta la televisión.",exampleEn:"I like television.",approx:"la te-le-bi-sion",ipa:"la televiˈsjon",explain:"Televisión ends in -sión, one of the endings that are always feminine.",visual:"📺"},
+  {lesson:"Lesson 14",topic:"Places",spanish:"la ciudad",english:"the city",vi:"thành phố",example:"La ciudad es grande.",exampleEn:"The city is big.",approx:"la siu-dad",ipa:"la sjuˈðad",explain:"Ciudad ends in -dad, one of the endings that are always feminine.",visual:"🏙️"},
+  {lesson:"Lesson 14",topic:"Abstract ideas",spanish:"la verdad",english:"the truth",vi:"sự thật",example:"Quiero la verdad.",exampleEn:"I want the truth.",approx:"la ber-dad",ipa:"la beɾˈðad",explain:"Verdad ends in -dad, one of the endings that are always feminine.",visual:"✅"},
+  {lesson:"Lesson 14",topic:"Abstract ideas",spanish:"la amistad",english:"the friendship",vi:"tình bạn",example:"La amistad es importante.",exampleEn:"Friendship is important.",approx:"la a-mis-tad",ipa:"la amisˈtad",explain:"Amistad ends in -tad, one of the endings that are always feminine.",visual:"🤝"},
+  {lesson:"Lesson 14",topic:"Abstract ideas",spanish:"la actitud",english:"the attitude",vi:"thái độ",example:"Me gusta tu actitud.",exampleEn:"I like your attitude.",approx:"la ak-ti-tud",ipa:"la aktiˈtud",explain:"Actitud ends in -tud, one of the endings that are always feminine.",visual:"🙂"}
+);
+
+grammarBank["Lesson 14"] = [
+  {q:"____ canción es bonita.",choices:["La","El","Los"],a:"La",why:"Nouns ending in -ción are always feminine."},
+  {q:"____ ciudad es grande.",choices:["La","El","Un"],a:"La",why:"Nouns ending in -dad are always feminine."},
+  {q:"Quiero ____ verdad.",choices:["la","el","los"],a:"la",why:"Verdad ends in -dad, so it is feminine."},
+  {q:"Which ending is ALWAYS feminine?",choices:["-ción","-o","-e"],a:"-ción",why:"-ción, -sión, -dad, -tad, and -tud are always feminine endings."},
+  {q:"La amistad es ____.",choices:["importante","importantes","importanto"],a:"importante",why:"Amistad is feminine singular, so the adjective agrees in its base form."}
+];
+
+listeningBank["Lesson 14"] = {
+  text:"La lección es sobre la ciudad. Me gusta la canción y la televisión. La verdad y la amistad son importantes. Tengo una buena actitud en la conversación.",
+  meaning:"The lesson is about the city. I like the song and television. The truth and friendship are important. I have a good attitude in the conversation.",
+  dictation:["La lección es sobre la ciudad.","La verdad y la amistad son importantes."],
+  questions:[
+    {q:"What is the lesson about?", a:["la ciudad","ciudad"], hint:"Listen for: la lección es sobre..."},
+    {q:"What two things does the speaker like?", a:["la canción y la televisión","canción y televisión"], hint:"Listen for: me gusta..."},
+    {q:"What two things are important?", a:["la verdad y la amistad","verdad y amistad"], hint:"Listen for: ... son importantes."},
+    {q:"What kind of attitude does the speaker have?", a:["buena","una buena actitud"], hint:"Listen for: tengo una buena..."},
+    {q:"Where does the speaker have a good attitude?", a:["en la conversación","la conversación","conversación"], hint:"Listen at the end."}
+  ]
+};
+
+quizBank["Lesson 14"] = [
+  {q:"song = ?", a:["la canción","canción","la cancion","cancion"], hint:"feminine noun ending in -ción"},
+  {q:"conversation = ?", a:["la conversación","conversación","la conversacion","conversacion"], hint:"feminine noun ending in -ción"},
+  {q:"invitation = ?", a:["la invitación","invitación","la invitacion","invitacion"], hint:"feminine noun ending in -ción"},
+  {q:"lesson = ?", a:["la lección","lección","la leccion","leccion"], hint:"feminine noun ending in -ción"},
+  {q:"illusion = ?", a:["la ilusión","ilusión","la ilusion","ilusion"], hint:"feminine noun ending in -sión"},
+  {q:"television = ?", a:["la televisión","televisión","la television","television"], hint:"feminine noun ending in -sión"},
+  {q:"city = ?", a:["la ciudad","ciudad"], hint:"feminine noun ending in -dad"},
+  {q:"truth = ?", a:["la verdad","verdad"], hint:"feminine noun ending in -dad"},
+  {q:"friendship = ?", a:["la amistad","amistad"], hint:"feminine noun ending in -tad"},
+  {q:"attitude = ?", a:["la actitud","actitud"], hint:"feminine noun ending in -tud"}
+];
+
+grammarNotesBank["Lesson 14"] = [
+  {title:"1. Five endings that are always feminine", body:"Nouns ending in -ción, -sión, -dad, -tad, or -tud are always feminine, with almost no exceptions.", pattern:"noun ending in -ción/-sión/-dad/-tad/-tud → la", example:"La canción. La ciudad.", meaning:"The song. The city."},
+  {title:"2. -ción and -sión nouns", body:"Canción, conversación, invitación, lección, ilusión, and televisión all end in -ción or -sión and are feminine.", pattern:"-ción/-sión → la", example:"La lección. La televisión.", meaning:"The lesson. The television."},
+  {title:"3. -dad, -tad, and -tud nouns", body:"Ciudad, verdad, amistad, and actitud end in -dad, -tad, or -tud and are feminine.", pattern:"-dad/-tad/-tud → la", example:"La ciudad. La amistad.", meaning:"The city. The friendship."},
+  {title:"4. The most reliable gender rule so far", body:"Unlike the -o and -a endings, which have exceptions, these five endings are almost always a safe way to know a noun is feminine.", pattern:"la + noun ending in -ción/-sión/-dad/-tad/-tud", example:"la actitud, la verdad, la canción", meaning:"the attitude, the truth, the song"}
+];
+
+lessonInfo["Lesson 15"] = {
+  title:"Nouns and Gender — Feminine Exceptions",
+  level:"A1",
+  vocabulary:"feminine nouns ending in -o and other irregular feminine nouns",
+  grammar:"la + feminine nouns that don't follow the usual -a/-o pattern",
+  listening:"identifying irregular feminine nouns in context",
+  goal:"After this lesson, you can recognize feminine nouns that break the usual gender patterns — some end in -o, others don't end in -a at all — and use la with them correctly.",
+  core:[
+    {spanish:"La mujer tiene buena suerte.", english:"The woman has good luck."},
+    {spanish:"Quiero la foto de la flor.", english:"I want the photo of the flower."},
+    {spanish:"La luz está en la clase.", english:"The light is in the classroom."},
+    {spanish:"Dame la mano; tu piel está fría.", english:"Give me your hand; your skin is cold."}
+  ]
+};
+
+baseItems.push(
+  {lesson:"Lesson 15",topic:"Exceptions ending in -o",spanish:"la foto",english:"the photograph",vi:"bức ảnh",example:"Quiero la foto.",exampleEn:"I want the photo.",approx:"la fo-to",ipa:"la ˈfoto",explain:"Foto ends in -o but is feminine because it is short for fotografía — learn it as la foto.",visual:"📷"},
+  {lesson:"Lesson 15",topic:"Exceptions ending in -o",spanish:"la mano",english:"the hand",vi:"bàn tay",example:"Dame la mano.",exampleEn:"Give me your hand.",approx:"la ma-no",ipa:"la ˈmano",explain:"Mano ends in -o but is feminine — one of the few true exceptions in Spanish: la mano.",visual:"✋"},
+  {lesson:"Lesson 15",topic:"Exceptions ending in -o",spanish:"la radio",english:"the radio",vi:"đài radio",example:"Me gusta la radio.",exampleEn:"I like the radio.",approx:"la ra-dio",ipa:"la ˈraðjo",explain:"Radio ends in -o but is feminine in most Spanish-speaking countries — learn it as la radio.",visual:"📻"},
+  {lesson:"Lesson 15",topic:"Irregular feminine nouns",spanish:"la clase",english:"the class",vi:"lớp học",example:"La clase es interesante.",exampleEn:"The class is interesting.",approx:"la kla-se",ipa:"la ˈklase",explain:"Clase does not follow the -a/-o pattern directly but is feminine: la clase.",visual:"🏫"},
+  {lesson:"Lesson 15",topic:"Irregular feminine nouns",spanish:"la flor",english:"the flower",vi:"bông hoa",example:"La flor es bonita.",exampleEn:"The flower is pretty.",approx:"la flor",ipa:"la floɾ",explain:"Flor ends in a consonant but is feminine: la flor.",visual:"🌸"},
+  {lesson:"Lesson 15",topic:"Irregular feminine nouns",spanish:"la luz",english:"the light",vi:"ánh sáng",example:"La luz está aquí.",exampleEn:"The light is here.",approx:"la lus",ipa:"la lus",explain:"Luz ends in -z and is feminine: la luz.",visual:"💡"},
+  {lesson:"Lesson 15",topic:"Irregular feminine nouns",spanish:"la mujer",english:"the woman",vi:"người phụ nữ",example:"La mujer está aquí.",exampleEn:"The woman is here.",approx:"la mu-kher",ipa:"la muˈxeɾ",explain:"Mujer ends in -r but is feminine: la mujer.",visual:"👩"},
+  {lesson:"Lesson 15",topic:"Irregular feminine nouns",spanish:"la piel",english:"the skin",vi:"làn da",example:"Mi piel está bien.",exampleEn:"My skin is fine.",approx:"la pi-el",ipa:"la pjel",explain:"Piel ends in -l but is feminine: la piel.",visual:"🖐️"},
+  {lesson:"Lesson 15",topic:"Irregular feminine nouns",spanish:"la suerte",english:"the luck",vi:"may mắn",example:"Tengo buena suerte.",exampleEn:"I have good luck.",approx:"la swer-te",ipa:"la ˈswerte",explain:"Suerte ends in -e but is feminine: la suerte.",visual:"🍀"}
+);
+
+grammarBank["Lesson 15"] = [
+  {q:"____ foto es bonita.",choices:["La","El","Los"],a:"La",why:"Foto ends in -o but is feminine: la foto."},
+  {q:"____ mano está fría.",choices:["La","El","Un"],a:"La",why:"Mano ends in -o but is one of the classic feminine exceptions."},
+  {q:"Quiero ____ flor.",choices:["la","el","los"],a:"la",why:"Flor does not end in -a or -o but is feminine: la flor."},
+  {q:"Which noun ends in -o but is feminine?",choices:["radio","carro","libro"],a:"radio",why:"Radio ends in -o but is feminine in most of the Spanish-speaking world: la radio."},
+  {q:"La mujer tiene buena ____.",choices:["suerte","sistema","día"],a:"suerte",why:"Suerte (luck) is the feminine noun that fits this sentence."}
+];
+
+listeningBank["Lesson 15"] = {
+  text:"La mujer tiene buena suerte. Quiero la foto de la flor. La luz está en la clase. Dame la mano; tu piel está fría. Me gusta la radio.",
+  meaning:"The woman has good luck. I want the photo of the flower. The light is in the classroom. Give me your hand; your skin is cold. I like the radio.",
+  dictation:["La mujer tiene buena suerte.","Dame la mano; tu piel está fría."],
+  questions:[
+    {q:"What does the woman have?", a:["buena suerte","suerte"], hint:"Listen for: la mujer tiene..."},
+    {q:"What photo does the speaker want?", a:["la foto de la flor","foto de la flor"], hint:"Listen for: quiero..."},
+    {q:"Where is the light?", a:["en la clase","la clase","clase"], hint:"Listen for: la luz está..."},
+    {q:"What does the speaker say about the skin?", a:["fría","tu piel está fría"], hint:"Listen for: tu piel está..."},
+    {q:"What does the speaker like at the end?", a:["la radio","radio"], hint:"Listen at the end."}
+  ]
+};
+
+quizBank["Lesson 15"] = [
+  {q:"photograph = ?", a:["la foto","foto"], hint:"feminine noun ending in -o (exception)"},
+  {q:"hand = ?", a:["la mano","mano"], hint:"feminine noun ending in -o (exception)"},
+  {q:"radio = ?", a:["la radio","radio"], hint:"feminine noun ending in -o (exception)"},
+  {q:"class = ?", a:["la clase","clase"], hint:"irregular feminine noun"},
+  {q:"flower = ?", a:["la flor","flor"], hint:"irregular feminine noun"},
+  {q:"light = ?", a:["la luz","luz"], hint:"irregular feminine noun"},
+  {q:"woman = ?", a:["la mujer","mujer"], hint:"irregular feminine noun"},
+  {q:"skin = ?", a:["la piel","piel"], hint:"irregular feminine noun"},
+  {q:"luck = ?", a:["la suerte","suerte"], hint:"irregular feminine noun"}
+];
+
+grammarNotesBank["Lesson 15"] = [
+  {title:"1. A few -o nouns are feminine", body:"Foto, mano, and radio all end in -o but are feminine — the opposite of the usual -o = masculine pattern.", pattern:"la + foto/mano/radio", example:"La foto. La mano. La radio.", meaning:"The photo. The hand. The radio."},
+  {title:"2. Why foto and radio break the rule", body:"Foto is short for fotografía and radio is short for radiodifusión — both feminine words — so they keep the feminine gender even though the short form ends in -o.", pattern:"shortened form keeps original gender", example:"la foto (from la fotografía)", meaning:"the photo (from the photograph)"},
+  {title:"3. Other feminine nouns with no fixed ending", body:"Clase, flor, luz, mujer, piel, and suerte don't end in -a or -o at all, but they are feminine. Learn each one with la.", pattern:"la + noun (no fixed ending)", example:"La flor. La mujer. La suerte.", meaning:"The flower. The woman. The luck."},
+  {title:"4. When in doubt, learn the noun with its article", body:"You've now seen both masculine and feminine exceptions. The safest habit for any new noun is to learn it together with el or la from the start.", pattern:"el/la + noun (always learn together)", example:"la mano, la mujer, el día", meaning:"the hand, the woman, the day"}
+];
+
 const visualMap = {
   "hola":"👋",
   "buenos días":"🌅",
