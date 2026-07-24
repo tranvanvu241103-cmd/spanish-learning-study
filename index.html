@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Spanish A1 Systematic Interactive Canvas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#f4f7fb;
@@ -24,18 +27,28 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:linear-gradient(135deg,#f8fafc,#eef2ff);
+      font-family:'Nunito', Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(37,99,235,.07), transparent 40%),
+        radial-gradient(circle at 92% 18%, rgba(249,115,22,.08), transparent 38%),
+        radial-gradient(circle at 50% 90%, rgba(124,58,237,.06), transparent 45%),
+        linear-gradient(135deg,#f8fafc,#eef2ff);
       color:var(--ink);
     }
+    h1,h2,h3,.tab,button{font-family:'Baloo 2','Nunito',Arial,sans-serif}
     header{
       background:linear-gradient(135deg,#111827,#1e3a8a);
       color:white;
       padding:28px 18px;
       text-align:center;
+      position:relative;
+      overflow:hidden;
     }
+    header .header-deco{position:absolute;inset:0;pointer-events:none;opacity:.5}
+    header .header-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
     header h1{margin:0 0 8px;font-size:30px}
     header p{margin:0;color:#dbeafe}
+    #headerMascot{animation:mascotBob 3s ease-in-out infinite;flex-shrink:0}
     .app{max-width:1220px;margin:0 auto;padding:20px}
     .tabs{
       display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px;
@@ -45,16 +58,24 @@
     .tab{
       border:1px solid var(--line);background:#fff;color:var(--ink);
       padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:700;
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
     }
+    .tab:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(15,23,42,.1)}
+    .tab:active{transform:translateY(0) scale(.97)}
     .tab.active{background:var(--blue);color:white;border-color:var(--blue)}
-    .section{display:none}.section.active{display:block}
+    .section{display:none}
+    .section.active{display:block;animation:sectionIn .38s ease}
+    @keyframes sectionIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     @media(max-width:950px){.grid,.grid3{grid-template-columns:1fr}}
     .card{
-      background:var(--card);border:1px solid var(--line);border-radius:18px;
+      background:var(--card);border:1px solid var(--line);border-radius:20px;
       padding:18px;margin-bottom:18px;box-shadow:0 10px 28px rgba(15,23,42,.07);
+      transition:transform .2s ease, box-shadow .2s ease;
+      animation:sectionIn .3s ease;
     }
+    .card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(15,23,42,.11)}
     h2{margin:0 0 12px;font-size:22px}
     h3{margin:18px 0 10px}
     .note{background:var(--softBlue);border-left:5px solid var(--blue);padding:12px 14px;border-radius:12px;line-height:1.65;margin:12px 0}
@@ -63,9 +84,13 @@
     .success{background:var(--softGreen);border-left:5px solid var(--green);padding:12px 14px;border-radius:12px;line-height:1.65;margin:12px 0}
     .small{font-size:14px;color:var(--muted);line-height:1.5}
     button{
-      border:0;padding:10px 13px;border-radius:11px;background:var(--blue);
+      border:0;padding:10px 13px;border-radius:12px;background:var(--blue);
       color:white;cursor:pointer;font-weight:700;margin:3px;
+      transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      box-shadow:0 3px 0 rgba(0,0,0,.12);
     }
+    button:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    button:active{transform:translateY(2px) scale(.98);box-shadow:0 1px 0 rgba(0,0,0,.12)}
     button.secondary{background:#475569} button.good{background:var(--green)}
     button.orange{background:var(--orange)} button.purple{background:var(--purple)}
     button.danger{background:var(--red)}
@@ -77,7 +102,12 @@
     table{width:100%;border-collapse:collapse;margin:12px 0}
     th,td{border:1px solid var(--line);padding:10px;vertical-align:top}
     th{background:#f1f5f9;text-align:left}
-    .word-row{border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;background:#fff}
+    .word-row{
+      border:1px solid var(--line);border-radius:16px;padding:14px;margin:10px 0;background:#fff;
+      transition:transform .18s ease, box-shadow .18s ease;
+      animation:sectionIn .32s ease;
+    }
+    .word-row:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(15,23,42,.08)}
     .vocab-card-layout{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start}
     .vocab-visual{
       min-height:112px;border:1px solid #dbeafe;border-radius:16px;background:linear-gradient(135deg,#eff6ff,#f8fafc);
@@ -90,15 +120,19 @@
     .tag{display:inline-block;background:#eef2ff;color:#3730a3;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800;margin-right:4px}
     .lesson-tag{display:inline-block;background:#ecfdf5;color:#166534;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800;margin-right:4px}
     .flashcard{
-      min-height:230px;border:2px solid #dbeafe;background:#eff6ff;border-radius:22px;
+      min-height:230px;border:2px solid #dbeafe;background:linear-gradient(160deg,#eff6ff,#e0e9ff);border-radius:24px;
       display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
       cursor:pointer;user-select:none;
+      transition:transform .18s ease, box-shadow .18s ease;
+      box-shadow:0 8px 0 rgba(37,99,235,.12);
+      animation:sectionIn .35s ease;
     }
+    .flashcard:hover{transform:translateY(-3px);box-shadow:0 12px 0 rgba(37,99,235,.14)}
     .flashcard .big{font-size:42px;font-weight:900;color:#1d4ed8}
     .flashcard .meaning{font-size:23px;line-height:1.55}
     .result{padding:12px 14px;border-radius:12px;background:#f8fafc;border:1px solid var(--line);margin-top:12px;font-weight:700}
     .progress{height:13px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:10px 0}
-    .bar{height:100%;width:0;background:var(--green);transition:.25s}
+    .bar{height:100%;width:0;background:linear-gradient(90deg,#16a34a,#22d3ee);transition:.4s ease}
     .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     @media(max-width:700px){.mini-grid{grid-template-columns:1fr}}
     .canvas-box{
@@ -193,8 +227,24 @@
 </head>
 <body>
 <header>
-  <h1>Spanish A1 Systematic Interactive Canvas</h1>
-  <p>Lesson-based learning: Vocabulary → Grammar → Listening → Practice → Reuse</p>
+  <svg class="header-deco" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+    <circle cx="40" cy="20" r="46" fill="#fbbf24" opacity=".18"/>
+    <circle cx="360" cy="100" r="60" fill="#22d3ee" opacity=".15"/>
+    <circle cx="200" cy="10" r="30" fill="#f97316" opacity=".14"/>
+  </svg>
+  <div class="header-inner">
+    <svg id="headerMascot" viewBox="0 0 120 120" width="56" height="56" aria-hidden="true">
+      <circle cx="60" cy="60" r="52" fill="#f97316"/>
+      <circle cx="60" cy="60" r="52" fill="none" stroke="#c2410c" stroke-width="4"/>
+      <circle cx="42" cy="55" r="7" fill="#172033"/>
+      <circle cx="78" cy="55" r="7" fill="#172033"/>
+      <path d="M42 78 Q60 92 78 78" stroke="#172033" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>Spanish A1 Systematic Interactive Canvas</h1>
+      <p>Lesson-based learning: Vocabulary → Grammar → Listening → Practice → Reuse</p>
+    </div>
+  </div>
 </header>
 
 <div class="app">
@@ -960,7 +1010,9 @@ function checkGrammar(){
   });
   const el = document.getElementById("grammarResult");
   el.classList.remove("hidden");
+  el.className = "result " + (score === grammarQuestions.length ? "feedback-correct" : "feedback-wrong");
   el.innerHTML = `Score: <b>${score}/${grammarQuestions.length}</b><br><br>${lines.join("<br>")}`;
+  if(grammarQuestions.length && score === grammarQuestions.length) burstConfetti();
 }
 
 function renderListeningQuiz(){
@@ -989,7 +1041,9 @@ function checkListening(){
   });
   const el = document.getElementById("listeningResult");
   el.classList.remove("hidden");
+  el.className = "result " + (score === listeningQuestions.length ? "feedback-correct" : "feedback-wrong");
   el.innerHTML = `Listening score: <b>${score}/${listeningQuestions.length}</b><br><br>${lines.join("<br>")}`;
+  if(listeningQuestions.length && score === listeningQuestions.length) burstConfetti();
 }
 function resetListening(){
   const listeningQuestions = (getLessonListening(selectedLesson)).questions;
@@ -1106,7 +1160,9 @@ function showQuizResult(){
   document.getElementById("quizFeedback").classList.add("hidden");
   const res = document.getElementById("quizResult");
   res.classList.remove("hidden");
+  res.className = "result " + (quiz.length && quizScore === quiz.length ? "feedback-correct" : "");
   res.innerHTML = `🎉 Finished! Score: <b>${quizScore}/${quiz.length}</b><br><br>Press Restart to try again.`;
+  if(quiz.length && quizScore === quiz.length) burstConfetti();
 }
 function resetQuiz(){
   renderQuiz();

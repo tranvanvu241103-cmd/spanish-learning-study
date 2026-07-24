@@ -45,6 +45,15 @@ A cross-lesson "🔥 Ôn tập" (Review) tab was added on top of the original pe
 - **Animation**: `setMascotState(state)` swaps the `#mascotMouth` SVG path `d` attribute and a CSS class (`idle`/`happy`/`sad`/`celebrate`) on `#mascotSvg` for a small reactive SVG character (no external assets). `burstConfetti()` is a self-contained `<canvas>` particle burst (no library), triggered on level-up, streak milestones (7/30/100 days), and session completion. Flashcard flip and correct/wrong feedback use short CSS keyframe animations (`cardFlip`, `popIn`, `shakeWrong`) rather than a true two-sided 3D flip.
 - **Scope boundary**: the original per-lesson `quiz`/Exercises tab is untouched and does **not** feed into SRS — only the Review tab reads/writes `srsData`. Keep this separation in mind if asked to "fix" why Exercises scores don't affect Review scheduling; that's by design.
 
+## Visual/motion polish pass (index.html)
+
+After the SRS build shipped, the user reported the app still felt "boring/no animation/no illustrations" — turned out to be partly a stale browser cache (hard refresh needed) and partly a real gap: the base visual language (plain Arial, flat white cards, no feedback on interaction) hadn't changed. A second pass addressed the design itself, app-wide, not just the Review tab:
+
+- **Fonts**: Google Fonts `Baloo 2` (headings/buttons/tabs) + `Nunito` (body) loaded via `<link>` in `<head>`, with a system-font fallback stack so the app still looks fine offline — this is the only external network dependency added beyond the pre-existing TTS fallback.
+- **Motion everywhere**: `.section.active`, `.card`, `.word-row`, and `.flashcard` all get a shared `sectionIn` fade+rise-in keyframe animation (replays automatically each render since new DOM/class changes retrigger CSS animations — no JS needed). Buttons and tabs get hover-lift + press-down (`:active`) feedback via pure CSS.
+- **Header**: decorative inline SVG background circles + a small static mascot (independent markup from the Review tab's `#mascotSvg`/`#mascotEyeL` etc. — same visual design, different id, no shared state) sit in the header via `.header-deco`/`.header-inner`.
+- **Celebration everywhere**: `checkGrammar`, `checkListening`, and `showQuizResult` now call `burstConfetti()` (defined in the SRS section) and apply the `feedback-correct`/`feedback-wrong` classes to their result box on a perfect score — previously confetti only fired from the Review tab, which made the rest of the app feel flat by comparison.
+
 ## UI architecture (index.html)
 
 - Single-page, tab-based: `showTab(id, btn)` (index.html:621) toggles `.section.active`/`.tab.active` and calls `refreshSection(id)` (index.html:639) to re-render that section's content on demand. Tabs: Guide, Lessons, Pronunciation, Vocabulary, Grammar, Listening, Flashcards, Exercises, **Ôn tập (Review)**, Reuse — **no Word Match or Sentence Builder tabs** (those exist only in the English project). See "SRS / gamification / Review tab" above for the Review tab's engine.
