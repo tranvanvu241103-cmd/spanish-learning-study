@@ -715,6 +715,95 @@ grammarNotesBank["Lesson 10"] = [
   {title:"3. Intensifying with mucho and nada", body:"Add mucho to strengthen a like, and use no...nada together to strongly emphasize a dislike.", pattern:"me gusta mucho / no me gusta nada", example:"Me gusta mucho el chocolate. No me gusta nada el frío.", meaning:"I like chocolate a lot. I don't like the cold at all."},
   {title:"4. Agreeing with también and tampoco", body:"Use también to agree with a positive statement, and tampoco to agree with a negative statement.", pattern:"A mí también (agree positive) / A mí tampoco (agree negative)", example:"Me gusta la música. A mí también. No me gusta el frío. A mí tampoco.", meaning:"I like music. Me too. I don't like the cold. Me neither."}
 ];
+lessonInfo["Lesson 11"] = {
+  title:"Nouns and Gender — El + Masculine Nouns",
+  level:"A1",
+  vocabulary:"everyday masculine nouns + the definite article el",
+  grammar:"el + masculine noun / nouns that do not end in -o",
+  listening:"identifying everyday people, animals, places, and objects",
+  goal:"After this lesson, you can name common people, animals, places, and objects using the masculine article el, and recognize that some masculine nouns do not end in -o.",
+  core:[
+    {spanish:"El doctor está en el hospital.", english:"The doctor is at the hospital."},
+    {spanish:"Tengo un perro y un gato.", english:"I have a dog and a cat."},
+    {spanish:"El hombre está en el banco.", english:"The man is at the bank."},
+    {spanish:"Quiero un café y un tomate.", english:"I want a coffee and a tomato."}
+  ]
+};
+
+baseItems.push(
+  {lesson:"Lesson 11",topic:"People",spanish:"el amigo",english:"the friend",vi:"người bạn",example:"Mi amigo está aquí.",exampleEn:"My friend is here.",approx:"el a-mi-go",ipa:"el aˈmiɣo",explain:"Amigo ends in -o, the typical masculine ending, so it takes el.",visual:"🤝"},
+  {lesson:"Lesson 11",topic:"Places",spanish:"el banco",english:"the bank",vi:"ngân hàng",example:"El banco está aquí.",exampleEn:"The bank is here.",approx:"el ban-ko",ipa:"el ˈbaŋko",explain:"Banco ends in -o, so it is masculine: el banco.",visual:"🏦"},
+  {lesson:"Lesson 11",topic:"Places",spanish:"el baño",english:"the bathroom",vi:"phòng tắm / nhà vệ sinh",example:"El baño está aquí.",exampleEn:"The bathroom is here.",approx:"el ba-nyo",ipa:"el ˈbaɲo",explain:"The ñ sounds like ny in canyon.",visual:"🚽"},
+  {lesson:"Lesson 11",topic:"Objects",spanish:"el carro",english:"the car",vi:"xe hơi / ô tô",example:"Mi carro es pequeño.",exampleEn:"My car is small.",approx:"el ka-rro",ipa:"el ˈkaro",explain:"Carro has a strong rolled double r sound.",visual:"🚗"},
+  {lesson:"Lesson 11",topic:"Animals",spanish:"el gato",english:"the cat",vi:"con mèo",example:"El gato es pequeño.",exampleEn:"The cat is small.",approx:"el ga-to",ipa:"el ˈɡato",explain:"Gato ends in -o, the typical masculine ending.",visual:"🐱"},
+  {lesson:"Lesson 11",topic:"People",spanish:"el hermano",english:"the brother",vi:"anh/em trai",example:"Mi hermano está aquí.",exampleEn:"My brother is here.",approx:"el er-ma-no",ipa:"el eɾˈmano",explain:"The h in hermano is silent.",visual:"🧑"},
+  {lesson:"Lesson 11",topic:"Objects",spanish:"el libro",english:"the book",vi:"quyển sách",example:"Quiero el libro.",exampleEn:"I want the book.",approx:"el li-bro",ipa:"el ˈliβɾo",explain:"Libro ends in -o, so it is masculine: el libro.",visual:"📖"},
+  {lesson:"Lesson 11",topic:"People",spanish:"el muchacho",english:"the boy",vi:"cậu bé / chàng trai",example:"El muchacho es mi amigo.",exampleEn:"The boy is my friend.",approx:"el mu-cha-cho",ipa:"el muˈtʃatʃo",explain:"Ch sounds like the ch in English chair.",visual:"🧑‍🎓"},
+  {lesson:"Lesson 11",topic:"People",spanish:"el niño",english:"the little boy / the child",vi:"đứa trẻ / cậu bé nhỏ",example:"El niño es pequeño.",exampleEn:"The child is small.",approx:"el ni-nyo",ipa:"el ˈniɲo",explain:"The ñ sounds like ny in canyon.",visual:"👦"},
+  {lesson:"Lesson 11",topic:"Animals",spanish:"el perro",english:"the dog",vi:"con chó",example:"Me gusta el perro.",exampleEn:"I like the dog.",approx:"el pe-rro",ipa:"el ˈpero",explain:"Perro has a strong rolled double r sound, different from pero (but).",visual:"🐶"},
+  {lesson:"Lesson 11",topic:"Objects",spanish:"el teléfono",english:"the telephone",vi:"điện thoại",example:"El teléfono está aquí.",exampleEn:"The telephone is here.",approx:"el te-le-fo-no",ipa:"el teˈlefono",explain:"The accent shows the stress falls on lé.",visual:"☎️"},
+  {lesson:"Lesson 11",topic:"Food and drink",spanish:"el vino",english:"the wine",vi:"rượu vang",example:"Quiero vino, por favor.",exampleEn:"I want wine, please.",approx:"el bi-no",ipa:"el ˈbino",explain:"Spanish v sounds close to a soft b: bino, not vino as in English.",visual:"🍷"},
+  {lesson:"Lesson 11",topic:"Animals",spanish:"el animal",english:"the animal",vi:"động vật",example:"El animal es pequeño.",exampleEn:"The animal is small.",approx:"el a-ni-mal",ipa:"el aniˈmal",explain:"Animal does not end in -o but is still masculine — learn it as el animal.",visual:"🐾"},
+  {lesson:"Lesson 11",topic:"Food and drink",spanish:"el café",english:"the coffee",vi:"cà phê",example:"Quiero un café, por favor.",exampleEn:"I want a coffee, please.",approx:"el ka-fe",ipa:"el kaˈfe",explain:"Café does not end in -o but is still masculine — learn it as el café.",visual:"☕"},
+  {lesson:"Lesson 11",topic:"People",spanish:"el doctor",english:"the doctor",vi:"bác sĩ",example:"El doctor está en el hospital.",exampleEn:"The doctor is at the hospital.",approx:"el dok-tor",ipa:"el dokˈtoɾ",explain:"Doctor does not end in -o but is still masculine — learn it as el doctor.",visual:"🩺"},
+  {lesson:"Lesson 11",topic:"Places",spanish:"el hospital",english:"the hospital",vi:"bệnh viện",example:"El hospital está aquí.",exampleEn:"The hospital is here.",approx:"el os-pi-tal",ipa:"el ospiˈtal",explain:"Hospital does not end in -o but is still masculine — learn it as el hospital.",visual:"🏥"},
+  {lesson:"Lesson 11",topic:"Places",spanish:"el hotel",english:"the hotel",vi:"khách sạn",example:"El hotel está aquí.",exampleEn:"The hotel is here.",approx:"el o-tel",ipa:"el oˈtel",explain:"Hotel does not end in -o but is still masculine — learn it as el hotel.",visual:"🏨"},
+  {lesson:"Lesson 11",topic:"Food and drink",spanish:"el tomate",english:"the tomato",vi:"cà chua",example:"Quiero un tomate.",exampleEn:"I want a tomato.",approx:"el to-ma-te",ipa:"el toˈmate",explain:"Tomate does not end in -o but is still masculine — learn it as el tomate.",visual:"🍅"},
+  {lesson:"Lesson 11",topic:"Objects",spanish:"el tren",english:"the train",vi:"tàu hỏa",example:"El tren está aquí.",exampleEn:"The train is here.",approx:"el tren",ipa:"el tɾen",explain:"Tren does not end in -o but is still masculine — learn it as el tren.",visual:"🚆"},
+  {lesson:"Lesson 11",topic:"People",spanish:"el hombre",english:"the man",vi:"người đàn ông",example:"El hombre está en el banco.",exampleEn:"The man is at the bank.",approx:"el om-bre",ipa:"el ˈombɾe",explain:"Hombre does not end in -o but is still masculine — learn it as el hombre.",visual:"👨"}
+);
+
+grammarBank["Lesson 11"] = [
+  {q:"____ amigo está aquí.",choices:["El","La","Los"],a:"El",why:"Use el before a masculine singular noun like amigo."},
+  {q:"____ hospital está aquí.",choices:["El","La","Un"],a:"El",why:"Hospital is masculine even though it does not end in -o — it still takes el."},
+  {q:"Quiero ____ café.",choices:["el","la","los"],a:"el",why:"Café is masculine and takes el, even though it ends in -é, not -o."},
+  {q:"Which noun does NOT end in -o but is still masculine?",choices:["tren","gato","libro"],a:"tren",why:"Tren is masculine (el tren) even though it ends in -n, not -o."},
+  {q:"El hombre trabaja en ____ banco.",choices:["el","la","una"],a:"el",why:"Banco ends in -o and is masculine, so use el."}
+];
+
+listeningBank["Lesson 11"] = {
+  text:"Mi amigo está en el hotel. Mi hermano está en el hospital. El perro está en casa. El hombre paga con tarjeta en el banco. El niño quiere un tomate.",
+  meaning:"My friend is at the hotel. My brother is at the hospital. The dog is at home. The man pays by card at the bank. The child wants a tomato.",
+  dictation:["Mi amigo está en el hotel.","El hombre paga con tarjeta en el banco."],
+  questions:[
+    {q:"Where is the friend?", a:["hotel","el hotel"], hint:"Listen for: mi amigo está en..."},
+    {q:"Where is the brother?", a:["hospital","el hospital"], hint:"Listen for: mi hermano está en..."},
+    {q:"Where is the dog?", a:["casa","en casa"], hint:"Listen for: el perro está en..."},
+    {q:"How does the man pay?", a:["con tarjeta","tarjeta"], hint:"Listen for: el hombre paga..."},
+    {q:"What does the child want?", a:["un tomate","tomate"], hint:"Listen at the end."}
+  ]
+};
+
+quizBank["Lesson 11"] = [
+  {q:"friend = ?", a:["el amigo","amigo"], hint:"masculine noun ending in -o"},
+  {q:"bank = ?", a:["el banco","banco"], hint:"masculine noun ending in -o"},
+  {q:"bathroom = ?", a:["el baño","baño"], hint:"masculine noun ending in -o"},
+  {q:"car = ?", a:["el carro","carro"], hint:"masculine noun ending in -o"},
+  {q:"cat = ?", a:["el gato","gato"], hint:"masculine noun ending in -o"},
+  {q:"brother = ?", a:["el hermano","hermano"], hint:"masculine noun ending in -o"},
+  {q:"book = ?", a:["el libro","libro"], hint:"masculine noun ending in -o"},
+  {q:"boy = ?", a:["el muchacho","muchacho"], hint:"masculine noun ending in -o"},
+  {q:"child / little boy = ?", a:["el niño","niño"], hint:"masculine noun ending in -o"},
+  {q:"dog = ?", a:["el perro","perro"], hint:"masculine noun ending in -o"},
+  {q:"telephone = ?", a:["el teléfono","teléfono","el telefono","telefono"], hint:"masculine noun ending in -o"},
+  {q:"wine = ?", a:["el vino","vino"], hint:"masculine noun ending in -o"},
+  {q:"animal = ?", a:["el animal","animal"], hint:"masculine noun that does NOT end in -o"},
+  {q:"coffee = ?", a:["el café","café","el cafe","cafe"], hint:"masculine noun that does NOT end in -o"},
+  {q:"doctor = ?", a:["el doctor","doctor"], hint:"masculine noun that does NOT end in -o"},
+  {q:"hospital = ?", a:["el hospital","hospital"], hint:"masculine noun that does NOT end in -o"},
+  {q:"hotel = ?", a:["el hotel","hotel"], hint:"masculine noun that does NOT end in -o"},
+  {q:"tomato = ?", a:["el tomate","tomate"], hint:"masculine noun that does NOT end in -o"},
+  {q:"train = ?", a:["el tren","tren"], hint:"masculine noun that does NOT end in -o"},
+  {q:"man = ?", a:["el hombre","hombre"], hint:"masculine noun that does NOT end in -o"}
+];
+
+grammarNotesBank["Lesson 11"] = [
+  {title:"1. “El” for masculine singular nouns", body:"Use el before a singular masculine noun. It is the Spanish equivalent of 'the' for masculine words.", pattern:"el + masculine noun", example:"El libro. El gato.", meaning:"The book. The cat."},
+  {title:"2. Most masculine nouns end in -o", body:"Many masculine nouns end in -o, which makes them easy to recognize: amigo, banco, baño, carro, gato, hermano, libro, muchacho, niño, perro, teléfono, vino.", pattern:"noun ending in -o → usually masculine → el", example:"El teléfono. El vino.", meaning:"The telephone. The wine."},
+  {title:"3. Some masculine nouns do NOT end in -o", body:"Nouns like animal, café, doctor, hospital, hotel, tomate, tren, and hombre are masculine even though they do not end in -o. You must learn each one together with its article.", pattern:"el + masculine noun (no fixed ending)", example:"El hospital. El café. El hombre.", meaning:"The hospital. The coffee. The man."},
+  {title:"4. Learn every noun with its article", body:"Instead of memorizing a noun alone, always learn it together with el or la. This helps you remember its gender correctly, especially for nouns that don't end in -o.", pattern:"el/la + noun (learn together)", example:"el tren, el doctor, el animal", meaning:"the train, the doctor, the animal"}
+];
+
 const visualMap = {
   "hola":"👋",
   "buenos días":"🌅",
