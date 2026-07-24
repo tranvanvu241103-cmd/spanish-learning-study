@@ -144,6 +144,51 @@
   .flashcard .meaning { font-size: 18px !important; }
 }
 
+/* SRS / Review / gamification / animation additions */
+.stats-bar{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#fff;
+  border:1px solid var(--line);border-radius:16px;padding:10px 16px;margin-bottom:14px;
+  box-shadow:0 6px 16px rgba(15,23,42,.05);
+}
+.streak-badge{display:flex;align-items:center;gap:6px;font-weight:800;color:var(--orange);white-space:nowrap}
+.streak-flame{display:inline-block;animation:flameFlicker 1.6s ease-in-out infinite}
+@keyframes flameFlicker{
+  0%,100%{transform:scale(1) rotate(0deg)}
+  25%{transform:scale(1.1) rotate(-4deg)}
+  50%{transform:scale(0.94) rotate(3deg)}
+  75%{transform:scale(1.06) rotate(-2deg)}
+}
+.xp-wrap{flex:1;min-width:160px}
+.xp-bar{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px}
+.xp-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#2563eb);transition:width .5s ease}
+.due-badge{
+  background:#fee2e2;color:#991b1b;font-weight:800;padding:6px 12px;
+  border-radius:999px;font-size:13px;cursor:pointer;white-space:nowrap;border:0;
+}
+.strength-meter{height:8px;border-radius:999px;background:#e5e7eb;overflow:hidden;margin:8px 0}
+.strength-fill{height:100%;border-radius:999px;transition:width .4s ease, background-color .4s ease}
+.mnemonic-box{background:#fff7ad;border:1px solid #fde68a;border-radius:12px;padding:12px;margin-top:12px}
+.mnemonic-box textarea{min-height:56px;margin:6px 0 0}
+@keyframes cardFlip{0%{transform:rotateY(0)}50%{transform:rotateY(90deg)}100%{transform:rotateY(0)}}
+.flashcard.flip-anim{animation:cardFlip .42s ease}
+@keyframes popIn{0%{transform:scale(.85);opacity:.4}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+@keyframes shakeWrong{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.feedback-correct{animation:popIn .35s ease}
+.feedback-wrong{animation:shakeWrong .4s ease}
+.mascot{transform-origin:center bottom}
+.mascot.idle{animation:mascotBob 3s ease-in-out infinite}
+.mascot.happy{animation:mascotBounce .55s ease}
+.mascot.sad{animation:mascotDroop .55s ease}
+.mascot.celebrate{animation:mascotJump .8s ease}
+@keyframes mascotBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes mascotBounce{0%{transform:scale(1)}30%{transform:scale(1.16) translateY(-12px)}60%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes mascotDroop{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(7px) rotate(-5deg)}100%{transform:translateY(2px) rotate(-2deg)}}
+@keyframes mascotJump{0%{transform:translateY(0) rotate(0)}25%{transform:translateY(-20px) rotate(-8deg)}50%{transform:translateY(0) rotate(8deg)}75%{transform:translateY(-10px) rotate(-4deg)}100%{transform:translateY(0) rotate(0)}}
+.confetti-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:999}
+@media(max-width:760px){
+  .stats-bar{padding:8px 10px;gap:10px}
+  .xp-wrap{min-width:110px}
+}
 </style>
 </head>
 <body>
@@ -153,6 +198,7 @@
 </header>
 
 <div class="app">
+  <div class="stats-bar" id="statsBar"></div>
   <div class="tabs">
     <button class="tab active" onclick="showTab('home', this)">🏠 Guide</button>
     <button class="tab" onclick="showTab('lesson', this)">📚 Lessons</button>
@@ -162,6 +208,7 @@
     <button class="tab" onclick="showTab('listening', this)">🎧 Listening</button>
     <button class="tab" onclick="showTab('flashcards', this)">🎴 Flashcards</button>
     <button class="tab" onclick="showTab('quiz', this)">✅ Exercises</button>
+    <button class="tab" onclick="showTab('review', this)">🔥 Ôn tập</button>
     <button class="tab" onclick="showTab('builder', this)">♻️ Reuse</button>
   </div>
 
@@ -319,6 +366,8 @@
         <button onclick="speakCurrentCard()">🔊 Listen</button>
         <button class="secondary" onclick="flipCard()">Flip</button>
         <button class="good" onclick="nextCard()">Next</button>
+        <div id="flashStrength"></div>
+        <div id="flashMnemonicBox"></div>
       </div>
       <div class="card">
         <h2>Memory method</h2>
@@ -342,6 +391,39 @@
       <button class="good" onclick="nextQuizQuestion()">Next ▶</button>
       <button class="secondary" onclick="resetQuiz()">Restart</button>
       <div id="quizResult" class="result hidden"></div>
+    </div>
+  </section>
+
+  <section id="review" class="section">
+    <div class="grid">
+      <div class="card">
+        <h2>🔥 Ôn tập ngắt quãng (Spaced Repetition)</h2>
+        <p class="small">Hệ thống tự chọn từ sắp quên để bạn ôn đúng lúc — trộn từ nhiều bài học và nhiều dạng câu hỏi (dịch nghĩa, điền từ trong câu) để não ghi nhớ sâu hơn.</p>
+        <p id="reviewProgress" class="small"></p>
+        <div id="reviewStrength"></div>
+        <div id="reviewCard"></div>
+        <button onclick="speakReviewPrompt()">🔊 Nghe</button>
+        <button class="good" onclick="checkReviewAnswer()">Kiểm tra / Câu tiếp theo</button>
+        <div id="reviewFeedback" class="result hidden"></div>
+        <div id="reviewSummary" class="result hidden"></div>
+      </div>
+      <div class="card">
+        <h2>Bạn đồng hành học tập</h2>
+        <div style="text-align:center">
+          <svg id="mascotSvg" viewBox="0 0 120 120" width="110" height="110" class="mascot idle">
+            <circle cx="60" cy="60" r="52" fill="#f97316"/>
+            <circle cx="60" cy="60" r="52" fill="none" stroke="#c2410c" stroke-width="4"/>
+            <circle id="mascotEyeL" cx="42" cy="55" r="7" fill="#172033"/>
+            <circle id="mascotEyeR" cx="78" cy="55" r="7" fill="#172033"/>
+            <path id="mascotMouth" d="M42 78 Q60 86 78 78" stroke="#172033" stroke-width="5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <p class="small" id="mascotCaption">Cùng ôn tập nào!</p>
+        </div>
+        <div class="note">
+          <b>Cách hoạt động:</b> Mỗi từ có một "sức mạnh trí nhớ". Trả lời đúng → khoảng cách ôn tăng dần (1 ngày → 3 ngày → 7 ngày → 14 ngày → 1 tháng → 3 tháng → 6 tháng). Trả lời sai → từ quay lại mức đầu và được hỏi lại ngay trong phiên này.
+        </div>
+        <div id="reviewMnemonicBox"></div>
+      </div>
     </div>
   </section>
 
@@ -396,6 +478,7 @@
   Spanish A1 Systematic Interactive Canvas — reusable local file
 </div>
 <audio id="ttsAudio" preload="none"></audio>
+<canvas id="confettiCanvas" class="confetti-canvas"></canvas>
 
 <script>
 let selectedLesson = localStorage.getItem("spanish_selected_lesson_v3") || "Lesson 1";
@@ -652,6 +735,7 @@ function refreshSection(id){
   if(id==="grammar") renderGrammarPractice();
   if(id==="listening") renderListeningQuiz();
   if(id==="builder") renderNotes();
+  if(id==="review") renderReview();
 }
 
 function syncLessonControls(){
@@ -831,6 +915,8 @@ function renderVocab(){
             <tr><th>Pronunciation</th><td>${pronunciationHtml(x)}</td></tr>
             <tr><th>Subject use</th><td>${subjectUseHtml(x)}</td></tr>
             <tr><th>English explanation</th><td>${x.explain || "Custom word. Listen, repeat, and create your own sentence."}</td></tr>
+            <tr><th>Strength</th><td>${strengthMeterHtml(x)}</td></tr>
+            <tr><th>Mnemonic</th><td>${mnemonics[itemKey(x)] ? escapeHtml(mnemonics[itemKey(x)]) : '<span class="small">Chưa có — thêm ở tab Flashcards hoặc Ôn tập.</span>'}</td></tr>
           </table>
         </div>
       </div>
@@ -938,8 +1024,16 @@ function renderFlashcard(){
   }else{
     el.innerHTML = `<div class="meaning"><div style="font-size:48px;margin-bottom:8px">${getVisual(x)}</div><b>${x.spanish}</b><br>${x.english}<br>${x.vi}<br><br><span class="small">${x.example || ""}<br>${x.exampleEn || ""}</span></div>`;
   }
+  const strengthEl = document.getElementById("flashStrength");
+  if(strengthEl) strengthEl.innerHTML = strengthMeterHtml(x);
+  renderMnemonicBox(x, "flashMnemonicBox");
 }
-function flipCard(){flipped=!flipped;renderFlashcard();}
+function flipCard(){
+  const el = document.getElementById("flashcard");
+  el.classList.add("flip-anim");
+  setTimeout(()=>{ flipped=!flipped; renderFlashcard(); }, 200);
+  setTimeout(()=>{ el.classList.remove("flip-anim"); }, 420);
+}
 function nextCard(){const items=lessonItems(); flashIndex=(flashIndex+1)%items.length;flipped=false;renderFlashcard();}
 function speakCurrentCard(){const items=lessonItems(); const x=items[flashIndex%items.length];speak(x.spanish);}
 
@@ -1058,23 +1152,419 @@ function clearNotes(){
   if(confirm("Clear all notes?")){notes=[];localStorage.removeItem("spanish_notes_v2");renderNotes();}
 }
 function exportData(){
-  document.getElementById("dataBox").value=JSON.stringify({customItems,notes},null,2);
+  document.getElementById("dataBox").value=JSON.stringify({customItems,notes,srsData,srsMeta,streakData,xpTotal,mnemonics},null,2);
 }
 function importData(){
   try{
     const data=JSON.parse(document.getElementById("dataBox").value);
     if(Array.isArray(data.customItems)) customItems=data.customItems;
     if(Array.isArray(data.notes)) notes=data.notes;
+    if(data.srsData && typeof data.srsData==="object") srsData=data.srsData;
+    if(data.srsMeta && typeof data.srsMeta==="object") srsMeta=data.srsMeta;
+    if(data.streakData && typeof data.streakData==="object") streakData=data.streakData;
+    if(typeof data.xpTotal==="number") xpTotal=data.xpTotal;
+    if(data.mnemonics && typeof data.mnemonics==="object") mnemonics=data.mnemonics;
     localStorage.setItem("spanish_custom_items_v2", JSON.stringify(customItems));
     localStorage.setItem("spanish_notes_v2", JSON.stringify(notes));
-    renderNotes();alert("Data imported.");
+    saveSrs(); saveSrsMeta(); saveStreak(); saveXp(); saveMnemonics();
+    renderNotes();renderStatsBar();alert("Data imported.");
   }catch(e){alert("Invalid JSON.");}
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));}
 function escapeJs(s){return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'");}
 
+/* =========================================================
+   SRS (Spaced Repetition), gamification, mascot & confetti
+   ========================================================= */
+const SRS_STAGES = [0, 1, 3, 7, 14, 30, 90, 180]; // days per stage, index = stage
+const NEW_ITEMS_PER_DAY = 10;
+
+let srsData = JSON.parse(localStorage.getItem("spanish_srs_v1") || "{}");
+let srsMeta = JSON.parse(localStorage.getItem("spanish_srs_meta_v1") || "{}");
+let streakData = JSON.parse(localStorage.getItem("spanish_streak_v1") || '{"count":0,"lastDate":""}');
+let xpTotal = Number(localStorage.getItem("spanish_xp_v1") || "0");
+let mnemonics = JSON.parse(localStorage.getItem("spanish_mnemonics_v1") || "{}");
+
+function todayStr(){ return new Date().toISOString().slice(0,10); }
+function itemKey(x){ return `${x.lesson || "Custom"}::${x.spanish}`; }
+function bareSpanishWord(spanish){ return String(spanish || "").replace(/^(el|la|los|las)\s+/i, ""); }
+
+function saveSrs(){ localStorage.setItem("spanish_srs_v1", JSON.stringify(srsData)); }
+function saveSrsMeta(){ localStorage.setItem("spanish_srs_meta_v1", JSON.stringify(srsMeta)); }
+function saveStreak(){ localStorage.setItem("spanish_streak_v1", JSON.stringify(streakData)); }
+function saveXp(){ localStorage.setItem("spanish_xp_v1", String(xpTotal)); }
+function saveMnemonics(){ localStorage.setItem("spanish_mnemonics_v1", JSON.stringify(mnemonics)); }
+
+function getSrsState(key){
+  if(!srsData[key]) srsData[key] = { stage:0, due:0, reps:0, lapses:0, introduced:false };
+  return srsData[key];
+}
+function srsStrengthPercent(state){
+  return Math.round((state.stage / (SRS_STAGES.length - 1)) * 100);
+}
+function srsStrengthColor(pct){
+  if(pct < 20) return "#dc2626";
+  if(pct < 50) return "#f97316";
+  if(pct < 80) return "#2563eb";
+  return "#16a34a";
+}
+function strengthMeterHtml(x){
+  const state = getSrsState(itemKey(x));
+  const pct = srsStrengthPercent(state);
+  return `<div class="strength-meter" title="Sức mạnh trí nhớ: ${pct}%"><div class="strength-fill" style="width:${pct}%;background:${srsStrengthColor(pct)}"></div></div>`;
+}
+
+function ensureNewItemQuota(){
+  const today = todayStr();
+  if(srsMeta.lastNewDate !== today){
+    srsMeta.lastNewDate = today;
+    srsMeta.newIntroducedToday = 0;
+    saveSrsMeta();
+  }
+}
+
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function buildReviewQueue(){
+  ensureNewItemQuota();
+  const now = Date.now();
+  const items = allItems();
+  const due = [];
+  const candidates = [];
+  items.forEach(x=>{
+    const state = getSrsState(itemKey(x));
+    if(state.introduced){
+      if(state.due <= now) due.push(x);
+    } else {
+      candidates.push(x);
+    }
+  });
+  due.sort((a,b)=> getSrsState(itemKey(a)).due - getSrsState(itemKey(b)).due);
+  candidates.sort((a,b)=> getLessonNumber(a.lesson) - getLessonNumber(b.lesson));
+  const remainingQuota = Math.max(0, NEW_ITEMS_PER_DAY - (srsMeta.newIntroducedToday||0));
+  const freshNew = candidates.slice(0, remainingQuota);
+  freshNew.forEach(x=>{
+    const state = getSrsState(itemKey(x));
+    state.introduced = true;
+    srsMeta.newIntroducedToday = (srsMeta.newIntroducedToday||0) + 1;
+  });
+  saveSrs(); saveSrsMeta();
+  return shuffleArray([...due, ...freshNew]);
+}
+
+function countDueToday(){
+  ensureNewItemQuota();
+  const now = Date.now();
+  const items = allItems();
+  let due=0, newAvail=0;
+  const freshLeft = Math.max(0, NEW_ITEMS_PER_DAY - (srsMeta.newIntroducedToday||0));
+  items.forEach(x=>{
+    const state = getSrsState(itemKey(x));
+    if(state.introduced){ if(state.due<=now) due++; }
+    else newAvail++;
+  });
+  saveSrs();
+  return due + Math.min(newAvail, freshLeft);
+}
+
+function recordReview(x, correct){
+  const key = itemKey(x);
+  const state = getSrsState(key);
+  state.reps = (state.reps||0)+1;
+  if(correct){
+    state.stage = Math.min(state.stage+1, SRS_STAGES.length-1);
+  } else {
+    state.lapses = (state.lapses||0)+1;
+    state.stage = 0;
+  }
+  state.due = Date.now() + SRS_STAGES[state.stage]*24*60*60*1000;
+  state.introduced = true;
+  saveSrs();
+  awardXp(correct ? 10 : 2);
+  bumpStreak();
+}
+
+function xpLevel(){ return Math.floor(xpTotal/100)+1; }
+function xpIntoLevel(){ return xpTotal % 100; }
+function awardXp(amount){
+  const beforeLevel = xpLevel();
+  xpTotal += amount;
+  saveXp();
+  if(xpLevel() > beforeLevel) burstConfetti();
+  renderStatsBar();
+}
+
+function bumpStreak(){
+  const today = todayStr();
+  if(streakData.lastDate === today) return;
+  const yesterday = new Date(Date.now()-86400000).toISOString().slice(0,10);
+  streakData.count = (streakData.lastDate === yesterday) ? (streakData.count||0)+1 : 1;
+  streakData.lastDate = today;
+  saveStreak();
+  renderStatsBar();
+  if([7,30,100].includes(streakData.count)) burstConfetti();
+}
+
+function goToReviewTab(){
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("review").classList.add("active");
+  const btn = Array.from(document.querySelectorAll(".tab")).find(t=>t.getAttribute("onclick")?.includes("'review'"));
+  if(btn) btn.classList.add("active");
+  refreshSection("review");
+}
+
+function renderStatsBar(){
+  const bar = document.getElementById("statsBar");
+  if(!bar) return;
+  const dueCount = countDueToday();
+  bar.innerHTML = `
+    <div class="streak-badge"><span class="streak-flame">🔥</span> ${streakData.count||0} ngày</div>
+    <div class="xp-wrap">
+      <div class="small">Cấp ${xpLevel()} — ${xpIntoLevel()}/100 XP</div>
+      <div class="xp-bar"><div class="xp-fill" style="width:${xpIntoLevel()}%"></div></div>
+    </div>
+    <button class="due-badge" onclick="goToReviewTab()">🧩 ${dueCount} từ cần ôn</button>
+  `;
+}
+
+/* ---------- Mascot ---------- */
+function setMascotState(state, caption){
+  const svg = document.getElementById("mascotSvg");
+  const mouth = document.getElementById("mascotMouth");
+  const captionEl = document.getElementById("mascotCaption");
+  if(svg){
+    svg.classList.remove("idle","happy","sad","celebrate");
+    svg.classList.add(state);
+  }
+  const paths = {
+    idle:"M42 78 Q60 86 78 78",
+    happy:"M40 76 Q60 96 80 76",
+    sad:"M42 84 Q60 70 78 84",
+    celebrate:"M40 76 Q60 96 80 76"
+  };
+  if(mouth) mouth.setAttribute("d", paths[state] || paths.idle);
+  const captions = {
+    idle:"Cùng ôn tập nào!",
+    happy:"Chính xác! Tuyệt vời!",
+    sad:"Không sao, cố lên!",
+    celebrate:"Hoàn thành phiên ôn tập!"
+  };
+  if(captionEl) captionEl.innerText = caption || captions[state] || "";
+  if(state === "celebrate") burstConfetti();
+}
+
+/* ---------- Confetti (vanilla canvas, no dependency) ---------- */
+function burstConfetti(){
+  const canvas = document.getElementById("confettiCanvas");
+  if(!canvas) return;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext("2d");
+  const colors = ["#2563eb","#16a34a","#f97316","#dc2626","#7c3aed","#facc15"];
+  const pieces = Array.from({length:120}, () => ({
+    x: Math.random()*canvas.width,
+    y: -20 - Math.random()*canvas.height*0.3,
+    w: 6+Math.random()*6,
+    h: 8+Math.random()*10,
+    color: colors[Math.floor(Math.random()*colors.length)],
+    vx: (Math.random()-0.5)*3,
+    vy: 2+Math.random()*4,
+    rot: Math.random()*360,
+    vr: (Math.random()-0.5)*10
+  }));
+  let frame=0;
+  const maxFrames=140;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr;
+      ctx.save();
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.rot*Math.PI/180);
+      ctx.fillStyle=p.color;
+      ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      ctx.restore();
+    });
+    frame++;
+    if(frame<maxFrames) requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  draw();
+}
+
+/* ---------- Mnemonics (elaborative encoding) ---------- */
+function renderMnemonicBox(x, containerId){
+  const key = itemKey(x);
+  const box = document.getElementById(containerId);
+  if(!box) return;
+  const saved = mnemonics[key] || "";
+  box.innerHTML = `
+    <div class="mnemonic-box">
+      <b>💡 Liên tưởng của bạn</b>
+      <p class="small">${x.explain || ""}</p>
+      <textarea id="${containerId}_input" placeholder="Viết câu chuyện/hình ảnh vui để nhớ từ này...">${escapeHtml(saved)}</textarea>
+      <button class="secondary" onclick="saveMnemonicFor('${escapeJs(key)}','${containerId}')">Lưu liên tưởng</button>
+    </div>
+  `;
+}
+function saveMnemonicFor(key, containerId){
+  const input = document.getElementById(containerId+"_input");
+  if(!input) return;
+  const val = input.value.trim();
+  if(val) mnemonics[key] = val; else delete mnemonics[key];
+  saveMnemonics();
+}
+
+/* ---------- Review tab (interleaved active recall + SRS) ---------- */
+let reviewQueue = [];
+let reviewIndex = 0;
+let reviewCorrect = 0;
+let reviewTotalPlanned = 0;
+let reviewQType = null;
+let reviewAnswered = false;
+let reviewRequeueCounts = {};
+const MAX_REQUEUES_PER_ITEM = 2;
+
+function renderReview(){
+  reviewQueue = buildReviewQueue();
+  reviewTotalPlanned = reviewQueue.length;
+  reviewIndex = 0;
+  reviewCorrect = 0;
+  reviewRequeueCounts = {};
+  document.getElementById("reviewSummary").classList.add("hidden");
+  setMascotState("idle");
+  renderStatsBar();
+  renderReviewCard();
+}
+
+function buildClozeSentence(x){
+  const bare = bareSpanishWord(x.spanish);
+  if(!x.example || !bare) return null;
+  const re = new RegExp(bare.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"), "i");
+  if(!re.test(x.example)) return null;
+  return x.example.replace(re, "_____");
+}
+function pickQuestionType(x){
+  const clozeSentence = buildClozeSentence(x);
+  const r = Math.random();
+  if(r < 0.35) return "es2en";
+  if(r < 0.65 && clozeSentence) return "cloze";
+  return "en2es";
+}
+
+function renderReviewCard(){
+  const feedback = document.getElementById("reviewFeedback");
+  feedback.classList.add("hidden");
+  feedback.className = "result hidden";
+  reviewAnswered = false;
+  if(reviewIndex >= reviewQueue.length){
+    showReviewSummary();
+    return;
+  }
+  const x = reviewQueue[reviewIndex];
+  let qType = pickQuestionType(x);
+  const clozeSentence = qType === "cloze" ? buildClozeSentence(x) : null;
+  if(qType === "cloze" && !clozeSentence) qType = "es2en";
+  reviewQType = qType;
+
+  document.getElementById("reviewProgress").innerText = `Câu ${reviewIndex+1}/${reviewTotalPlanned} — Đúng: ${reviewCorrect}`;
+  document.getElementById("reviewStrength").innerHTML = strengthMeterHtml(x);
+
+  let prompt, placeholder;
+  if(qType === "es2en"){
+    prompt = `<div style="font-size:48px;margin-bottom:8px">${getVisual(x)}</div><div class="big">${x.spanish}</div><p class="small">Gõ nghĩa tiếng Anh</p>`;
+    placeholder = "Type in English...";
+  } else if(qType === "en2es"){
+    prompt = `<div class="big">${x.english}</div><p class="small">${x.vi || ""}</p><p class="small">Gõ từ tiếng Tây Ban Nha</p>`;
+    placeholder = "Escribe en español...";
+  } else {
+    prompt = `<p style="font-size:19px;line-height:1.6">${clozeSentence}</p><p class="small">Điền từ còn thiếu (tiếng Tây Ban Nha)</p>`;
+    placeholder = "Escribe la palabra...";
+  }
+
+  document.getElementById("reviewCard").innerHTML = `
+    <div class="flashcard">${prompt}</div>
+    <input id="reviewInput" placeholder="${escapeHtml(placeholder)}" autocomplete="off">
+  `;
+  renderMnemonicBox(x, "reviewMnemonicBox");
+  const input = document.getElementById("reviewInput");
+  input.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); checkReviewAnswer(); } });
+  input.focus();
+  setMascotState("idle");
+}
+
+function speakReviewPrompt(){
+  const x = reviewQueue[reviewIndex];
+  if(!x) return;
+  if(reviewQType === "es2en") speak(x.spanish);
+  else speak(bareSpanishWord(x.spanish));
+}
+
+function checkReviewAnswer(){
+  if(reviewIndex >= reviewQueue.length) return;
+  if(reviewAnswered){ nextReviewCard(); return; }
+  const x = reviewQueue[reviewIndex];
+  const input = document.getElementById("reviewInput");
+  const val = normalize(input ? input.value : "");
+  let correct = false;
+  if(reviewQType === "es2en"){
+    correct = String(x.english).split("/").map(s=>normalize(s)).includes(val);
+  } else {
+    const bare = normalize(bareSpanishWord(x.spanish));
+    correct = val === bare || val === normalize(x.spanish);
+  }
+  reviewAnswered = true;
+  if(correct) reviewCorrect++;
+  recordReview(x, correct);
+
+  const feedback = document.getElementById("reviewFeedback");
+  feedback.classList.remove("hidden");
+  feedback.className = "result " + (correct ? "feedback-correct" : "feedback-wrong");
+  const answerShown = reviewQType === "es2en" ? x.english : x.spanish;
+  feedback.innerHTML = correct ? `✅ Chính xác!` : `❌ Chưa đúng. Đáp án: <b>${answerShown}</b>`;
+  setMascotState(correct ? "happy" : "sad");
+  speak(reviewQType === "es2en" ? x.spanish : bareSpanishWord(x.spanish));
+  document.getElementById("reviewProgress").innerText = `Câu ${reviewIndex+1}/${reviewTotalPlanned} — Đúng: ${reviewCorrect}`;
+
+  if(!correct){
+    const key = itemKey(x);
+    const requeued = reviewRequeueCounts[key] || 0;
+    if(requeued < MAX_REQUEUES_PER_ITEM){
+      reviewRequeueCounts[key] = requeued + 1;
+      const insertAt = Math.min(reviewQueue.length, reviewIndex + 3);
+      reviewQueue.splice(insertAt, 0, x);
+    }
+  }
+  renderStatsBar();
+}
+function nextReviewCard(){
+  reviewIndex++;
+  renderReviewCard();
+}
+function showReviewSummary(){
+  document.getElementById("reviewCard").innerHTML = "";
+  document.getElementById("reviewProgress").innerText = "";
+  document.getElementById("reviewFeedback").classList.add("hidden");
+  const el = document.getElementById("reviewSummary");
+  el.classList.remove("hidden");
+  el.innerHTML = reviewTotalPlanned
+    ? `🎉 Hoàn thành phiên ôn tập! Đúng ${reviewCorrect}/${reviewTotalPlanned}.<br>Hẹn quay lại sau — hệ thống đã tự tính lịch ôn tiếp theo cho từng từ.`
+    : `🎉 Không có từ nào cần ôn lúc này. Hãy học thêm từ mới ở tab Vocabulary, hoặc quay lại sau!`;
+  setMascotState("celebrate");
+  renderStatsBar();
+}
+
 renderProgressChecklist();
 validateLessonCatalog();
+renderStatsBar();
 syncLessonControls();
 renderLessonOverview();
 renderTopicOptions();
