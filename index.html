@@ -260,6 +260,40 @@
   .stats-bar{padding:8px 10px;gap:10px}
   .xp-wrap{min-width:110px}
 }
+
+/* Word-to-image matching game */
+.match-toolbar{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin-bottom:6px}
+.match-toolbar > div{min-width:150px}
+.match-stats{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.match-stat{background:var(--bg);border:1px solid var(--line);padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px}
+.match-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;margin:14px 0}
+.match-tile{
+  background:#fff;border:2px dashed var(--line);border-radius:16px;min-height:100px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  font-size:40px;cursor:pointer;transition:transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.match-tile:hover{transform:translateY(-2px);border-color:var(--coral)}
+.match-tile.matched{border-style:solid;border-color:var(--teal);background:var(--softGreen);cursor:default}
+.match-tile-label{font-size:12px;font-weight:800;color:var(--teal-dark);text-align:center;padding:0 4px}
+.match-tile.match-error{animation:shakeWrong .4s ease;border-color:var(--red)}
+.match-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.match-chip{
+  display:flex;align-items:center;gap:7px;background:#fff;border:2px solid var(--line);
+  border-radius:14px;padding:9px 8px 9px 14px;font-weight:800;cursor:grab;
+  transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.match-chip:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(15,23,42,.08)}
+.match-chip.selected{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,90,95,.18)}
+.match-chip.matched{opacity:.35;cursor:default;border-style:dashed}
+.audio-mini{
+  background:var(--blue) !important;border:0;color:#fff;border-radius:999px;width:26px;height:26px;
+  font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  padding:0 !important;margin:0 !important;box-shadow:none !important;flex-shrink:0;
+}
+@media(max-width:760px){
+  .match-tiles{grid-template-columns:repeat(auto-fill,minmax(88px,1fr))}
+  .match-tile{min-height:84px;font-size:32px}
+}
 </style>
 </head>
 <body>
@@ -299,6 +333,7 @@
     <button class="tab" onclick="showTab('grammar', this)" title="Grammar"><span class="tab-icon">📘</span><span class="tab-label">Grammar</span></button>
     <button class="tab" onclick="showTab('listening', this)" title="Listening"><span class="tab-icon">🎧</span><span class="tab-label">Listening</span></button>
     <button class="tab" onclick="showTab('flashcards', this)" title="Flashcards"><span class="tab-icon">🎴</span><span class="tab-label">Flashcards</span></button>
+    <button class="tab" onclick="showTab('match', this)" title="Ghép hình"><span class="tab-icon">🧩</span><span class="tab-label">Ghép hình</span></button>
     <button class="tab" onclick="showTab('quiz', this)" title="Exercises"><span class="tab-icon">✅</span><span class="tab-label">Exercises</span></button>
     <button class="tab" onclick="showTab('review', this)" title="Ôn tập"><span class="tab-icon">🔥</span><span class="tab-label">Ôn tập</span></button>
     <button class="tab utility" onclick="showTab('builder', this)" title="Reuse &amp; Settings"><span class="tab-icon">⚙️</span><span class="tab-label">Reuse</span></button>
@@ -470,6 +505,27 @@
     </div>
   </section>
 
+  <section id="match" class="section">
+    <div class="card">
+      <h2>🧩 Ghép từ với hình ảnh</h2>
+      <p class="small">Nhấn 🔊 để nghe phát âm, rồi kéo (hoặc chạm) từ tiếng Tây Ban Nha vào đúng hình ảnh tương ứng.</p>
+      <div class="match-toolbar">
+        <div>
+          <label>Số cặp mỗi vòng</label>
+          <select id="matchRoundSize" onchange="startMatchRound()">
+            <option value="4">4 cặp</option>
+            <option value="5" selected>5 cặp</option>
+            <option value="6">6 cặp</option>
+            <option value="8">8 cặp</option>
+          </select>
+        </div>
+        <button class="secondary" onclick="startMatchRound()">🔀 Vòng mới</button>
+      </div>
+      <div id="matchStats" class="match-stats"></div>
+      <div id="matchBoard" class="match-board" aria-live="polite"></div>
+    </div>
+  </section>
+
   <section id="quiz" class="section">
     <div class="card">
       <h2 id="quizTitle">✅ Exercises</h2>
@@ -524,6 +580,14 @@
   </section>
 
   <section id="builder" class="section">
+    <div class="card">
+      <h2>🔊 Giọng đọc tiếng Tây Ban Nha</h2>
+      <p class="small">Nếu nghe phát âm sai (ví dụ "amiga" thành "amida"), trình duyệt/máy của bạn có thể đang dùng giọng đọc chất lượng thấp. Hãy thử chọn giọng khác bên dưới.</p>
+      <label>Chọn giọng đọc</label>
+      <select id="voiceSelect" onchange="setPreferredVoice(this.value)"></select>
+      <button class="audio" onclick="speak('la amiga')">🔊 Nghe thử: la amiga</button>
+    </div>
+
     <div class="grid">
       <div class="card">
         <h2>♻️ Add new words for future lessons</h2>
@@ -793,12 +857,49 @@ function speakOnline(text, rate=0.82){
   }
   playNext();
 }
+let preferredVoiceURI = localStorage.getItem("spanish_voice_uri_v1") || "";
+
+function getSpanishVoices(){
+  if(!("speechSynthesis" in window)) return [];
+  return speechSynthesis.getVoices().filter(v => v.lang.toLowerCase().startsWith("es"));
+}
+function pickBestVoice(){
+  const voices = getSpanishVoices();
+  if(!voices.length) return null;
+  if(preferredVoiceURI){
+    const chosen = voices.find(v => v.voiceURI === preferredVoiceURI);
+    if(chosen) return chosen;
+  }
+  return voices.find(v => v.lang.toLowerCase() === "es-es") || voices[0];
+}
+function setPreferredVoice(uri){
+  preferredVoiceURI = uri;
+  localStorage.setItem("spanish_voice_uri_v1", uri);
+}
+function populateVoiceSelect(){
+  const select = document.getElementById("voiceSelect");
+  if(!select) return;
+  const voices = getSpanishVoices();
+  if(!voices.length){
+    select.innerHTML = `<option value="">Không tìm thấy giọng tiếng Tây Ban Nha nào trên trình duyệt/máy này</option>`;
+    return;
+  }
+  select.innerHTML = voices.map(v => `<option value="${escapeHtml(v.voiceURI)}">${escapeHtml(v.name)} (${escapeHtml(v.lang)})</option>`).join("");
+  const best = pickBestVoice();
+  if(best) select.value = best.voiceURI;
+}
+if("speechSynthesis" in window){
+  speechSynthesis.onvoiceschanged = populateVoiceSelect;
+}
+
 function speak(text, rate=0.82){
   if(!text) return;
   if(!("speechSynthesis" in window)) { speakOnline(text, rate); return; }
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "es-ES";
+  const voice = pickBestVoice();
+  if(voice) utterance.voice = voice;
   utterance.rate = rate;
   utterance.pitch = 1;
   utterance.volume = 1;
@@ -830,10 +931,11 @@ function refreshSection(id){
   if(id==="lesson") renderLessonOverview();
   if(id==="vocab") renderVocab();
   if(id==="flashcards") renderFlashcard();
+  if(id==="match") startMatchRound();
   if(id==="quiz") renderQuiz();
   if(id==="grammar") renderGrammarPractice();
   if(id==="listening") renderListeningQuiz();
-  if(id==="builder") renderNotes();
+  if(id==="builder"){ renderNotes(); populateVoiceSelect(); }
   if(id==="review") renderReview();
 }
 
@@ -870,6 +972,7 @@ function setSelectedLesson(lesson){
   renderListeningQuiz();
   renderQuiz();
   renderFlashcard();
+  startMatchRound();
 }
 
 function syncLessonFromFilter(lesson){
@@ -1118,6 +1221,134 @@ function flipCard(){
 }
 function nextCard(){const items=lessonItems(); flashIndex=(flashIndex+1)%items.length;flipped=false;renderFlashcard();}
 function speakCurrentCard(){const items=lessonItems(); const x=items[flashIndex%items.length];speak(x.spanish);}
+
+/* ---------- Word-to-image matching game ---------- */
+let matchPairs = [];
+let matchTiles = [];
+let matchChips = [];
+let matchSelectedChip = null;
+let matchDragIndex = null;
+let matchScore = 0, matchMistakes = 0, matchStreak = 0;
+
+function getMatchableItems(){
+  const seenIcons = new Set();
+  return lessonItems().filter(x=>{
+    const icon = getVisual(x);
+    if(icon === "🧠" || seenIcons.has(icon)) return false;
+    seenIcons.add(icon);
+    return true;
+  });
+}
+
+function startMatchRound(){
+  const board = document.getElementById("matchBoard");
+  const statsEl = document.getElementById("matchStats");
+  if(!board) return;
+  const size = Number(document.getElementById("matchRoundSize")?.value || 5);
+  const pool = getMatchableItems();
+  if(pool.length < 3){
+    statsEl.innerHTML = "";
+    board.innerHTML = `<div class="warning">Bài học này chưa đủ từ có hình ảnh riêng biệt để ghép (cần ít nhất 3). Hãy chọn bài học khác ở tab Lessons.</div>`;
+    matchPairs = []; matchTiles = []; matchChips = [];
+    return;
+  }
+  const count = Math.min(size, pool.length);
+  matchPairs = shuffleArray(pool).slice(0, count).map((x,i)=>({ spanish:x.spanish, english:x.english, visual:getVisual(x), id:i }));
+  matchTiles = shuffleArray(matchPairs.map(p=>({...p, matched:false})));
+  matchChips = shuffleArray(matchPairs.map(p=>({...p, matched:false})));
+  matchSelectedChip = null;
+  matchScore = 0; matchMistakes = 0; matchStreak = 0;
+  renderMatchBoard();
+}
+
+function renderMatchBoard(){
+  const board = document.getElementById("matchBoard");
+  const statsEl = document.getElementById("matchStats");
+  if(!board || !matchTiles.length) return;
+  const remaining = matchTiles.filter(t=>!t.matched).length;
+  statsEl.innerHTML = `
+    <span class="match-stat">✅ Đúng: ${matchScore}</span>
+    <span class="match-stat">❌ Sai: ${matchMistakes}</span>
+    <span class="match-stat">🔥 Chuỗi: ${matchStreak}</span>
+    <span class="match-stat">Còn lại: ${remaining}</span>
+  `;
+  board.innerHTML = `
+    <div class="match-tiles">
+      ${matchTiles.map((t,i)=>`
+        <div class="match-tile${t.matched ? " matched" : ""}" data-idx="${i}"
+             ondragover="event.preventDefault()" ondrop="onMatchTileDrop(event, ${i})"
+             onclick="onMatchTileTap(${i})">
+          <div>${t.visual}</div>
+          ${t.matched ? `<div class="match-tile-label">${escapeHtml(t.spanish)}</div>` : ""}
+        </div>
+      `).join("")}
+    </div>
+    <div class="match-chips">
+      ${matchChips.map((c,i)=>`
+        <div class="match-chip${c.matched ? " matched" : ""}${matchSelectedChip===i ? " selected" : ""}" data-idx="${i}"
+             draggable="${c.matched ? "false" : "true"}"
+             ondragstart="onMatchChipDragStart(event, ${i})"
+             onclick="onMatchChipTap(${i})">
+          <span>${escapeHtml(c.spanish)}</span>
+          ${!c.matched ? `<button class="audio-mini" type="button" onclick="event.stopPropagation(); speak('${escapeJs(c.spanish)}')">🔊</button>` : ""}
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function onMatchChipDragStart(e, i){
+  if(matchChips[i].matched){ e.preventDefault(); return; }
+  matchDragIndex = i;
+  e.dataTransfer.setData("text/plain", String(i));
+}
+function onMatchTileDrop(e, tileIdx){
+  e.preventDefault();
+  const chipIdx = matchDragIndex !== null ? matchDragIndex : Number(e.dataTransfer.getData("text/plain"));
+  matchDragIndex = null;
+  attemptMatch(chipIdx, tileIdx);
+}
+function onMatchChipTap(i){
+  if(matchChips[i].matched) return;
+  matchSelectedChip = (matchSelectedChip === i) ? null : i;
+  renderMatchBoard();
+}
+function onMatchTileTap(tileIdx){
+  if(matchTiles[tileIdx].matched) return;
+  if(matchSelectedChip === null) return;
+  attemptMatch(matchSelectedChip, tileIdx);
+}
+
+function attemptMatch(chipIdx, tileIdx){
+  const chip = matchChips[chipIdx];
+  const tile = matchTiles[tileIdx];
+  if(!chip || !tile || chip.matched || tile.matched) return;
+  const correct = chip.id === tile.id;
+  matchSelectedChip = null;
+  if(correct){
+    chip.matched = true; tile.matched = true;
+    matchScore++; matchStreak++;
+    awardXp(8);
+    renderMatchBoard();
+    speak(chip.spanish);
+    if(matchTiles.every(t=>t.matched)) setTimeout(showMatchRoundComplete, 450);
+  } else {
+    matchMistakes++; matchStreak = 0;
+    renderMatchBoard();
+    const el = document.querySelector(`.match-tile[data-idx="${tileIdx}"]`);
+    if(el){ el.classList.add("match-error"); setTimeout(()=>el.classList.remove("match-error"), 450); }
+  }
+}
+function showMatchRoundComplete(){
+  const board = document.getElementById("matchBoard");
+  board.innerHTML += `
+    <div class="result feedback-correct">
+      🎉 Hoàn thành vòng ghép! Đúng ${matchScore}, sai ${matchMistakes}.
+      <br><button class="good" onclick="startMatchRound()">Vòng mới</button>
+    </div>
+  `;
+  if(matchMistakes === 0) burstConfetti();
+}
 
 function renderQuiz(){
   const quiz = getLessonData(selectedLesson)?.quiz || [];
@@ -1739,6 +1970,7 @@ renderListeningQuiz();
 renderFlashcard();
 renderQuiz();
 renderNotes();
+populateVoiceSelect();
 restoreProgress();
 </script>
 </body>
