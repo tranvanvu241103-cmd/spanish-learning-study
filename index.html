@@ -334,9 +334,13 @@
     <div class="card">
       <h2 id="quizTitle">✅ Exercises</h2>
       <p class="small" id="quizIntro">These exercises reuse the same vocabulary and grammar from the selected lesson.</p>
-      <div id="quizList"></div>
-      <button class="good" onclick="checkQuiz()">Check score</button>
-      <button class="secondary" onclick="resetQuiz()">Reset</button>
+      <p class="small" id="quizProgress"></p>
+      <div id="quizCard" class="word-row"></div>
+      <div id="quizFeedback" class="result hidden"></div>
+      <button onclick="speakQuizAnswer()">🔊 Listen</button>
+      <button class="secondary" onclick="checkQuizAnswer()">Check</button>
+      <button class="good" onclick="nextQuizQuestion()">Next ▶</button>
+      <button class="secondary" onclick="resetQuiz()">Restart</button>
       <div id="quizResult" class="result hidden"></div>
     </div>
   </section>
@@ -403,6 +407,9 @@ let customItems = JSON.parse(localStorage.getItem("spanish_custom_items_v2") || 
 let notes = JSON.parse(localStorage.getItem("spanish_notes_v2") || "[]");
 let flashIndex = 0;
 let flipped = false;
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = [];
 
 function getVisual(x){
   return x.visual || visualMap[(x.spanish || "").toLowerCase()] || "🧠";
@@ -938,33 +945,77 @@ function speakCurrentCard(){const items=lessonItems(); const x=items[flashIndex%
 
 function renderQuiz(){
   const quiz = getLessonData(selectedLesson)?.quiz || [];
+  quizIndex = 0;
+  quizScore = 0;
+  quizAnswered = new Array(quiz.length).fill(null);
   document.getElementById("quizTitle").innerText = `✅ ${selectedLesson} Exercises`;
   document.getElementById("quizIntro").innerText = `These exercises reuse the same vocabulary and grammar from ${selectedLesson}.`;
-  document.getElementById("quizList").innerHTML = quiz.map((x,i)=>`
-    <div class="word-row">
-      <label><b>${i+1}. ${x.q}</b></label>
-      <input id="quiz_${i}" placeholder="Type your answer...">
-      <p class="small">Hint: ${x.hint}</p>
-    </div>
-  `).join("");
+  document.getElementById("quizResult").classList.add("hidden");
+  renderQuizQuestion();
 }
-function checkQuiz(){
+function renderQuizQuestion(){
   const quiz = getLessonData(selectedLesson)?.quiz || [];
-  let score=0, details=[];
-  quiz.forEach((x,i)=>{
-    const val=normalize(document.getElementById(`quiz_${i}`).value);
-    const ok=x.a.map(normalize).includes(val);
-    if(ok) score++;
-    details.push(`${i+1}. ${ok ? "✅ Correct" : "❌ Wrong"} — answer: ${x.a[0]}`);
-  });
-  const res=document.getElementById("quizResult");
+  const feedback = document.getElementById("quizFeedback");
+  feedback.classList.add("hidden");
+  feedback.innerHTML = "";
+  if(!quiz.length){
+    document.getElementById("quizProgress").innerText = "";
+    document.getElementById("quizCard").innerHTML = "<p>No exercises yet for this lesson.</p>";
+    return;
+  }
+  if(quizIndex >= quiz.length){
+    showQuizResult();
+    return;
+  }
+  const x = quiz[quizIndex];
+  document.getElementById("quizProgress").innerText = `Question ${quizIndex+1} of ${quiz.length} — Score so far: ${quizScore}`;
+  document.getElementById("quizCard").innerHTML = `
+    <label><b>${quizIndex+1}. ${x.q}</b></label>
+    <input id="quizInput" placeholder="Type your answer..." autocomplete="off">
+    <p class="small">Hint: ${x.hint}</p>
+  `;
+  const input = document.getElementById("quizInput");
+  input.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); checkQuizAnswer(); } });
+  input.focus();
+}
+function speakQuizAnswer(){
+  const quiz = getLessonData(selectedLesson)?.quiz || [];
+  const x = quiz[quizIndex];
+  if(x) speak(x.a[0]);
+}
+function checkQuizAnswer(){
+  const quiz = getLessonData(selectedLesson)?.quiz || [];
+  if(quizIndex >= quiz.length) return;
+  const x = quiz[quizIndex];
+  const input = document.getElementById("quizInput");
+  const val = normalize(input ? input.value : "");
+  const ok = x.a.map(normalize).includes(val);
+  if(quizAnswered[quizIndex] === null){
+    quizAnswered[quizIndex] = ok;
+    if(ok) quizScore++;
+  }
+  const feedback = document.getElementById("quizFeedback");
+  feedback.classList.remove("hidden");
+  feedback.innerHTML = ok ? `✅ Correct!` : `❌ Not quite. Correct answer: <b>${x.a[0]}</b>`;
+  document.getElementById("quizProgress").innerText = `Question ${quizIndex+1} of ${quiz.length} — Score so far: ${quizScore}`;
+  speak(x.a[0]);
+}
+function nextQuizQuestion(){
+  const quiz = getLessonData(selectedLesson)?.quiz || [];
+  if(quizIndex < quiz.length) quizIndex++;
+  renderQuizQuestion();
+}
+function showQuizResult(){
+  const quiz = getLessonData(selectedLesson)?.quiz || [];
+  document.getElementById("quizProgress").innerText = "";
+  document.getElementById("quizCard").innerHTML = "";
+  document.getElementById("quizFeedback").classList.add("hidden");
+  const res = document.getElementById("quizResult");
   res.classList.remove("hidden");
-  res.innerHTML=`Score: <b>${score}/${quiz.length}</b><br><br>${details.join("<br>")}`;
+  res.innerHTML = `🎉 Finished! Score: <b>${quizScore}/${quiz.length}</b><br><br>Press Restart to try again.`;
 }
 function resetQuiz(){
-  const quiz = getLessonData(selectedLesson)?.quiz || [];
-  quiz.forEach((_,i)=>{const input=document.getElementById(`quiz_${i}`); if(input) input.value="";});
-  document.getElementById("quizResult").classList.add("hidden");
+  renderQuiz();
 }
 
 function normalize(s){
