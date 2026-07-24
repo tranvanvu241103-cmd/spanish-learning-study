@@ -14,15 +14,19 @@
       --ink:#172033;
       --muted:#657085;
       --line:#dbe3ef;
-      --blue:#2563eb;
-      --green:#16a34a;
+      --blue:#1cb0f6;
+      --brand:#3dc25a;
+      --brand-dark:#2fa347;
+      --gold:#ffb703;
+      --green:#3dc25a;
       --orange:#f97316;
-      --red:#dc2626;
+      --red:#ff4b4b;
       --purple:#7c3aed;
-      --softBlue:#eff6ff;
-      --softGreen:#ecfdf5;
+      --softBlue:#e8f7ff;
+      --softGreen:#eafff0;
       --softOrange:#fff7ed;
       --softPurple:#f5f3ff;
+      --softGold:#fff8e6;
     }
     *{box-sizing:border-box}
     body{
@@ -62,7 +66,7 @@
     }
     .tab:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(15,23,42,.1)}
     .tab:active{transform:translateY(0) scale(.97)}
-    .tab.active{background:var(--blue);color:white;border-color:var(--blue)}
+    .tab.active{background:var(--brand);color:white;border-color:var(--brand)}
     .section{display:none}
     .section.active{display:block;animation:sectionIn .38s ease}
     @keyframes sectionIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
@@ -84,16 +88,20 @@
     .success{background:var(--softGreen);border-left:5px solid var(--green);padding:12px 14px;border-radius:12px;line-height:1.65;margin:12px 0}
     .small{font-size:14px;color:var(--muted);line-height:1.5}
     button{
-      border:0;padding:10px 13px;border-radius:12px;background:var(--blue);
-      color:white;cursor:pointer;font-weight:700;margin:3px;
+      border:0;padding:10px 13px;border-radius:12px;background:var(--brand);
+      color:white;cursor:pointer;font-weight:800;margin:3px;
       transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
-      box-shadow:0 3px 0 rgba(0,0,0,.12);
+      box-shadow:0 3px 0 var(--brand-dark);
+      letter-spacing:.2px;
     }
     button:hover{filter:brightness(1.06);transform:translateY(-1px)}
-    button:active{transform:translateY(2px) scale(.98);box-shadow:0 1px 0 rgba(0,0,0,.12)}
-    button.secondary{background:#475569} button.good{background:var(--green)}
-    button.orange{background:var(--orange)} button.purple{background:var(--purple)}
-    button.danger{background:var(--red)}
+    button:active{transform:translateY(2px) scale(.98);box-shadow:0 1px 0 var(--brand-dark)}
+    button.secondary{background:#5b6b85;box-shadow:0 3px 0 #3f4c62}
+    button.good{background:var(--brand);box-shadow:0 3px 0 var(--brand-dark)}
+    button.orange{background:var(--orange);box-shadow:0 3px 0 #c2530a}
+    button.purple{background:var(--purple);box-shadow:0 3px 0 #5b21b6}
+    button.danger{background:var(--red);box-shadow:0 3px 0 #b91c1c}
+    button.audio{background:var(--blue);box-shadow:0 3px 0 #0f8fce}
     input, textarea, select{
       width:100%;padding:10px;border:1px solid var(--line);border-radius:11px;
       font-size:15px;margin:6px 0 12px;background:#fff;
@@ -121,18 +129,20 @@
     .lesson-tag{display:inline-block;background:#ecfdf5;color:#166534;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800;margin-right:4px}
     .flashcard{
       min-height:230px;border:2px solid #dbeafe;background:linear-gradient(160deg,#eff6ff,#e0e9ff);border-radius:24px;
-      display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
-      cursor:pointer;user-select:none;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 24px;
+      cursor:pointer;user-select:none;gap:6px;
       transition:transform .18s ease, box-shadow .18s ease;
       box-shadow:0 8px 0 rgba(37,99,235,.12);
       animation:sectionIn .35s ease;
     }
     .flashcard:hover{transform:translateY(-3px);box-shadow:0 12px 0 rgba(37,99,235,.14)}
-    .flashcard .big{font-size:42px;font-weight:900;color:#1d4ed8}
+    .flashcard .big{font-size:42px;font-weight:900;color:#1d4ed8;line-height:1.2}
+    .qtype-tag{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--muted);font-weight:800;font-size:12px;padding:5px 12px;border-radius:999px;margin-bottom:6px;letter-spacing:.3px}
+    .flashcard .cue{font-size:15px;color:var(--muted);font-weight:700;margin-top:2px}
     .flashcard .meaning{font-size:23px;line-height:1.55}
     .result{padding:12px 14px;border-radius:12px;background:#f8fafc;border:1px solid var(--line);margin-top:12px;font-weight:700}
     .progress{height:13px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin:10px 0}
-    .bar{height:100%;width:0;background:linear-gradient(90deg,#16a34a,#22d3ee);transition:.4s ease}
+    .bar{height:100%;width:0;background:linear-gradient(90deg,var(--brand),#22d3ee);transition:.4s ease}
     .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     @media(max-width:700px){.mini-grid{grid-template-columns:1fr}}
     .canvas-box{
@@ -194,7 +204,7 @@
 }
 .xp-wrap{flex:1;min-width:160px}
 .xp-bar{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px}
-.xp-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#2563eb);transition:width .5s ease}
+.xp-fill{height:100%;background:linear-gradient(90deg,var(--gold),#ffdd55);transition:width .5s ease}
 .due-badge{
   background:#fee2e2;color:#991b1b;font-weight:800;padding:6px 12px;
   border-radius:999px;font-size:13px;cursor:pointer;white-space:nowrap;border:0;
@@ -233,12 +243,17 @@
     <circle cx="200" cy="10" r="30" fill="#f97316" opacity=".14"/>
   </svg>
   <div class="header-inner">
-    <svg id="headerMascot" viewBox="0 0 120 120" width="56" height="56" aria-hidden="true">
-      <circle cx="60" cy="60" r="52" fill="#f97316"/>
-      <circle cx="60" cy="60" r="52" fill="none" stroke="#c2410c" stroke-width="4"/>
-      <circle cx="42" cy="55" r="7" fill="#172033"/>
-      <circle cx="78" cy="55" r="7" fill="#172033"/>
-      <path d="M42 78 Q60 92 78 78" stroke="#172033" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <svg id="headerMascot" viewBox="0 0 120 128" width="58" height="62" aria-hidden="true">
+      <path d="M52 20 Q60 4 68 20 Q60 13 52 20Z" fill="#3dc25a"/>
+      <path d="M43 25 Q54 9 61 22 Q50 18 43 25Z" fill="#2fa347"/>
+      <path d="M77 25 Q66 9 59 22 Q70 18 77 25Z" fill="#2fa347"/>
+      <circle cx="60" cy="70" r="48" fill="#ff6b3d"/>
+      <circle cx="60" cy="70" r="48" fill="none" stroke="#d84315" stroke-width="4"/>
+      <ellipse cx="32" cy="78" rx="8" ry="5" fill="#ff3d3d" opacity=".35"/>
+      <ellipse cx="88" cy="78" rx="8" ry="5" fill="#ff3d3d" opacity=".35"/>
+      <circle cx="42" cy="64" r="7" fill="#172033"/>
+      <circle cx="78" cy="64" r="7" fill="#172033"/>
+      <path d="M42 86 Q60 94 78 86" stroke="#172033" stroke-width="5" fill="none" stroke-linecap="round"/>
     </svg>
     <div>
       <h1>Spanish A1 Systematic Interactive Canvas</h1>
@@ -383,7 +398,7 @@
         <h3 id="listenTextHeading">Listening Text</h3>
         <p><b>Spanish:</b> <span id="listenText1"></span></p>
         <p><b>English meaning:</b> <span id="listenMeaning"></span></p>
-        <button onclick="speak(document.getElementById('listenText1').innerText)">🔊 Play listening</button>
+        <button class="audio" onclick="speak(document.getElementById('listenText1').innerText)">🔊 Play listening</button>
         <button class="secondary" onclick="speakSlow(document.getElementById('listenText1').innerText)">🐢 Slow listening</button>
       </div>
 
@@ -397,9 +412,9 @@
     <div class="card">
       <h2>Dictation practice</h2>
       <p>Listen and type what you hear.</p>
-      <button onclick="playDictation(0)">🔊 Sentence 1</button>
+      <button class="audio" onclick="playDictation(0)">🔊 Sentence 1</button>
       <input id="dict1" placeholder="Type the Spanish sentence">
-      <button onclick="playDictation(1)">🔊 Sentence 2</button>
+      <button class="audio" onclick="playDictation(1)">🔊 Sentence 2</button>
       <input id="dict2" placeholder="Type the Spanish sentence">
       <button class="good" onclick="checkDictation()">Check dictation</button>
       <div id="dictResult" class="result hidden"></div>
@@ -413,7 +428,7 @@
         <p class="small">Click the card to flip it. Listen and repeat.</p>
         <div id="flashcard" class="flashcard" onclick="flipCard()"></div>
         <br>
-        <button onclick="speakCurrentCard()">🔊 Listen</button>
+        <button class="audio" onclick="speakCurrentCard()">🔊 Listen</button>
         <button class="secondary" onclick="flipCard()">Flip</button>
         <button class="good" onclick="nextCard()">Next</button>
         <div id="flashStrength"></div>
@@ -436,7 +451,7 @@
       <p class="small" id="quizProgress"></p>
       <div id="quizCard" class="word-row"></div>
       <div id="quizFeedback" class="result hidden"></div>
-      <button onclick="speakQuizAnswer()">🔊 Listen</button>
+      <button class="audio" onclick="speakQuizAnswer()">🔊 Listen</button>
       <button class="secondary" onclick="checkQuizAnswer()">Check</button>
       <button class="good" onclick="nextQuizQuestion()">Next ▶</button>
       <button class="secondary" onclick="resetQuiz()">Restart</button>
@@ -452,7 +467,7 @@
         <p id="reviewProgress" class="small"></p>
         <div id="reviewStrength"></div>
         <div id="reviewCard"></div>
-        <button onclick="speakReviewPrompt()">🔊 Nghe</button>
+        <button class="audio" onclick="speakReviewPrompt()">🔊 Nghe</button>
         <button class="good" onclick="checkReviewAnswer()">Kiểm tra / Câu tiếp theo</button>
         <div id="reviewFeedback" class="result hidden"></div>
         <div id="reviewSummary" class="result hidden"></div>
@@ -460,12 +475,17 @@
       <div class="card">
         <h2>Bạn đồng hành học tập</h2>
         <div style="text-align:center">
-          <svg id="mascotSvg" viewBox="0 0 120 120" width="110" height="110" class="mascot idle">
-            <circle cx="60" cy="60" r="52" fill="#f97316"/>
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#c2410c" stroke-width="4"/>
-            <circle id="mascotEyeL" cx="42" cy="55" r="7" fill="#172033"/>
-            <circle id="mascotEyeR" cx="78" cy="55" r="7" fill="#172033"/>
-            <path id="mascotMouth" d="M42 78 Q60 86 78 78" stroke="#172033" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <svg id="mascotSvg" viewBox="0 0 120 128" width="112" height="120" class="mascot idle">
+            <path d="M52 20 Q60 4 68 20 Q60 13 52 20Z" fill="#3dc25a"/>
+            <path d="M43 25 Q54 9 61 22 Q50 18 43 25Z" fill="#2fa347"/>
+            <path d="M77 25 Q66 9 59 22 Q70 18 77 25Z" fill="#2fa347"/>
+            <circle cx="60" cy="70" r="48" fill="#ff6b3d"/>
+            <circle cx="60" cy="70" r="48" fill="none" stroke="#d84315" stroke-width="4"/>
+            <ellipse cx="32" cy="78" rx="8" ry="5" fill="#ff3d3d" opacity=".35"/>
+            <ellipse cx="88" cy="78" rx="8" ry="5" fill="#ff3d3d" opacity=".35"/>
+            <circle id="mascotEyeL" cx="42" cy="64" r="7" fill="#172033"/>
+            <circle id="mascotEyeR" cx="78" cy="64" r="7" fill="#172033"/>
+            <path id="mascotMouth" d="M42 86 Q60 94 78 86" stroke="#172033" stroke-width="5" fill="none" stroke-linecap="round"/>
           </svg>
           <p class="small" id="mascotCaption">Cùng ôn tập nào!</p>
         </div>
@@ -852,7 +872,7 @@ function renderLessonOverview(){
   document.getElementById("coreSentences").innerHTML = `
     <table>
       <tr><th>Spanish</th><th>English</th><th>Audio</th></tr>
-      ${info.core.map(x=>`<tr><td>${x.spanish}</td><td>${x.english}</td><td><button onclick="speak('${escapeJs(x.spanish)}')">🔊 Listen</button></td></tr>`).join("")}
+      ${info.core.map(x=>`<tr><td>${x.spanish}</td><td>${x.english}</td><td><button class="audio" onclick="speak('${escapeJs(x.spanish)}')">🔊 Listen</button></td></tr>`).join("")}
     </table>
   `;
 }
@@ -925,7 +945,7 @@ function renderPronunciation(){
     <div class="word-row">
       <div class="word-head">
         <div><span class="tag">${x.topic || "Pronunciation"}</span> <span class="word">${x.spanish}</span></div>
-        <div><button onclick="speak('${escapeJs(x.spanish)}')">🔊 Word</button><button class="secondary" onclick="speak('${escapeJs(x.example || x.spanish)}')">🔊 Sentence</button></div>
+        <div><button class="audio" onclick="speak('${escapeJs(x.spanish)}')">🔊 Word</button><button class="secondary" onclick="speak('${escapeJs(x.example || x.spanish)}')">🔊 Sentence</button></div>
       </div>
       <p><b>Meaning:</b> ${x.english}${x.vi ? ` / ${x.vi}` : ""}</p>
       <p>${pronunciationHtml(x)}</p>
@@ -955,12 +975,12 @@ function renderVocab(){
         <div>
           <div class="word-head">
             <div><span class="lesson-tag">${x.lesson || "Custom"}</span><span class="tag">${x.topic}</span> <span class="word">${x.spanish}</span></div>
-            <button onclick="speak('${escapeJs(x.spanish)}')">🔊 Word</button>
+            <button class="audio" onclick="speak('${escapeJs(x.spanish)}')">🔊 Word</button>
           </div>
           <table>
             <tr><th>English</th><td>${x.english}</td></tr>
             <tr><th>Vietnamese</th><td>${x.vi}</td></tr>
-            <tr><th>Example</th><td>${x.example || ""} <button class="secondary" onclick="speak('${escapeJs(x.example || x.spanish)}')">🔊 Sentence</button>${sentencePronunciationHtml(x.example || x.spanish)}</td></tr>
+            <tr><th>Example</th><td>${x.example || ""} <button class="audio" onclick="speak('${escapeJs(x.example || x.spanish)}')">🔊 Sentence</button>${sentencePronunciationHtml(x.example || x.spanish)}</td></tr>
             <tr><th>Example meaning</th><td>${x.exampleEn || ""}</td></tr>
             <tr><th>Pronunciation</th><td>${pronunciationHtml(x)}</td></tr>
             <tr><th>Subject use</th><td>${subjectUseHtml(x)}</td></tr>
@@ -984,7 +1004,7 @@ function renderGrammarPractice(){
       <p>${x.body}</p>
       <p><b>Pattern:</b> <span class="mono">${x.pattern}</span></p>
       <p><b>Example:</b> <i>${x.example}</i> = ${x.meaning}</p>
-      <button onclick="speak('${escapeJs(x.example)}')">🔊 Listen</button>
+      <button class="audio" onclick="speak('${escapeJs(x.example)}')">🔊 Listen</button>
     </div>
   `).join("");
   document.querySelector("#grammar .card + .card .small").innerText = `Choose the correct expression for ${selectedLesson}.`;
@@ -1401,10 +1421,10 @@ function setMascotState(state, caption){
     svg.classList.add(state);
   }
   const paths = {
-    idle:"M42 78 Q60 86 78 78",
-    happy:"M40 76 Q60 96 80 76",
-    sad:"M42 84 Q60 70 78 84",
-    celebrate:"M40 76 Q60 96 80 76"
+    idle:"M42 86 Q60 94 78 86",
+    happy:"M40 84 Q60 104 80 84",
+    sad:"M42 92 Q60 78 78 92",
+    celebrate:"M40 84 Q60 104 80 84"
   };
   if(mouth) mouth.setAttribute("d", paths[state] || paths.idle);
   const captions = {
@@ -1534,27 +1554,41 @@ function renderReviewCard(){
   document.getElementById("reviewProgress").innerText = `Câu ${reviewIndex+1}/${reviewTotalPlanned} — Đúng: ${reviewCorrect}`;
   document.getElementById("reviewStrength").innerHTML = strengthMeterHtml(x);
 
-  let prompt, placeholder;
+  let prompt, placeholder, tag;
   if(qType === "es2en"){
-    prompt = `<div style="font-size:48px;margin-bottom:8px">${getVisual(x)}</div><div class="big">${x.spanish}</div><p class="small">Gõ nghĩa tiếng Anh</p>`;
+    tag = "🔤 Dịch nghĩa · ES → EN";
+    prompt = `<span class="qtype-tag">${tag}</span><div style="font-size:48px">${getVisual(x)}</div><div class="big">${x.spanish}</div><p class="cue">Gõ nghĩa tiếng Anh</p>`;
     placeholder = "Type in English...";
   } else if(qType === "en2es"){
-    prompt = `<div class="big">${x.english}</div><p class="small">${x.vi || ""}</p><p class="small">Gõ từ tiếng Tây Ban Nha</p>`;
+    tag = "✍️ Dịch nghĩa · EN → ES";
+    prompt = `<span class="qtype-tag">${tag}</span><div class="big">${x.english}</div>${x.vi ? `<p class="cue">${x.vi}</p>` : ""}<p class="cue">Gõ từ tiếng Tây Ban Nha</p>`;
     placeholder = "Escribe en español...";
   } else {
-    prompt = `<p style="font-size:19px;line-height:1.6">${clozeSentence}</p><p class="small">Điền từ còn thiếu (tiếng Tây Ban Nha)</p>`;
+    tag = "📝 Điền vào chỗ trống";
+    prompt = `<span class="qtype-tag">${tag}</span><p style="font-size:19px;line-height:1.6;margin:4px 0">${clozeSentence}</p><p class="cue">Điền từ còn thiếu (tiếng Tây Ban Nha)</p>`;
     placeholder = "Escribe la palabra...";
   }
 
   document.getElementById("reviewCard").innerHTML = `
     <div class="flashcard">${prompt}</div>
     <input id="reviewInput" placeholder="${escapeHtml(placeholder)}" autocomplete="off">
+    <button class="secondary" type="button" onclick="toggleReviewHint()">💡 Gợi ý</button>
+    <div id="reviewHint" class="small hidden" style="margin-top:6px"></div>
   `;
+  document.getElementById("reviewHint").dataset.text = x.explain || "Không có gợi ý cho từ này.";
   renderMnemonicBox(x, "reviewMnemonicBox");
   const input = document.getElementById("reviewInput");
   input.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); checkReviewAnswer(); } });
   input.focus();
   setMascotState("idle");
+}
+function toggleReviewHint(){
+  const hint = document.getElementById("reviewHint");
+  if(!hint) return;
+  const showing = !hint.classList.contains("hidden");
+  if(showing){ hint.classList.add("hidden"); return; }
+  hint.innerText = "💡 " + hint.dataset.text;
+  hint.classList.remove("hidden");
 }
 
 function speakReviewPrompt(){
