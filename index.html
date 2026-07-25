@@ -648,6 +648,7 @@ let selectedLesson = localStorage.getItem("spanish_selected_lesson_v3") || "Less
 
 </script>
 <script src="lessons.js"></script>
+<script src="audio/audioMap.js"></script>
 <script>
 let customItems = JSON.parse(localStorage.getItem("spanish_custom_items_v2") || "[]");
 let notes = JSON.parse(localStorage.getItem("spanish_notes_v2") || "[]");
@@ -892,8 +893,27 @@ if("speechSynthesis" in window){
   speechSynthesis.onvoiceschanged = populateVoiceSelect;
 }
 
-function speak(text, rate=0.82){
-  if(!text) return;
+function audioMapLookup(text){
+  if(typeof audioMap === "undefined") return null;
+  const key = String(text || "").replace(/\s+/g," ").trim();
+  return audioMap[key] || null;
+}
+function playStaticAudio(text, rate){
+  const file = audioMapLookup(text);
+  if(!file) return false;
+  const audio = document.getElementById("ttsAudio");
+  if(!audio) return false;
+  if("speechSynthesis" in window) speechSynthesis.cancel();
+  audio.onended = null;
+  audio.onerror = () => speakBrowser(text, rate);
+  audio.pause();
+  audio.currentTime = 0;
+  audio.src = "audio/" + file;
+  audio.playbackRate = rate;
+  audio.play().catch(() => speakBrowser(text, rate));
+  return true;
+}
+function speakBrowser(text, rate){
   if(!("speechSynthesis" in window)) { speakOnline(text, rate); return; }
   speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
@@ -905,6 +925,11 @@ function speak(text, rate=0.82){
   utterance.volume = 1;
   utterance.onerror = () => speakOnline(text, rate);
   speechSynthesis.speak(utterance);
+}
+function speak(text, rate=0.82){
+  if(!text) return;
+  if(playStaticAudio(text, rate)) return;
+  speakBrowser(text, rate);
 }
 function speakSlow(text){ speak(text, 0.62); }
 
