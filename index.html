@@ -305,6 +305,7 @@
 .sentence-word.used{visibility:hidden;pointer-events:none}
 .sentence-answer-word{background:rgba(255,90,95,.12);color:var(--coral-dark);border:2px solid var(--coral);box-shadow:0 3px 0 var(--coral-dark);margin:0;border-radius:11px}
 .sentence-builder-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.sentence-meaning{text-align:center;margin:2px 0 0}
 @media(max-width:760px){
   .sentence-bank,.sentence-prompt{justify-content:flex-start}
 }
@@ -573,6 +574,7 @@
       <div id="sentencePrompt" class="sentence-prompt empty" aria-label="Câu của bạn"></div>
       <p class="match-column-title">Ngân hàng từ</p>
       <div id="sentenceBank" class="sentence-bank"></div>
+      <p id="sentenceMeaning" class="small sentence-meaning"></p>
       <div class="sentence-builder-actions">
         <button class="good" onclick="checkSentenceBuild()">Kiểm tra</button>
         <button class="secondary" onclick="resetSentenceAnswer()">Làm lại</button>
@@ -1439,11 +1441,24 @@ let sentenceBuildAnswer = [];
 let sentenceBuildCorrect = 0;
 let sentenceBuildAttempts = 0;
 
+function getListeningSentenceEnglish(lessonId, spanishSentence){
+  const bank = listeningBank[lessonId];
+  if(!bank || !bank.text || !bank.meaning) return "";
+  const splitRe = /(?<=[.!?])\s+/;
+  const esParts = bank.text.split(splitRe).map(s=>s.trim()).filter(Boolean);
+  const enParts = bank.meaning.split(splitRe).map(s=>s.trim()).filter(Boolean);
+  const target = normalize(spanishSentence).replace(/[.!?]+$/,"");
+  const idx = esParts.findIndex(s => {
+    const full = normalize(s).replace(/[.!?]+$/,"");
+    return full === target || full.includes(target);
+  });
+  return idx > -1 && enParts[idx] ? enParts[idx] : "";
+}
 function getSentenceBuildPool(){
   const source = document.getElementById("sentenceSource")?.value || "mixed";
-  const core = (getLessonInfo(selectedLesson)?.core || []).map(c=>({text:c.spanish, source:"Core"}));
-  const listening = (getLessonListening(selectedLesson)?.dictation || []).map(text=>({text, source:"Listening"}));
-  const examples = lessonItems().filter(x=>x.example).map(x=>({text:x.example, source:`Example: ${x.spanish}`}));
+  const core = (getLessonInfo(selectedLesson)?.core || []).map(c=>({text:c.spanish, source:"Core", english:c.english || ""}));
+  const listening = (getLessonListening(selectedLesson)?.dictation || []).map(text=>({text, source:"Listening", english:getListeningSentenceEnglish(selectedLesson, text)}));
+  const examples = lessonItems().filter(x=>x.example).map(x=>({text:x.example, source:`Example: ${x.spanish}`, english:x.exampleEn || ""}));
   const selected = source==="core" ? core : source==="listening" ? listening : source==="examples" ? examples : [...core,...listening,...examples];
   const seen = new Set();
   return selected.filter(item=>{
@@ -1471,7 +1486,13 @@ function renderSentenceBuilder(){
   const prompt = document.getElementById("sentencePrompt");
   const bank = document.getElementById("sentenceBank");
   const result = document.getElementById("sentenceResult");
+  const meaningEl = document.getElementById("sentenceMeaning");
   if(!prompt || !bank) return;
+  if(meaningEl){
+    meaningEl.innerHTML = sentenceBuildCurrent && sentenceBuildCurrent.english
+      ? `💬 Nghĩa: <i>${escapeHtml(sentenceBuildCurrent.english)}</i>`
+      : "";
+  }
   if(!sentenceBuildCurrent){
     prompt.classList.remove("empty");
     prompt.innerHTML = `<div class="warning">Chưa có câu nào cho bài học và nguồn này. Hãy chọn nguồn khác hoặc bài học khác.</div>`;
