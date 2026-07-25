@@ -510,112 +510,182 @@ const grammarBank = {
     {q:"____ hospital está aquí.",choices:["El","La","Un"],a:"El",why:"Hospital is masculine even though it does not end in -o — it still takes el."},
     {q:"Quiero ____ café.",choices:["el","la","los"],a:"el",why:"Café is masculine and takes el, even though it ends in -é, not -o."},
     {q:"Which noun does NOT end in -o but is still masculine?",choices:["tren","gato","libro"],a:"tren",why:"Tren is masculine (el tren) even though it ends in -n, not -o."},
-    {q:"El hombre trabaja en ____ banco.",choices:["el","la","una"],a:"el",why:"Banco ends in -o and is masculine, so use el."}
+    {q:"El hombre trabaja en ____ banco.",choices:["el","la","una"],a:"el",why:"Banco ends in -o and is masculine, so use el."},
+    {q:"El ____ está en el hotel.",choices:["amigo","amiga","amigos"],a:"amigo",why:"Amigo is masculine singular, matching el."},
+    {q:"Which of these is masculine despite NOT ending in -o?",choices:["hotel","gato","libro"],a:"hotel",why:"Hotel is masculine (el hotel) even though it ends in -l, not -o."},
+    {q:"El niño y el perro están en ____ baño.",choices:["el","la","los"],a:"el",why:"Baño ends in -o and is masculine: el baño."},
+    {q:"Which article goes with tren?",choices:["el","la","los"],a:"el",why:"Tren is masculine even though it doesn't end in -o — one of the memorized exceptions."}
   ],
   "Lesson 2": [
     {q:"____ clima es agradable.",choices:["El","La","Los"],a:"El",why:"Clima ends in -ma but is masculine, so use el."},
     {q:"____ problema es grave.",choices:["El","La","Un"],a:"El",why:"Problema is one of the Greek-origin -ma nouns that are masculine."},
     {q:"Tengo ____ mapa.",choices:["el","la","los"],a:"el",why:"Mapa ends in -a but is masculine: el mapa."},
     {q:"Which noun is masculine even though it ends in -a?",choices:["día","amiga","mesa"],a:"día",why:"Día ends in -a but is masculine: el día."},
-    {q:"El sistema es ____.",choices:["nuevo","nueva","nuevas"],a:"nuevo",why:"Sistema is masculine, so adjectives describing it use the masculine form."}
+    {q:"El sistema es ____.",choices:["nuevo","nueva","nuevas"],a:"nuevo",why:"Sistema is masculine, so adjectives describing it use the masculine form."},
+    {q:"Which of these nouns is masculine despite ending in -a?",choices:["mapa","mesa","casa"],a:"mapa",why:"Mapa is one of the masculine -a exceptions: el mapa."},
+    {q:"El poema y el drama son ____.",choices:["interesantes","interesantas","interesanta"],a:"interesantes",why:"Poema and drama are masculine plural, so the adjective (which doesn't change for gender) takes the -es plural ending."},
+    {q:"Which is NOT one of the Greek -ma nouns?",choices:["cama","clima","sistema"],a:"cama",why:"Cama (bed) is a regular feminine -a noun (la cama), unlike the masculine -ma nouns."},
+    {q:"¿Cuál es el ____?",choices:["problema","problemo","problemas"],a:"problema",why:"Problema is the correct masculine singular form."}
   ],
   "Lesson 3": [
     {q:"____ casa es grande.",choices:["La","El","Los"],a:"La",why:"Casa ends in -a, the typical feminine ending, so use la."},
     {q:"____ hermana está aquí.",choices:["La","El","Un"],a:"La",why:"Hermana is feminine: la hermana."},
     {q:"Quiero ____ silla.",choices:["la","el","los"],a:"la",why:"Silla ends in -a and is feminine."},
     {q:"Which noun is feminine?",choices:["mesa","día","problema"],a:"mesa",why:"Mesa ends in -a and follows the regular feminine pattern, unlike día and problema."},
-    {q:"La ventana está ____.",choices:["abierta","abierto","abiertos"],a:"abierta",why:"Ventana is feminine, so adjectives describing it use the feminine form."}
+    {q:"La ventana está ____.",choices:["abierta","abierto","abiertos"],a:"abierta",why:"Ventana is feminine, so adjectives describing it use the feminine form."},
+    {q:"Which noun is feminine?",choices:["silla","día","problema"],a:"silla",why:"Silla ends in -a and follows the regular feminine pattern; día and problema are masculine exceptions."},
+    {q:"La niña juega con ____ muñeca.",choices:["la","el","los"],a:"la",why:"Muñeca (doll) ends in -a and is feminine."},
+    {q:"____ tienda vende ropa.",choices:["La","El","Los"],a:"La",why:"Tienda is feminine: la tienda."},
+    {q:"Which article pairs with ventana?",choices:["la","el","los"],a:"la",why:"Ventana ends in -a and is feminine."}
   ],
   "Lesson 4": [
     {q:"____ canción es bonita.",choices:["La","El","Los"],a:"La",why:"Nouns ending in -ción are always feminine."},
     {q:"____ ciudad es grande.",choices:["La","El","Un"],a:"La",why:"Nouns ending in -dad are always feminine."},
     {q:"Quiero ____ verdad.",choices:["la","el","los"],a:"la",why:"Verdad ends in -dad, so it is feminine."},
     {q:"Which ending is ALWAYS feminine?",choices:["-ción","-o","-e"],a:"-ción",why:"-ción, -sión, -dad, -tad, and -tud are always feminine endings."},
-    {q:"La amistad es ____.",choices:["importante","importantes","importanto"],a:"importante",why:"Amistad is feminine singular, so the adjective agrees in its base form."}
+    {q:"La amistad es ____.",choices:["importante","importantes","importanto"],a:"importante",why:"Amistad is feminine singular, so the adjective agrees in its base form."},
+    {q:"Which ending is ALWAYS feminine?",choices:["-tud","-o","-e"],a:"-tud",why:"-tud (like -ción/-sión/-dad/-tad) is always feminine: la actitud."},
+    {q:"La ____ es divertida.",choices:["canción","canciones","cancion"],a:"canción",why:"Canción needs its written accent and is singular here."},
+    {q:"Which noun does NOT belong to this always-feminine group?",choices:["problema","ciudad","amistad"],a:"problema",why:"Problema ends in -ma and is masculine (el problema), unlike ciudad/amistad which end in -dad/-tad and are feminine."},
+    {q:"____ verdad es importante.",choices:["La","El","Los"],a:"La",why:"Verdad ends in -dad and is feminine."}
   ],
   "Lesson 5": [
     {q:"____ foto es bonita.",choices:["La","El","Los"],a:"La",why:"Foto ends in -o but is feminine: la foto."},
     {q:"____ mano está fría.",choices:["La","El","Un"],a:"La",why:"Mano ends in -o but is one of the classic feminine exceptions."},
     {q:"Quiero ____ flor.",choices:["la","el","los"],a:"la",why:"Flor does not end in -a or -o but is feminine: la flor."},
     {q:"Which noun ends in -o but is feminine?",choices:["radio","carro","libro"],a:"radio",why:"Radio ends in -o but is feminine in most of the Spanish-speaking world: la radio."},
-    {q:"La mujer tiene buena ____.",choices:["suerte","sistema","día"],a:"suerte",why:"Suerte (luck) is the feminine noun that fits this sentence."}
+    {q:"La mujer tiene buena ____.",choices:["suerte","sistema","día"],a:"suerte",why:"Suerte (luck) is the feminine noun that fits this sentence."},
+    {q:"Which noun ends in -o but is feminine?",choices:["mano","gato","libro"],a:"mano",why:"Mano is one of the true feminine -o exceptions: la mano."},
+    {q:"____ luz está encendida.",choices:["La","El","Los"],a:"La",why:"Luz is feminine even though it ends in a consonant: la luz."},
+    {q:"Dame ____ mano, por favor.",choices:["la","el","los"],a:"la",why:"Mano is feminine: la mano."},
+    {q:"Which is correct?",choices:["la foto","el foto","los foto"],a:"la foto",why:"Foto is feminine (short for fotografía) even though it ends in -o."}
   ],
   "Lesson 6": [
     {q:"El lápiz → los ____.",choices:["lápices","lápizes","lápics"],a:"lápices",why:"Nouns ending in -z change z→c before adding -es: lápiz→lápices."},
     {q:"Which noun does NOT change in the plural?",choices:["lunes","libro","mesa"],a:"lunes",why:"Lunes already ends in unstressed -s, so el lunes → los lunes stays the same."},
     {q:"El joven → los ____.",choices:["jóvenes","jovenes","jovenies"],a:"jóvenes",why:"The plural jóvenes needs a written accent to keep the stress on the same syllable."},
     {q:"Which sentence correctly omits the article?",choices:["Soy profesor","Soy un profesor","Soy una profesor"],a:"Soy profesor",why:"After ser + an unmodified profession, Spanish omits the indefinite article."},
-    {q:"Tengo ____ veinte años.",choices:["unos","unas","una"],a:"unos",why:"Unos can express an approximate quantity: unos veinte = about twenty."}
+    {q:"Tengo ____ veinte años.",choices:["unos","unas","una"],a:"unos",why:"Unos can express an approximate quantity: unos veinte = about twenty."},
+    {q:"La ciudad → las ____.",choices:["ciudades","ciudads","ciudás"],a:"ciudades",why:"Ciudad ends in a consonant, so add -es: ciudades."},
+    {q:"Why does el camión lose its accent in the plural (los camiones)?",choices:["Adding a syllable naturally keeps the stress in place","Accents are random","Plural nouns never have accents"],a:"Adding a syllable naturally keeps the stress in place",why:"Camión is stressed on the last syllable; camiones is naturally stressed on the same syllable without needing a written accent."},
+    {q:"Quiero ____ café.",choices:["un","una","unos"],a:"un",why:"Café is masculine, so use un."},
+    {q:"El paraguas → los ____.",choices:["paraguas","paraguases","paraguás"],a:"paraguas",why:"Paraguas already ends in unstressed -s, so it doesn't change in the plural."}
   ],
   "Lesson 7": [
     {q:"Mi hermana es ____.",choices:["alta","alto","altos"],a:"alta",why:"Alto changes to alta to agree with the feminine noun hermana."},
     {q:"El examen es ____.",choices:["fácil","fácila","fácils"],a:"fácil",why:"Fácil ends in a consonant, so it does not change for gender."},
     {q:"Mi amiga es ____.",choices:["francesa","francés","francesas"],a:"francesa",why:"Nationality adjectives DO change for gender, unlike most consonant adjectives — francés→francesa, dropping the accent."},
     {q:"Es un ____ día.",choices:["buen","bueno","buena"],a:"buen",why:"Bueno shortens to buen right before a masculine singular noun."},
-    {q:"Es una ____ mujer.",choices:["gran","grande","granda"],a:"gran",why:"Grande shortens to gran before ANY singular noun, masculine or feminine."}
+    {q:"Es una ____ mujer.",choices:["gran","grande","granda"],a:"gran",why:"Grande shortens to gran before ANY singular noun, masculine or feminine."},
+    {q:"Mis hermanas son ____.",choices:["altas","alto","altos"],a:"altas",why:"Altas agrees in both feminine gender and plural number with hermanas."},
+    {q:"Which pair correctly shows an adjective that DOES change for gender?",choices:["trabajador → trabajadora","alto → alto","fácil → fácila"],a:"trabajador → trabajadora",why:"Trabajador is one of the -dor adjectives that DOES change for gender, unlike most consonant-ending adjectives."},
+    {q:"Es el ____ libro de la serie.",choices:["primer","primero","primera"],a:"primer",why:"Primero shortens to primer before a masculine singular noun like libro."},
+    {q:"Mis amigas son ____.",choices:["felices","feliz","felizes"],a:"felices",why:"Feliz pluralizes with the same z→c change as nouns ending in -z: feliz→felices."}
   ],
   "Lesson 8": [
     {q:"____ soy estudiante.",choices:["Yo","Tú","Él"],a:"Yo",why:"Soy is the yo form of ser."},
     {q:"Tú ____ mi amigo.",choices:["eres","es","soy"],a:"eres",why:"Eres is the tú form of ser."},
     {q:"Nosotros ____ de España.",choices:["somos","son","es"],a:"somos",why:"Somos is the nosotros form of ser."},
     {q:"La fiesta ____ en mi casa. (location of an event)",choices:["es","está","son"],a:"es",why:"The location of an EVENT uses ser, not estar: la fiesta es en mi casa."},
-    {q:"El libro ____ en la mesa. (location of an object)",choices:["está","es","son"],a:"está",why:"The location of an object or person uses estar: el libro está en la mesa."}
+    {q:"El libro ____ en la mesa. (location of an object)",choices:["está","es","son"],a:"está",why:"The location of an object or person uses estar: el libro está en la mesa."},
+    {q:"____ estás cansada?",choices:["¿Cómo","¿Qué","¿Cuál"],a:"¿Cómo",why:"¿Cómo estás? is the standard way to ask how someone is (uses estar)."},
+    {q:"Ella es ____. (boring, using ser)",choices:["aburrida","aburrido","aburridas"],a:"aburrida",why:"Ser aburrida = she is boring; using estar aburrida instead would mean she is bored — a classic meaning-changing pair."},
+    {q:"Nosotros ____ en la playa ahora mismo.",choices:["estamos","somos","son"],a:"estamos",why:"Location right now uses estar: estamos en la playa."},
+    {q:"Which pronoun is used ONLY for a group of women?",choices:["nosotras","nosotros","ustedes"],a:"nosotras",why:"Nosotras is exclusively feminine; nosotros covers male or mixed groups."},
+    {q:"Vosotros ____ mis amigos.",choices:["sois","son","es"],a:"sois",why:"Sois is the vosotros form of ser, used in Spain."}
   ],
   "Lesson 9": [
     {q:"No sé ____ está la estación.",choices:["dónde","donde","adonde"],a:"dónde",why:"Interrogative words keep their accent even in indirect questions with no question mark."},
     {q:"¿____ es tu color favorito?",choices:["Cuál","Qué","Cómo"],a:"Cuál",why:"Use cuál when choosing among options."},
     {q:"¿____ color prefieres?",choices:["Qué","Cuál","Cuáles"],a:"Qué",why:"Use qué directly before a noun, even where English would say 'which'."},
     {q:"Voy ____ parque.",choices:["al","a el","a la"],a:"al",why:"a + el always contracts to al."},
-    {q:"Estudio ____ dos horas.",choices:["por","para","con"],a:"por",why:"Por expresses duration; para would express purpose/deadline instead."}
+    {q:"Estudio ____ dos horas.",choices:["por","para","con"],a:"por",why:"Por expresses duration; para would express purpose/deadline instead."},
+    {q:"____ libros hay en la mesa?",choices:["¿Cuántos","¿Cuánto","¿Cuál"],a:"¿Cuántos",why:"Cuántos agrees with the plural masculine noun libros."},
+    {q:"Vengo ____ trabajo.",choices:["del","de el","de la"],a:"del",why:"de + el always contracts to del."},
+    {q:"Estudio ____ el examen. (purpose)",choices:["para","por","con"],a:"para",why:"Para expresses purpose/goal here — studying FOR the exam."},
+    {q:"El libro está ____ la mesa y la silla.",choices:["entre","con","sin"],a:"entre",why:"Entre means between."},
+    {q:"Which uses hay correctly?",choices:["Hay dos libros.","Hayn dos libros.","Hay dos libro."],a:"Hay dos libros.",why:"Hay never conjugates for plural — 'hayn' does not exist."}
   ],
   "Lesson 10": [
     {q:"Hay clase ____ lunes.",choices:["los","el","la"],a:"los",why:"Use los + day for repeated/habitual days: los lunes = on Mondays."},
     {q:"Mi cumpleaños es ____ marzo.",choices:["en","el","los"],a:"en",why:"Use en + month/season, no article needed."},
     {q:"____ empieza en marzo.",choices:["La primavera","El verano","El invierno"],a:"La primavera",why:"Spring (la primavera) begins in March in the Northern Hemisphere."},
     {q:"Which day does NOT change spelling in the plural?",choices:["viernes","sábado","domingo"],a:"viernes",why:"Viernes already ends in -s, so it stays the same — only el changes to los."},
-    {q:"¿Qué día es hoy? Hoy es ____.",choices:["lunes","el lunes","los lunes"],a:"lunes",why:"To simply state the day, use the bare day name with no article: hoy es lunes."}
+    {q:"¿Qué día es hoy? Hoy es ____.",choices:["lunes","el lunes","los lunes"],a:"lunes",why:"To simply state the day, use the bare day name with no article: hoy es lunes."},
+    {q:"Los sábados y los domingos, ____.",choices:["descanso","descansa","descansas"],a:"descanso",why:"Descanso is the yo form: I rest — matching a first-person statement."},
+    {q:"El otoño empieza en ____.",choices:["septiembre","marzo","junio"],a:"septiembre",why:"Autumn begins in September in the Northern Hemisphere."},
+    {q:"Which month name is correctly spelled?",choices:["diciembre","Diciembre","Deciembre"],a:"diciembre",why:"Spanish months are never capitalized."},
+    {q:"Hace frío en ____.",choices:["invierno","verano","primavera"],a:"invierno",why:"Invierno (winter) is the cold season."},
+    {q:"¿Qué día es hoy? Hoy es ____.",choices:["martes","el martes","los martes"],a:"martes",why:"State the day with the bare name, no article."}
   ],
   "Lesson 11": [
     {q:"Es mi ____ día. (first)",choices:["primer","primero","primera"],a:"primer",why:"Primero shortens to primer before a masculine singular noun."},
     {q:"Es el ____ capítulo. (third)",choices:["tercer","tercero","tercera"],a:"tercer",why:"Tercero shortens to tercer before a masculine singular noun."},
     {q:"Es la ____ semana. (first, feminine)",choices:["primera","primer","primero"],a:"primera",why:"Primera (feminine) never shortens, unlike the masculine primer."},
     {q:"¿Cuántos años tienes? Tengo veinte ____.",choices:["años","año","anos"],a:"años",why:"Años (with ñ) means years; use it after a number to say age."},
-    {q:"After décimo (10th), everyday Spanish usually switches to:",choices:["cardinal numbers","more ordinals","no numbers"],a:"cardinal numbers",why:"Beyond 10th, ordinals are rare in spoken Spanish — cardinals are used instead, e.g. el rey catorce, not decimocuarto."}
+    {q:"After décimo (10th), everyday Spanish usually switches to:",choices:["cardinal numbers","more ordinals","no numbers"],a:"cardinal numbers",why:"Beyond 10th, ordinals are rare in spoken Spanish — cardinals are used instead, e.g. el rey catorce, not decimocuarto."},
+    {q:"Dieciséis = ?",choices:["16","17","15"],a:"16",why:"Dieciséis combines diez (10) + seis (6) = 16."},
+    {q:"Which ordinal does NOT shorten before a masculine noun?",choices:["segundo","primero","tercero"],a:"segundo",why:"Only primero and tercero shorten (primer/tercer); segundo never changes."},
+    {q:"Tengo quince ____.",choices:["años","año","anos"],a:"años",why:"Años (with ñ) means years, used after a number to state age."},
+    {q:"Es la ____ vez que vengo aquí.",choices:["primera","primer","primero"],a:"primera",why:"Primera (feminine, agreeing with vez) never shortens."},
+    {q:"Hay ____ estudiantes en la clase. (12)",choices:["doce","dose","doze"],a:"doce",why:"Doce is the correct spelling for twelve."}
   ],
   "Lesson 12": [
     {q:"¿Cuál es la ____ de hoy?",choices:["fecha","hora","semana"],a:"fecha",why:"Fecha means calendar date; hora means time of day."},
     {q:"Es el tres ____ marzo.",choices:["de","del","en"],a:"de",why:"Dates use de between the number and the month: el tres de marzo."},
     {q:"Mi cumpleaños es el ____ de enero. (the 1st)",choices:["primero","uno","un"],a:"primero",why:"The 1st of the month uses the ordinal primero, unlike other dates which use cardinal numbers."},
     {q:"¿____ hora es?",choices:["Qué","Cuál","Cuánto"],a:"Qué",why:"¿Qué hora es? is the fixed way to ask the time."},
-    {q:"Son las tres y ____. (half past)",choices:["media","medio","cuarto"],a:"media",why:"Y media means 'half past' — medio would be wrong gender agreement."}
+    {q:"Son las tres y ____. (half past)",choices:["media","medio","cuarto"],a:"media",why:"Y media means 'half past' — medio would be wrong gender agreement."},
+    {q:"Son las cinco ____ cuarto. (quarter to five)",choices:["menos","y","de"],a:"menos",why:"Menos cuarto counts back from the next hour for 'quarter to'."},
+    {q:"La cita es ____ las tres.",choices:["a","en","de"],a:"a",why:"Use a las for a scheduled time (from two o'clock up)."},
+    {q:"Es el veinte ____ mayo.",choices:["de","del","en"],a:"de",why:"Dates use de between the day number and the month."},
+    {q:"Which is the correct way to say 'It is 8:00 AM'?",choices:["Son las ocho de la mañana.","Son las ocho de la tarde.","Es las ocho de la mañana."],a:"Son las ocho de la mañana.",why:"Son las + hour is used for every hour except one, and de la mañana specifies morning."},
+    {q:"Mi cumpleaños es el ____ de mayo. (the 1st)",choices:["primero","uno","un"],a:"primero",why:"The 1st of the month is the one date that uses the ordinal primero."}
   ],
   "Lesson 13": [
     {q:"Yo ____ español.",choices:["hablo","hablas","habla"],a:"hablo",why:"Hablo is the yo form of hablar: -o ending."},
     {q:"Tú ____ inglés.",choices:["hablas","hablo","habla"],a:"hablas",why:"Hablas is the tú form: -as ending."},
     {q:"Nosotros ____ mucho.",choices:["trabajamos","trabajan","trabaja"],a:"trabajamos",why:"Trabajamos is the nosotros form: -amos ending."},
     {q:"Ellos ____ todos los días.",choices:["estudian","estudia","estudias"],a:"estudian",why:"Estudian is the ellos/ellas/ustedes form: -an ending."},
-    {q:"Which ending goes with vosotros?",choices:["-áis","-amos","-an"],a:"-áis",why:"The vosotros form of -ar verbs always ends in -áis: habláis, cocináis."}
+    {q:"Which ending goes with vosotros?",choices:["-áis","-amos","-an"],a:"-áis",why:"The vosotros form of -ar verbs always ends in -áis: habláis, cocináis."},
+    {q:"¿____ tú español?",choices:["Hablas","Hablo","Habla"],a:"Hablas",why:"Hablas is the tú form of hablar."},
+    {q:"Vosotros ____ mucho.",choices:["trabajáis","trabajamos","trabajan"],a:"trabajáis",why:"Trabajáis is the vosotros form: -áis ending."},
+    {q:"Which verb form matches nosotros?",choices:["estudiamos","estudias","estudian"],a:"estudiamos",why:"Estudiamos ends in -amos, the nosotros ending for -ar verbs."},
+    {q:"Ella ____ en la cocina ahora.",choices:["cocina","cocino","cocinas"],a:"cocina",why:"Cocina is the él/ella/usted form of cocinar."}
   ],
   "Lesson 14": [
     {q:"Yo ____ fruta.",choices:["como","comes","come"],a:"como",why:"Como is the yo form of comer: -o ending."},
     {q:"Tú ____ verduras.",choices:["comes","como","come"],a:"comes",why:"Comes is the tú form: -es ending."},
     {q:"Nosotros ____ español.",choices:["aprendemos","aprenden","aprende"],a:"aprendemos",why:"Aprendemos is the nosotros form: -emos ending."},
     {q:"Ellos ____ agua.",choices:["beben","bebe","bebes"],a:"beben",why:"Beben is the ellos/ellas/ustedes form: -en ending."},
-    {q:"Which ending goes with vosotros?",choices:["-éis","-emos","-en"],a:"-éis",why:"The vosotros form of -er verbs always ends in -éis: coméis, leéis."}
+    {q:"Which ending goes with vosotros?",choices:["-éis","-emos","-en"],a:"-éis",why:"The vosotros form of -er verbs always ends in -éis: coméis, leéis."},
+    {q:"¿Qué ____ tú?",choices:["comes","como","come"],a:"comes",why:"Comes is the tú form of comer."},
+    {q:"Vosotros ____ demasiado café.",choices:["bebéis","bebemos","beben"],a:"bebéis",why:"Bebéis is the vosotros form: -éis ending."},
+    {q:"Nosotros ____ un libro nuevo cada mes.",choices:["leemos","leo","lee"],a:"leemos",why:"Leemos ends in -emos, the nosotros ending for -er verbs."},
+    {q:"Ellas ____ mucho en la universidad.",choices:["aprenden","aprende","aprendo"],a:"aprenden",why:"Aprenden is the ellos/ellas/ustedes form of aprender."}
   ],
   "Lesson 15": [
     {q:"Yo ____ aquí.",choices:["vivo","vives","vive"],a:"vivo",why:"Vivo is the yo form of vivir: -o ending."},
     {q:"Tú ____ allí.",choices:["vives","vivo","vive"],a:"vives",why:"Vives is the tú form: -es ending."},
     {q:"Nosotros ____ cartas.",choices:["escribimos","escriben","escribe"],a:"escribimos",why:"Escribimos is the nosotros form: -imos ending."},
     {q:"Ellos ____ la tienda a las nueve.",choices:["abren","abre","abres"],a:"abren",why:"Abren is the ellos/ellas/ustedes form: -en ending."},
-    {q:"-ER and -IR verbs differ mainly in which forms?",choices:["nosotros and vosotros","yo and tú","él and ellos"],a:"nosotros and vosotros",why:"Comparing comemos/coméis (-er) with vivimos/vivís (-ir), only the nosotros/vosotros forms differ; the rest are identical patterns."}
+    {q:"-ER and -IR verbs differ mainly in which forms?",choices:["nosotros and vosotros","yo and tú","él and ellos"],a:"nosotros and vosotros",why:"Comparing comemos/coméis (-er) with vivimos/vivís (-ir), only the nosotros/vosotros forms differ; the rest are identical patterns."},
+    {q:"¿Dónde ____ tú?",choices:["vives","vivo","vive"],a:"vives",why:"Vives is the tú form of vivir."},
+    {q:"Vosotros ____ muy rápido.",choices:["escribís","escribimos","escriben"],a:"escribís",why:"Escribís is the vosotros form: -ís ending."},
+    {q:"Nosotros ____ la puerta a las nueve.",choices:["abrimos","abro","abre"],a:"abrimos",why:"Abrimos ends in -imos, the nosotros ending for -ir verbs."},
+    {q:"¿Quién ____ el plan?",choices:["decide","decido","decides"],a:"decide",why:"Decide is the él/ella/usted form of decidir."}
   ],
   "Lesson 16": [
     {q:"Yo ____ hambre. (tener)",choices:["tengo","tienes","tiene"],a:"tengo",why:"Tengo is the irregular yo form of tener."},
     {q:"Yo ____ a la tienda. (ir)",choices:["voy","vas","va"],a:"voy",why:"Voy is the irregular yo form of ir."},
     {q:"¿____ venir? Sí, puedo. (poder)",choices:["Puedes","Puedo","Puede"],a:"Puedes",why:"Puedes is the tú form of poder (o→ue stem change)."},
     {q:"Which verb is irregular ONLY in the yo form?",choices:["hacer","tener","querer"],a:"hacer",why:"Hacer→hago is irregular only in yo; the rest (haces, hace, hacemos...) are fully regular. Tener and querer also change their stem in other forms."},
-    {q:"No ____ qué digo. (saber)",choices:["sé","se","sabo"],a:"sé",why:"Sé (with an accent) is I know, from saber — different from se, the reflexive pronoun."}
+    {q:"No ____ qué digo. (saber)",choices:["sé","se","sabo"],a:"sé",why:"Sé (with an accent) is I know, from saber — different from se, the reflexive pronoun."},
+    {q:"Nosotros ____ mucho trabajo hoy. (tener)",choices:["tenemos","tengo","tienen"],a:"tenemos",why:"Tenemos is fully regular — only the yo/tú/él/ellos forms of tener change their stem."},
+    {q:"¿A dónde ____ ustedes? (ir)",choices:["van","vamos","va"],a:"van",why:"Van is the ellos/ellas/ustedes form of the fully irregular verb ir."},
+    {q:"Yo ____ la verdad. (decir)",choices:["digo","dice","dices"],a:"digo",why:"Digo is the irregular yo form of decir."},
+    {q:"¿____ ustedes venir a la fiesta? (poder)",choices:["Pueden","Puedo","Puede"],a:"Pueden",why:"Pueden is the ellos/ellas/ustedes form of poder (o→ue stem change)."},
+    {q:"Ella no ____ nada. (saber)",choices:["sabe","sé","sabo"],a:"sabe",why:"Sabe is the él/ella/usted form of saber; sé is only for yo."}
   ]
 };
 
