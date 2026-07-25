@@ -1094,6 +1094,93 @@ grammarNotesBank["Lesson 15"] = [
   {title:"4. When in doubt, learn the noun with its article", body:"You've now seen both masculine and feminine exceptions. The safest habit for any new noun is to learn it together with el or la from the start.", pattern:"el/la + noun (always learn together)", example:"la mano, la mujer, el día", meaning:"the hand, the woman, the day"}
 ];
 
+lessonInfo["Lesson 16"] = {
+  title:"Plural Days and Months of the Year",
+  level:"A1",
+  vocabulary:"plural days of the week + the twelve months",
+  grammar:"el → los for repeated days / en + month",
+  listening:"a weekly schedule and important dates across the year",
+  goal:"After this lesson, you can say what happens on certain days every week using los, name all twelve months, and say what month something happens in using en.",
+  core:[
+    {spanish:"Hay clase los lunes.", english:"There is class on Mondays."},
+    {spanish:"¿Hay fiestas los sábados?", english:"Are there parties on Saturdays?"},
+    {spanish:"Mi cumpleaños es en marzo.", english:"My birthday is in March."},
+    {spanish:"El curso empieza en septiembre y termina en junio.", english:"The course starts in September and ends in June."}
+  ]
+};
+
+baseItems.push(
+  {lesson:"Lesson 16",topic:"Days (plural)",spanish:"los lunes",english:"Mondays / on Mondays",vi:"vào các thứ Hai",example:"Hay clase los lunes.",exampleEn:"There is class on Mondays.",approx:"los lu-nes",ipa:"los ˈlunes",explain:"Lunes already ends in -s, so only the article changes: el lunes → los lunes.",visual:"📅"},
+  {lesson:"Lesson 16",topic:"Days (plural)",spanish:"los martes",english:"Tuesdays / on Tuesdays",vi:"vào các thứ Ba",example:"Trabajo los martes.",exampleEn:"I work on Tuesdays.",approx:"los mar-tes",ipa:"los ˈmartes",explain:"Martes already ends in -s, so the word itself stays the same in the plural.",visual:"📅"},
+  {lesson:"Lesson 16",topic:"Days (plural)",spanish:"los miércoles",english:"Wednesdays / on Wednesdays",vi:"vào các thứ Tư",example:"Estamos en clase los miércoles.",exampleEn:"We are in class on Wednesdays.",approx:"los mier-ko-les",ipa:"los ˈmjeɾkoles",explain:"Miércoles already ends in -s, so only el changes to los.",visual:"📅"},
+  {lesson:"Lesson 16",topic:"Days (plural)",spanish:"los jueves",english:"Thursdays / on Thursdays",vi:"vào các thứ Năm",example:"Descanso los jueves.",exampleEn:"I rest on Thursdays.",approx:"los khwe-bes",ipa:"los ˈxweβes",explain:"Jueves already ends in -s, so it stays the same; only the article changes.",visual:"📅"},
+  {lesson:"Lesson 16",topic:"Days (plural)",spanish:"los viernes",english:"Fridays / on Fridays",vi:"vào các thứ Sáu",example:"¿Dónde estás los viernes?",exampleEn:"Where are you on Fridays?",approx:"los bier-nes",ipa:"los ˈbjeɾnes",explain:"Viernes already ends in -s, so the plural only changes el to los.",visual:"📅"},
+  {lesson:"Lesson 16",topic:"Days (plural)",spanish:"los sábados",english:"Saturdays / on Saturdays",vi:"vào các thứ Bảy",example:"¿Hay fiestas los sábados?",exampleEn:"Are there parties on Saturdays?",approx:"los sa-ba-dos",ipa:"los ˈsaβaðos",explain:"Sábado does not end in -s, so add -s to make it plural: sábado → sábados.",visual:"📅"},
+  {lesson:"Lesson 16",topic:"Days (plural)",spanish:"los domingos",english:"Sundays / on Sundays",vi:"vào các Chủ nhật",example:"¿Dónde está Tomás los domingos?",exampleEn:"Where is Tomás on Sundays?",approx:"los do-min-gos",ipa:"los doˈmiŋgos",explain:"Domingo does not end in -s, so add -s to make it plural: domingo → domingos.",visual:"📅"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"enero",english:"January",vi:"tháng Một",example:"Mi cumpleaños es en enero.",exampleEn:"My birthday is in January.",approx:"e-ne-ro",ipa:"eˈneɾo",explain:"Use en + month to say when something happens: en enero.",visual:"❄️"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"febrero",english:"February",vi:"tháng Hai",example:"El día del amor es en febrero.",exampleEn:"Valentine's Day is in February.",approx:"fe-bre-ro",ipa:"feˈβɾeɾo",explain:"Months are not capitalized in Spanish: febrero, not Febrero.",visual:"💌"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"marzo",english:"March",vi:"tháng Ba",example:"La primavera empieza en marzo.",exampleEn:"Spring begins in March.",approx:"mar-so",ipa:"ˈmarso",explain:"Months are masculine but take no article when saying en marzo (in March).",visual:"🌱"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"abril",english:"April",vi:"tháng Tư",example:"Llueve mucho en abril.",exampleEn:"It rains a lot in April.",approx:"a-bril",ipa:"aˈβɾil",explain:"The br in abril is a soft tap, not a rolled r.",visual:"🌧️"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"mayo",english:"May",vi:"tháng Năm",example:"Las flores crecen en mayo.",exampleEn:"Flowers grow in May.",approx:"ma-yo",ipa:"ˈmajo",explain:"The y in mayo sounds like the y in yes.",visual:"🌷"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"junio",english:"June",vi:"tháng Sáu",example:"El curso termina en junio.",exampleEn:"The course ends in June.",approx:"khu-nio",ipa:"ˈxunjo",explain:"Junio and julio look similar — listen carefully for -nio vs -lio.",visual:"☀️"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"julio",english:"July",vi:"tháng Bảy",example:"Hace calor en julio.",exampleEn:"It is hot in July.",approx:"khu-lio",ipa:"ˈxuljo",explain:"Julio and junio are easy to confuse — julio has an l, junio has an n.",visual:"🎆"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"agosto",english:"August",vi:"tháng Tám",example:"Voy de vacaciones en agosto.",exampleEn:"I go on vacation in August.",approx:"a-gos-to",ipa:"aˈɣosto",explain:"The g before o/a/u is a soft, breathy sound, not a hard English g.",visual:"🏖️"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"septiembre",english:"September",vi:"tháng Chín",example:"El curso empieza en septiembre.",exampleEn:"The course starts in September.",approx:"sep-tiem-bre",ipa:"sepˈtjembɾe",explain:"The final bre is a soft tap r, like in hombre and octubre.",visual:"🍂"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"octubre",english:"October",vi:"tháng Mười",example:"Hay una fiesta en octubre.",exampleEn:"There is a party in October.",approx:"ok-tu-bre",ipa:"okˈtuβɾe",explain:"The bre ending uses the same soft tap r sound as hombre.",visual:"🎃"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"noviembre",english:"November",vi:"tháng Mười Một",example:"Mi cumpleaños es en noviembre.",exampleEn:"My birthday is in November.",approx:"no-biem-bre",ipa:"noˈβjembɾe",explain:"The v in noviembre sounds like a soft b, not an English v.",visual:"🦃"},
+  {lesson:"Lesson 16",topic:"Months",spanish:"diciembre",english:"December",vi:"tháng Mười Hai",example:"La Navidad es en diciembre.",exampleEn:"Christmas is in December.",approx:"di-siem-bre",ipa:"diˈsjembɾe",explain:"Diciembre ends the year — use en diciembre to say in December.",visual:"🎄"}
+);
+
+grammarBank["Lesson 16"] = [
+  {q:"Hay clase ____ lunes.",choices:["los","el","la"],a:"los",why:"Use los + day to talk about a repeated/habitual day — los lunes means 'on Mondays'."},
+  {q:"¿Hay fiestas los ____?",choices:["sábados","sábado","sábada"],a:"sábados",why:"Sábado does not end in -s, so add -s in the plural: los sábados."},
+  {q:"Which day does NOT change spelling when you add los?",choices:["viernes","sábado","domingo"],a:"viernes",why:"Viernes already ends in -s, so it stays the same — only el changes to los."},
+  {q:"Mi cumpleaños es ____ marzo.",choices:["en","el","los"],a:"en",why:"Use en + month to say when something happens — no article is needed before the month."},
+  {q:"Which is spelled correctly?",choices:["enero","Enero","henero"],a:"enero",why:"Months are not capitalized in Spanish, unlike English."}
+];
+
+listeningBank["Lesson 16"] = {
+  text:"Hay clase los lunes y los miércoles. Los sábados y los domingos no hay clase. Trabajo los martes y los jueves. Mi cumpleaños es en marzo. El curso empieza en septiembre y termina en junio.",
+  meaning:"There is class on Mondays and Wednesdays. On Saturdays and Sundays there is no class. I work on Tuesdays and Thursdays. My birthday is in March. The course starts in September and ends in June.",
+  dictation:["Los sábados y los domingos no hay clase.","Mi cumpleaños es en marzo."],
+  questions:[
+    {q:"On which two days is there class?", a:["los lunes y los miércoles","lunes y miércoles"], hint:"Listen for: hay clase..."},
+    {q:"Is there class on Saturdays and Sundays?", a:["no","no hay clase"], hint:"Listen for: los sábados y los domingos..."},
+    {q:"On which two days does the speaker work?", a:["los martes y los jueves","martes y jueves"], hint:"Listen for: trabajo..."},
+    {q:"What month is the speaker's birthday?", a:["marzo","en marzo"], hint:"Listen for: mi cumpleaños es..."},
+    {q:"When does the course start and end?", a:["septiembre y junio","en septiembre y termina en junio"], hint:"Listen for: el curso empieza... termina..."}
+  ]
+};
+
+quizBank["Lesson 16"] = [
+  {q:"Mondays / on Mondays = ?", a:["los lunes","lunes"], hint:"plural of el lunes"},
+  {q:"Tuesdays / on Tuesdays = ?", a:["los martes","martes"], hint:"plural of el martes"},
+  {q:"Wednesdays / on Wednesdays = ?", a:["los miércoles","los miercoles","miércoles","miercoles"], hint:"plural of el miércoles"},
+  {q:"Thursdays / on Thursdays = ?", a:["los jueves","jueves"], hint:"plural of el jueves"},
+  {q:"Fridays / on Fridays = ?", a:["los viernes","viernes"], hint:"plural of el viernes"},
+  {q:"Saturdays / on Saturdays = ?", a:["los sábados","los sabados","sábados","sabados"], hint:"sábado + s in the plural"},
+  {q:"Sundays / on Sundays = ?", a:["los domingos","domingos"], hint:"domingo + s in the plural"},
+  {q:"January = ?", a:["enero"], hint:"month"},
+  {q:"February = ?", a:["febrero"], hint:"month"},
+  {q:"March = ?", a:["marzo"], hint:"month"},
+  {q:"April = ?", a:["abril"], hint:"month"},
+  {q:"May = ?", a:["mayo"], hint:"month"},
+  {q:"June = ?", a:["junio"], hint:"month"},
+  {q:"July = ?", a:["julio"], hint:"month"},
+  {q:"August = ?", a:["agosto"], hint:"month"},
+  {q:"September = ?", a:["septiembre"], hint:"month"},
+  {q:"October = ?", a:["octubre"], hint:"month"},
+  {q:"November = ?", a:["noviembre"], hint:"month"},
+  {q:"December = ?", a:["diciembre"], hint:"month"}
+];
+
+grammarNotesBank["Lesson 16"] = [
+  {title:"1. Days of the week: el → los in the plural", body:"To talk about something that happens repeatedly on a certain day, change el to los: el lunes (on that Monday) becomes los lunes (on Mondays, every Monday).", pattern:"los + day", example:"Hay clase los lunes.", meaning:"There is class on Mondays."},
+  {title:"2. Sábado and domingo add -s in the plural", body:"Monday through Friday already end in -s (lunes, martes, miércoles, jueves, viernes), so they don't change. Only sábado and domingo need an -s added: sábado → sábados, domingo → domingos.", pattern:"sábado/domingo + s", example:"Los sábados y los domingos descanso.", meaning:"On Saturdays and Sundays I rest."},
+  {title:"3. Months of the year are lowercase", body:"Unlike English, Spanish months are never capitalized in normal writing: enero, not Enero.", pattern:"month name, lowercase", example:"Hoy es tres de marzo.", meaning:"Today is March third."},
+  {title:"4. Saying when something happens: en + month", body:"To say what month something happens in, use en before the month name — no article is needed.", pattern:"en + month", example:"Mi cumpleaños es en noviembre.", meaning:"My birthday is in November."}
+];
+
 const visualMap = {
   "hola":"👋",
   "buenos días":"🌅",
