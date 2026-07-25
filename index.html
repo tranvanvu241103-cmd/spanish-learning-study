@@ -294,6 +294,20 @@
   .match-tiles{grid-template-columns:repeat(auto-fill,minmax(88px,1fr))}
   .match-tile{min-height:84px;font-size:32px}
 }
+
+/* Sentence Builder */
+.match-column-title{margin:0 0 2px;text-align:center;font-size:13px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.sentence-prompt{min-height:96px;border:2px dashed var(--line);border-radius:16px;background:var(--bg);padding:14px;display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin:14px 0}
+.sentence-prompt.empty::before{content:"Chạm vào các từ bên dưới để ghép câu theo đúng thứ tự";color:var(--muted);font-size:14px}
+.sentence-bank{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;padding:14px 4px;min-height:76px}
+.sentence-word{margin:0;background:#fff;color:var(--ink);border:2px solid var(--line);box-shadow:0 3px 0 var(--line);font-size:16px;border-radius:11px}
+.sentence-word:hover{border-color:var(--coral);transform:translateY(-1px)}
+.sentence-word.used{visibility:hidden;pointer-events:none}
+.sentence-answer-word{background:rgba(255,90,95,.12);color:var(--coral-dark);border:2px solid var(--coral);box-shadow:0 3px 0 var(--coral-dark);margin:0;border-radius:11px}
+.sentence-builder-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:12px}
+@media(max-width:760px){
+  .sentence-bank,.sentence-prompt{justify-content:flex-start}
+}
 </style>
 </head>
 <body>
@@ -333,9 +347,10 @@
     <button class="tab" onclick="showTab('grammar', this)" title="Grammar"><span class="tab-icon">📘</span><span class="tab-label">Grammar</span></button>
     <button class="tab" onclick="showTab('listening', this)" title="Listening"><span class="tab-icon">🎧</span><span class="tab-label">Listening</span></button>
     <button class="tab" onclick="showTab('flashcards', this)" title="Flashcards"><span class="tab-icon">🎴</span><span class="tab-label">Flashcards</span></button>
-    <button class="tab" onclick="showTab('match', this)" title="Ghép hình"><span class="tab-icon">🧩</span><span class="tab-label">Ghép hình</span></button>
+    <button class="tab" onclick="showTab('match', this)" title="Picture Match"><span class="tab-icon">🧩</span><span class="tab-label">Picture Match</span></button>
+    <button class="tab" onclick="showTab('sentence', this)" title="Sentence Builder"><span class="tab-icon">🧱</span><span class="tab-label">Sentence Builder</span></button>
     <button class="tab" onclick="showTab('quiz', this)" title="Exercises"><span class="tab-icon">✅</span><span class="tab-label">Exercises</span></button>
-    <button class="tab" onclick="showTab('review', this)" title="Ôn tập"><span class="tab-icon">🔥</span><span class="tab-label">Ôn tập</span></button>
+    <button class="tab" onclick="showTab('review', this)" title="Review"><span class="tab-icon">🔥</span><span class="tab-label">Review</span></button>
     <button class="tab utility" onclick="showTab('builder', this)" title="Reuse &amp; Settings"><span class="tab-icon">⚙️</span><span class="tab-label">Reuse</span></button>
   </nav>
   <div class="app-content">
@@ -507,7 +522,7 @@
 
   <section id="match" class="section">
     <div class="card">
-      <h2>🧩 Ghép từ với hình ảnh</h2>
+      <h2>🧩 Picture Match</h2>
       <p class="small">Nhấn 🔊 để nghe phát âm, rồi kéo (hoặc chạm) từ tiếng Tây Ban Nha vào đúng hình ảnh tương ứng.</p>
       <div class="match-toolbar">
         <div>
@@ -523,6 +538,46 @@
       </div>
       <div id="matchStats" class="match-stats"></div>
       <div id="matchBoard" class="match-board" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="sentence" class="section">
+    <div class="card">
+      <h2>🧱 Sentence Builder</h2>
+      <p class="small">Nghe câu, rồi chạm vào các từ theo đúng thứ tự để ghép thành câu — dùng lại từ vựng và câu mẫu trong bài học để nhớ từ sâu hơn.</p>
+      <div class="match-toolbar sentence-toolbar">
+        <div>
+          <label for="sentenceLessonFilter">Lesson</label>
+          <select id="sentenceLessonFilter" onchange="syncLessonFromFilter(this.value); startSentenceBuild(true)"></select>
+        </div>
+        <div>
+          <label for="sentenceSource">Nguồn câu</label>
+          <select id="sentenceSource" onchange="startSentenceBuild(true)">
+            <option value="mixed">Tất cả các câu</option>
+            <option value="core">Câu mẫu bài học</option>
+            <option value="listening">Câu nghe (Listening)</option>
+            <option value="examples">Câu ví dụ từ vựng</option>
+          </select>
+        </div>
+        <button class="secondary" onclick="startSentenceBuild(false)">🔀 Câu mới</button>
+      </div>
+      <div class="match-stats">
+        <span class="match-stat">✅ Đúng: <span id="sentenceCorrect">0</span></span>
+        <span class="match-stat">🎯 Số lần: <span id="sentenceAttempts">0</span></span>
+        <span class="match-stat">🔤 Số từ: <span id="sentenceWordCount">0</span></span>
+      </div>
+      <div class="sentence-builder-actions">
+        <button class="audio" onclick="listenSentenceBuild()">🔊 Nghe</button>
+        <button class="secondary" onclick="listenSentenceBuild(true)">🐢 Chậm</button>
+      </div>
+      <div id="sentencePrompt" class="sentence-prompt empty" aria-label="Câu của bạn"></div>
+      <p class="match-column-title">Ngân hàng từ</p>
+      <div id="sentenceBank" class="sentence-bank"></div>
+      <div class="sentence-builder-actions">
+        <button class="good" onclick="checkSentenceBuild()">Kiểm tra</button>
+        <button class="secondary" onclick="resetSentenceAnswer()">Làm lại</button>
+      </div>
+      <div id="sentenceResult" class="result hidden" aria-live="polite"></div>
     </div>
   </section>
 
@@ -544,7 +599,7 @@
   <section id="review" class="section">
     <div class="grid">
       <div class="card">
-        <h2>🔥 Ôn tập ngắt quãng (Spaced Repetition)</h2>
+        <h2>🔥 Review — Ôn tập ngắt quãng (Spaced Repetition)</h2>
         <p class="small">Hệ thống tự chọn từ sắp quên để bạn ôn đúng lúc — trộn từ nhiều bài học và nhiều dạng câu hỏi (dịch nghĩa, điền từ trong câu) để não ghi nhớ sâu hơn.</p>
         <p id="reviewProgress" class="small"></p>
         <div id="reviewStrength"></div>
@@ -957,6 +1012,7 @@ function refreshSection(id){
   if(id==="vocab") renderVocab();
   if(id==="flashcards") renderFlashcard();
   if(id==="match") startMatchRound();
+  if(id==="sentence" && !sentenceBuildCurrent) startSentenceBuild(false);
   if(id==="quiz") renderQuiz();
   if(id==="grammar") renderGrammarPractice();
   if(id==="listening") renderListeningQuiz();
@@ -966,7 +1022,7 @@ function refreshSection(id){
 
 function syncLessonControls(){
   populateLessonOptions();
-  ["lessonSelect","vocabLessonFilter"].forEach(id=>{
+  ["lessonSelect","vocabLessonFilter","sentenceLessonFilter"].forEach(id=>{
     const el = document.getElementById(id);
     if(el) el.value = selectedLesson;
   });
@@ -978,7 +1034,7 @@ function populateLessonOptions(){
     const label = getLessonInfo(lesson) ? `${lesson} — ${getLessonInfo(lesson).title.split(" — ")[0]}` : lesson;
     return `<option value="${escapeHtml(lesson)}">${escapeHtml(label)}</option>`;
   }).join("");
-  ["lessonSelect","vocabLessonFilter"].forEach(id=>{
+  ["lessonSelect","vocabLessonFilter","sentenceLessonFilter"].forEach(id=>{
     const el = document.getElementById(id);
     if(el) el.innerHTML = options;
   });
@@ -998,6 +1054,7 @@ function setSelectedLesson(lesson){
   renderQuiz();
   renderFlashcard();
   startMatchRound();
+  startSentenceBuild(true);
 }
 
 function syncLessonFromFilter(lesson){
@@ -1122,7 +1179,7 @@ function renderVocab(){
             <tr><th>Subject use</th><td>${subjectUseHtml(x)}</td></tr>
             <tr><th>English explanation</th><td>${x.explain || "Custom word. Listen, repeat, and create your own sentence."}</td></tr>
             <tr><th>Strength</th><td>${strengthMeterHtml(x)}</td></tr>
-            <tr><th>Mnemonic</th><td>${mnemonics[itemKey(x)] ? escapeHtml(mnemonics[itemKey(x)]) : '<span class="small">Chưa có — thêm ở tab Flashcards hoặc Ôn tập.</span>'}</td></tr>
+            <tr><th>Mnemonic</th><td>${mnemonics[itemKey(x)] ? escapeHtml(mnemonics[itemKey(x)]) : '<span class="small">Chưa có — thêm ở tab Flashcards hoặc Review.</span>'}</td></tr>
           </table>
         </div>
       </div>
@@ -1375,6 +1432,103 @@ function showMatchRoundComplete(){
   if(matchMistakes === 0) burstConfetti();
 }
 
+/* ---------- Sentence Builder ---------- */
+let sentenceBuildCurrent = null;
+let sentenceBuildWords = [];
+let sentenceBuildAnswer = [];
+let sentenceBuildCorrect = 0;
+let sentenceBuildAttempts = 0;
+
+function getSentenceBuildPool(){
+  const source = document.getElementById("sentenceSource")?.value || "mixed";
+  const core = (getLessonInfo(selectedLesson)?.core || []).map(c=>({text:c.spanish, source:"Core"}));
+  const listening = (getLessonListening(selectedLesson)?.dictation || []).map(text=>({text, source:"Listening"}));
+  const examples = lessonItems().filter(x=>x.example).map(x=>({text:x.example, source:`Example: ${x.spanish}`}));
+  const selected = source==="core" ? core : source==="listening" ? listening : source==="examples" ? examples : [...core,...listening,...examples];
+  const seen = new Set();
+  return selected.filter(item=>{
+    const key = normalize(item.text);
+    if(!key || seen.has(key)) return false;
+    seen.add(key); return true;
+  });
+}
+function startSentenceBuild(resetStats=false){
+  const prompt = document.getElementById("sentencePrompt");
+  if(!prompt) return;
+  if(resetStats){ sentenceBuildCorrect = 0; sentenceBuildAttempts = 0; }
+  const pool = getSentenceBuildPool();
+  if(!pool.length){
+    sentenceBuildCurrent = null; sentenceBuildWords = []; sentenceBuildAnswer = [];
+    renderSentenceBuilder(); return;
+  }
+  const alternatives = sentenceBuildCurrent && pool.length > 1 ? pool.filter(x=>x.text !== sentenceBuildCurrent.text) : pool;
+  sentenceBuildCurrent = alternatives[Math.floor(Math.random() * alternatives.length)];
+  sentenceBuildWords = (sentenceBuildCurrent.text.match(/\S+/g) || []).map((text, index) => ({id:`sw_${Date.now()}_${index}`, text}));
+  sentenceBuildAnswer = [];
+  renderSentenceBuilder();
+}
+function renderSentenceBuilder(){
+  const prompt = document.getElementById("sentencePrompt");
+  const bank = document.getElementById("sentenceBank");
+  const result = document.getElementById("sentenceResult");
+  if(!prompt || !bank) return;
+  if(!sentenceBuildCurrent){
+    prompt.classList.remove("empty");
+    prompt.innerHTML = `<div class="warning">Chưa có câu nào cho bài học và nguồn này. Hãy chọn nguồn khác hoặc bài học khác.</div>`;
+    bank.innerHTML = "";
+  } else {
+    prompt.classList.toggle("empty", sentenceBuildAnswer.length === 0);
+    prompt.innerHTML = sentenceBuildAnswer.map(id=>{
+      const word = sentenceBuildWords.find(x=>x.id === id);
+      return word ? `<button class="sentence-answer-word" onclick="removeSentenceWord('${word.id}')">${escapeHtml(word.text)}</button>` : "";
+    }).join("");
+    if(!bank.dataset.round || bank.dataset.round !== sentenceBuildWords[0]?.id){
+      bank.dataset.round = sentenceBuildWords[0]?.id || "";
+      bank.dataset.order = JSON.stringify(shuffleArray(sentenceBuildWords).map(x=>x.id));
+    }
+    let order = [];
+    try{ order = JSON.parse(bank.dataset.order || "[]"); } catch(e){ order = sentenceBuildWords.map(x=>x.id); }
+    bank.innerHTML = order.map(id=>{
+      const word = sentenceBuildWords.find(x=>x.id === id);
+      if(!word) return "";
+      const used = sentenceBuildAnswer.includes(id);
+      return `<button class="sentence-word${used ? " used" : ""}" onclick="addSentenceWord('${word.id}')" ${used ? `aria-hidden="true" tabindex="-1"` : ""}>${escapeHtml(word.text)}</button>`;
+    }).join("");
+  }
+  if(result) result.classList.add("hidden");
+  updateSentenceBuildStats();
+}
+function addSentenceWord(id){
+  if(sentenceBuildAnswer.includes(id)) return;
+  sentenceBuildAnswer.push(id); renderSentenceBuilder();
+}
+function removeSentenceWord(id){
+  sentenceBuildAnswer = sentenceBuildAnswer.filter(x=>x !== id); renderSentenceBuilder();
+}
+function resetSentenceAnswer(){ sentenceBuildAnswer = []; renderSentenceBuilder(); }
+function listenSentenceBuild(slow=false){
+  if(!sentenceBuildCurrent) return;
+  slow ? speakSlow(sentenceBuildCurrent.text) : speak(sentenceBuildCurrent.text);
+}
+function checkSentenceBuild(){
+  if(!sentenceBuildCurrent) return;
+  const result = document.getElementById("sentenceResult");
+  const built = sentenceBuildAnswer.map(id=>sentenceBuildWords.find(x=>x.id === id)?.text || "").join(" ");
+  sentenceBuildAttempts++;
+  const correct = normalize(built) === normalize(sentenceBuildCurrent.text);
+  if(correct){ sentenceBuildCorrect++; awardXp(6); }
+  updateSentenceBuildStats();
+  result.classList.remove("hidden");
+  result.innerHTML = correct
+    ? `✅ Chính xác! <button class="good" onclick="startSentenceBuild(false)">Câu tiếp theo</button>`
+    : `❌ Chưa đúng. Nghe lại hoặc đổi thứ tự từ.<br><span class="small"><b>Câu đúng:</b> ${escapeHtml(sentenceBuildCurrent.text)}</span>`;
+  if(correct) burstConfetti();
+}
+function updateSentenceBuildStats(){
+  const stats = {sentenceCorrect:sentenceBuildCorrect, sentenceAttempts:sentenceBuildAttempts, sentenceWordCount:sentenceBuildWords.length};
+  Object.entries(stats).forEach(([id,value])=>{ const el = document.getElementById(id); if(el) el.textContent = value; });
+}
+
 function renderQuiz(){
   const quiz = getLessonData(selectedLesson)?.quiz || [];
   quizIndex = 0;
@@ -1611,7 +1765,7 @@ function renderHomeForecast(){
       <div><span class="label">Từ yếu nhất</span><div class="word">${weakest.spanish} — ${weakest.english}</div></div>
       ${strengthMeterHtml(weakest)}
     </div>
-  ` : `<div class="weakest-card"><span class="label">Chưa có dữ liệu — hãy vào 🔥 Ôn tập để bắt đầu</span></div>`;
+  ` : `<div class="weakest-card"><span class="label">Chưa có dữ liệu — hãy vào 🔥 Review để bắt đầu</span></div>`;
 }
 
 function ensureNewItemQuota(){
