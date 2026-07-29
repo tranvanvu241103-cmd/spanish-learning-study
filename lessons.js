@@ -222,6 +222,34 @@ const lessonInfo = {
       {spanish:"¿Puedes venir? Sí, puedo.", english:"Can you come? Yes, I can."},
       {spanish:"No sé qué digo.", english:"I don't know what I'm saying."}
     ]
+  },
+  "Lesson 17": {
+    title:"La Casa — Rooms & Furniture",
+    level:"A1",
+    vocabulary:"rooms of the house and common furniture/objects",
+    grammar:"gender patterns for house vocabulary (-a/-o/-ción/-dor endings, consonant-ending exceptions)",
+    listening:"a description of a house's rooms and furniture",
+    goal:"After this lesson, you can name the rooms of a house and the furniture/objects found in each one, and apply gender patterns to new house-related nouns.",
+    core:[
+      {spanish:"Mi casa es vieja y grande, con muchas ventanas.", english:"My house is old and big, with many windows."},
+      {spanish:"El comedor es sencillo, con una mesa y seis sillas.", english:"The dining room is simple, with a table and six chairs."},
+      {spanish:"La cocina es amplia, con paredes amarillas y gabinetes blancos.", english:"The kitchen is spacious, with yellow walls and white cabinets."},
+      {spanish:"Mis libros, mis cuadernos y mis videos están en el estudio.", english:"My books, my notebooks, and my videos are in the study."}
+    ]
+  },
+  "Lesson 18": {
+    title:"Describing a House — More Adjectives",
+    level:"A1",
+    vocabulary:"adjectives for describing houses, colors, and qualities",
+    grammar:"applying ser + adjective agreement (Lesson 7) to new -o/-consonant adjectives",
+    listening:"a description of an old, beautiful house",
+    goal:"After this lesson, you can describe a house's age, size, colors, and qualities using ser + adjective, applying the -o/-a/-os/-as agreement pattern and recognizing consonant-ending colors like gris that don't change for gender.",
+    core:[
+      {spanish:"Mi casa es vieja y grande, con muchas ventanas.", english:"My house is old and big, with many windows."},
+      {spanish:"Las paredes son blancas; el exterior es gris.", english:"The walls are white; the exterior is gray."},
+      {spanish:"El patio es bonito, con flores todavía.", english:"The yard is pretty, with flowers still blooming."},
+      {spanish:"Hoy es un día hermoso.", english:"Today is a beautiful day."}
+    ]
   }
 };
 
@@ -501,7 +529,44 @@ const baseItems = [
   {lesson:"Lesson 16",topic:"Yo-irregular + Stem-change",spanish:"vengo",english:"I come",vi:"tôi đến",example:"Vengo del trabajo.",exampleEn:"I'm coming from work.",approx:"ben-go",ipa:"ˈbeŋɡo",explain:"Venir is yo-irregular AND stem-changing (e→ie), like tener: vengo, vienes, viene, venimos, venís, vienen.",visual:"🚶‍♂️"},
   {lesson:"Lesson 16",topic:"Yo-irregular only",spanish:"doy",english:"I give",vi:"tôi cho",example:"Doy un regalo.",exampleEn:"I give a gift.",approx:"doy",ipa:"doj",explain:"Dar is yo-irregular only (with an unusual -oy ending): doy, das, da, damos, dais, dan.",visual:"🎁"},
   {lesson:"Lesson 16",topic:"Yo-irregular only",spanish:"veo",english:"I see",vi:"tôi nhìn thấy",example:"Veo la televisión.",exampleEn:"I watch television.",approx:"be-o",ipa:"ˈbeo",explain:"Ver is yo-irregular only: veo, ves, ve, vemos, veis, ven.",visual:"👀"},
-  {lesson:"Lesson 16",topic:"Yo-irregular only",spanish:"sé",english:"I know",vi:"tôi biết",example:"No sé qué digo.",exampleEn:"I don't know what I'm saying.",approx:"se",ipa:"se",explain:"Saber is yo-irregular only, with a written accent to distinguish sé (I know) from se (a reflexive pronoun): sé, sabes, sabe, sabemos, sabéis, saben.",visual:"💡"}
+  {lesson:"Lesson 16",topic:"Yo-irregular only",spanish:"sé",english:"I know",vi:"tôi biết",example:"No sé qué digo.",exampleEn:"I don't know what I'm saying.",approx:"se",ipa:"se",explain:"Saber is yo-irregular only, with a written accent to distinguish sé (I know) from se (a reflexive pronoun): sé, sabes, sabe, sabemos, sabéis, saben.",visual:"💡"},
+  {lesson:"Lesson 17",topic:"Rooms",spanish:"la alcoba",english:"the bedroom",vi:"phòng ngủ",example:"Mi alcoba con un baño privado es azul y blanca.",exampleEn:"My bedroom with a private bathroom is blue and white.",approx:"al-ko-ba",ipa:"alˈkoβa",explain:"Alcoba is a synonym for dormitorio (bedroom); it ends in -a, so it takes la.",visual:"🛏️"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"la alfombra",english:"the rug",vi:"tấm thảm",example:"La alfombra es roja y azul marino.",exampleEn:"The rug is red and navy blue.",approx:"al-fom-bra",ipa:"alˈfombɾa",explain:"Alfombra ends in -a, so it is feminine: la alfombra.",visual:"🟥"},
+  {lesson:"Lesson 17",topic:"Personal Objects",spanish:"el bolígrafo",english:"the ballpoint pen",vi:"cây bút bi",example:"Necesito un bolígrafo para escribir.",exampleEn:"I need a pen to write.",approx:"bo-li-gra-fo",ipa:"boˈliɣɾafo",explain:"Bolígrafo ends in -o, so it is masculine: el bolígrafo.",visual:"🖊️"},
+  {lesson:"Lesson 17",topic:"Rooms",spanish:"la cocina",english:"the kitchen",vi:"nhà bếp",example:"La cocina es amplia, con paredes amarillas.",exampleEn:"The kitchen is spacious, with yellow walls.",approx:"ko-si-na",ipa:"koˈsina",explain:"Cocina ends in -a, so it is feminine: la cocina.",visual:"🍳"},
+  {lesson:"Lesson 17",topic:"Personal Objects",spanish:"la colección",english:"the collection",vi:"bộ sưu tập",example:"Mi colección de discos compactos está en el estudio.",exampleEn:"My CD collection is in the study.",approx:"ko-lek-sion",ipa:"kolekˈsjon",explain:"Words ending in -ción are always feminine: la colección.",visual:"📀"},
+  {lesson:"Lesson 17",topic:"Rooms",spanish:"el comedor",english:"the dining room",vi:"phòng ăn",example:"El comedor es sencillo, con una mesa y seis sillas.",exampleEn:"The dining room is simple, with a table and six chairs.",approx:"ko-me-dor",ipa:"komeˈðoɾ",explain:"Nouns ending in -dor are typically masculine: el comedor.",visual:"🍽️"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"la cortina",english:"the curtain",vi:"rèm cửa",example:"Las cortinas en toda la casa son gruesas.",exampleEn:"The curtains throughout the house are thick.",approx:"kor-ti-na",ipa:"koɾˈtina",explain:"Cortina ends in -a, so it is feminine: la cortina.",visual:"🪟"},
+  {lesson:"Lesson 17",topic:"Personal Objects",spanish:"el cuaderno",english:"the notebook",vi:"quyển vở",example:"Mis cuadernos están en el estudio.",exampleEn:"My notebooks are in the study.",approx:"kwa-der-no",ipa:"kwaˈðeɾno",explain:"Cuaderno ends in -o, so it is masculine: el cuaderno.",visual:"📓"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"el espejo",english:"the mirror",vi:"cái gương",example:"Un espejo antiguo está en el vestíbulo.",exampleEn:"An antique mirror is in the entryway.",approx:"es-pe-kho",ipa:"esˈpexo",explain:"Espejo ends in -o, so it is masculine: el espejo.",visual:"🪞"},
+  {lesson:"Lesson 17",topic:"Rooms",spanish:"el estudio",english:"the study",vi:"phòng học/làm việc",example:"Mis libros y mis videos están en el estudio.",exampleEn:"My books and my videos are in the study.",approx:"es-tu-dio",ipa:"esˈtuðjo",explain:"Estudio ends in -o, so it is masculine: el estudio.",visual:"📚"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"la estufa",english:"the stove",vi:"cái bếp lò",example:"La estufa y el horno están limpios.",exampleEn:"The stove and the oven are clean.",approx:"es-tu-fa",ipa:"esˈtufa",explain:"Estufa ends in -a, so it is feminine: la estufa.",visual:"🔥"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"el gabinete",english:"the cabinet",vi:"tủ đựng đồ",example:"La cocina tiene gabinetes blancos.",exampleEn:"The kitchen has white cabinets.",approx:"ga-bi-ne-te",ipa:"ɡaβiˈnete",explain:"Gabinete ends in -e, so its gender must be memorized: el gabinete.",visual:"🗄️"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"el horno",english:"the oven",vi:"lò nướng",example:"El horno está limpio.",exampleEn:"The oven is clean.",approx:"or-no",ipa:"ˈoɾno",explain:"Horno ends in -o, so it is masculine: el horno.",visual:"🍞"},
+  {lesson:"Lesson 17",topic:"Personal Objects",spanish:"el lápiz",english:"the pencil",vi:"cây bút chì",example:"Mis lápices y bolígrafos están en el estudio.",exampleEn:"My pencils and pens are in the study.",approx:"la-pis",ipa:"ˈlapis",explain:"Lápiz ends in a consonant and is masculine: el lápiz. Its plural changes z→c: lápices.",visual:"✏️"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"la madera",english:"the wood",vi:"gỗ",example:"La mesa es de madera fina.",exampleEn:"The table is made of fine wood.",approx:"ma-de-ra",ipa:"maˈðeɾa",explain:"Madera ends in -a, so it is feminine: la madera.",visual:"🪵"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"la nevera",english:"the refrigerator",vi:"tủ lạnh",example:"La nevera es bastante grande.",exampleEn:"The refrigerator is quite big.",approx:"ne-be-ra",ipa:"neˈβeɾa",explain:"Nevera ends in -a, so it is feminine: la nevera.",visual:"🧊"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"la pared",english:"the wall",vi:"bức tường",example:"Las paredes del interior son blancas.",exampleEn:"The interior walls are white.",approx:"pa-red",ipa:"paˈɾeð",explain:"Pared ends in a consonant; its gender must be memorized: la pared.",visual:"🧱"},
+  {lesson:"Lesson 17",topic:"Rooms",spanish:"el patio",english:"the yard",vi:"sân",example:"El patio es bonito, con flores todavía.",exampleEn:"The yard is pretty, with flowers still blooming.",approx:"pa-tio",ipa:"ˈpatjo",explain:"Patio ends in -o, so it is masculine: el patio.",visual:"🌳"},
+  {lesson:"Lesson 17",topic:"Rooms",spanish:"la sala",english:"the living room",vi:"phòng khách",example:"Dos sillones cómodos y un piano están en la sala.",exampleEn:"Two comfortable armchairs and a piano are in the living room.",approx:"sa-la",ipa:"ˈsala",explain:"Sala ends in -a, so it is feminine: la sala.",visual:"🛋️"},
+  {lesson:"Lesson 17",topic:"Furniture & Fixtures",spanish:"el sillón",english:"the easy chair",vi:"ghế bành",example:"Los sillones son cómodos.",exampleEn:"The armchairs are comfortable.",approx:"si-yon",ipa:"siˈʝon",explain:"Sillón is masculine: el sillón. Its plural drops the written accent: sillones.",visual:"🪑"},
+  {lesson:"Lesson 17",topic:"Rooms",spanish:"el vestíbulo",english:"the entryway",vi:"tiền sảnh",example:"Un espejo antiguo y una mesa de madera fina están en el vestíbulo.",exampleEn:"An antique mirror and a fine wood table are in the entryway.",approx:"bes-ti-bu-lo",ipa:"besˈtiβulo",explain:"Vestíbulo ends in -o, so it is masculine: el vestíbulo.",visual:"🚪"},
+  {lesson:"Lesson 17",topic:"Personal Objects",spanish:"el video",english:"the video",vi:"video",example:"Mis videos están en el estudio.",exampleEn:"My videos are in the study.",approx:"bi-de-o",ipa:"ˈbiðeo",explain:"Video ends in -o, so it is masculine: el video.",visual:"📹"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"viejo",english:"old",vi:"cũ, già",example:"Mi casa es vieja y grande.",exampleEn:"My house is old and big.",approx:"bye-kho",ipa:"ˈbjexo",explain:"Viejo is a regular -o adjective (viejo/vieja/viejos/viejas) meaning old, the opposite of nuevo (new).",visual:"🏚️"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"grueso",english:"thick",vi:"dày",example:"Las cortinas son gruesas.",exampleEn:"The curtains are thick.",approx:"grwe-so",ipa:"ˈɡɾweso",explain:"Grueso is a regular -o adjective: grueso, gruesa, gruesos, gruesas.",visual:"🧥"},
+  {lesson:"Lesson 18",topic:"Colors",spanish:"blanco",english:"white",vi:"trắng",example:"Las paredes son blancas.",exampleEn:"The walls are white.",approx:"blan-ko",ipa:"ˈblaŋko",explain:"Blanco is a regular -o color adjective: blanco, blanca, blancos, blancas.",visual:"⚪"},
+  {lesson:"Lesson 18",topic:"Colors (Invariant)",spanish:"gris",english:"gray",vi:"xám",example:"El exterior de la casa es gris.",exampleEn:"The exterior of the house is gray.",approx:"gris",ipa:"ɡɾis",explain:"Gris ends in a consonant, so — like most colors ending in a consonant — it doesn't change for gender; only add -es for plural: grises.",visual:"🩶"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"bonito",english:"pretty",vi:"xinh đẹp, dễ thương",example:"El patio es bonito, con flores.",exampleEn:"The yard is pretty, with flowers.",approx:"bo-ni-to",ipa:"boˈnito",explain:"Bonito is a regular -o adjective: bonito, bonita, bonitos, bonitas.",visual:"🌸"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"antiguo",english:"antique, old",vi:"cổ, xưa",example:"Un espejo antiguo está en el vestíbulo.",exampleEn:"An antique mirror is in the entryway.",approx:"an-ti-gwo",ipa:"anˈtiɣwo",explain:"Antiguo is a regular -o adjective for old objects or buildings — it emphasizes historic or antique value, unlike the more general viejo.",visual:"🏺"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"fino",english:"fine, refined",vi:"tinh xảo, cao cấp",example:"La mesa es de madera fina.",exampleEn:"The table is made of fine wood.",approx:"fi-no",ipa:"ˈfino",explain:"Fino is a regular -o adjective meaning fine or high-quality: fino, fina, finos, finas.",visual:"✨"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"sencillo",english:"simple",vi:"đơn giản",example:"El comedor es sencillo.",exampleEn:"The dining room is simple.",approx:"sen-si-yo",ipa:"senˈsiʝo",explain:"Sencillo is a regular -o adjective: sencillo, sencilla, sencillos, sencillas.",visual:"🔹"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"amplio",english:"spacious",vi:"rộng rãi",example:"La cocina es amplia.",exampleEn:"The kitchen is spacious.",approx:"am-plio",ipa:"ˈamplio",explain:"Amplio is a regular -o adjective: amplio, amplia, amplios, amplias.",visual:"📐"},
+  {lesson:"Lesson 18",topic:"Colors",spanish:"amarillo",english:"yellow",vi:"vàng",example:"Las paredes son amarillas.",exampleEn:"The walls are yellow.",approx:"a-ma-ri-yo",ipa:"amaˈɾiʝo",explain:"Amarillo is a regular -o color adjective: amarillo, amarilla, amarillos, amarillas.",visual:"🟡"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"limpio",english:"clean",vi:"sạch",example:"El horno está limpio.",exampleEn:"The oven is clean.",approx:"lim-pio",ipa:"ˈlimpjo",explain:"Limpio is a regular -o adjective, often used with estar for a temporary state: está limpio (it is clean).",visual:"🧼"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"cómodo",english:"comfortable",vi:"thoải mái",example:"Los sillones son cómodos.",exampleEn:"The armchairs are comfortable.",approx:"ko-mo-do",ipa:"ˈkomoðo",explain:"Cómodo is a regular -o adjective: cómodo, cómoda, cómodos, cómodas.",visual:"😌"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"privado",english:"private",vi:"riêng tư",example:"Mi alcoba tiene un baño privado.",exampleEn:"My bedroom has a private bathroom.",approx:"pri-ba-do",ipa:"pɾiˈβaðo",explain:"Privado is a regular -o adjective: privado, privada, privados, privadas.",visual:"🔒"},
+  {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"hermoso",english:"beautiful",vi:"đẹp, tuyệt đẹp",example:"Hoy es un día hermoso.",exampleEn:"Today is a beautiful day.",approx:"er-mo-so",ipa:"eɾˈmoso",explain:"Hermoso is a regular -o adjective meaning beautiful, similar to bonito but stronger: hermoso, hermosa, hermosos, hermosas.",visual:"🌅"},
+  {lesson:"Lesson 18",topic:"Colors",spanish:"rojo",english:"red",vi:"đỏ",example:"La alfombra es roja.",exampleEn:"The rug is red.",approx:"ro-kho",ipa:"ˈroxo",explain:"Rojo is a regular -o color adjective: rojo, roja, rojos, rojas.",visual:"🔴"}
 ];
 
 const grammarBank = {
@@ -686,6 +751,30 @@ const grammarBank = {
     {q:"Yo ____ la verdad. (decir)",choices:["digo","dice","dices"],a:"digo",why:"Digo is the irregular yo form of decir."},
     {q:"¿____ ustedes venir a la fiesta? (poder)",choices:["Pueden","Puedo","Puede"],a:"Pueden",why:"Pueden is the ellos/ellas/ustedes form of poder (o→ue stem change)."},
     {q:"Ella no ____ nada. (saber)",choices:["sabe","sé","sabo"],a:"sabe",why:"Sabe is the él/ella/usted form of saber; sé is only for yo."}
+  ],
+  "Lesson 17": [
+    {q:"____ cocina es amplia.",choices:["La","El","Los"],a:"La",why:"Cocina ends in -a, so it takes la."},
+    {q:"____ comedor es sencillo.",choices:["El","La","Las"],a:"El",why:"Comedor ends in -dor, a typically masculine ending, so it takes el."},
+    {q:"Mis libros están en ____ estudio.",choices:["el","la","los"],a:"el",why:"Estudio ends in -o, so it takes el."},
+    {q:"____ paredes son blancas.",choices:["Las","Los","La"],a:"Las",why:"Pared is feminine (la pared); its plural takes las."},
+    {q:"Which word means 'the living room'?",choices:["la sala","el comedor","la alcoba"],a:"la sala",why:"La sala is the living room; el comedor is the dining room and la alcoba is the bedroom."},
+    {q:"____ nevera es bastante grande.",choices:["La","El","Los"],a:"La",why:"Nevera ends in -a, so it takes la."},
+    {q:"Which word means 'the yard'?",choices:["el patio","el vestíbulo","la sala"],a:"el patio",why:"El patio is the yard; el vestíbulo is the entryway."},
+    {q:"____ colección de discos compactos está aquí.",choices:["La","El","Los"],a:"La",why:"Words ending in -ción, like colección, are always feminine."},
+    {q:"Un espejo antiguo está en ____ vestíbulo.",choices:["el","la","los"],a:"el",why:"Vestíbulo ends in -o, so it takes el."},
+    {q:"Which word means 'the easy chair'?",choices:["el sillón","la silla","el comedor"],a:"el sillón",why:"El sillón is a large easy chair; la silla is a regular chair — different words."}
+  ],
+  "Lesson 18": [
+    {q:"Mi casa es ____.",choices:["vieja","viejo","viejos"],a:"vieja",why:"Casa is feminine, so the -o adjective viejo becomes vieja to agree."},
+    {q:"Las cortinas son ____.",choices:["gruesas","grueso","gruesos"],a:"gruesas",why:"Cortinas is feminine plural, so grueso becomes gruesas."},
+    {q:"El exterior es ____.",choices:["gris","grisa","grisos"],a:"gris",why:"Gris ends in a consonant, so it doesn't change for gender — same form for masculine and feminine."},
+    {q:"La cocina es ____, con paredes amarillas.",choices:["amplia","amplio","amplios"],a:"amplia",why:"Cocina is feminine, so amplio becomes amplia."},
+    {q:"El comedor es ____.",choices:["sencillo","sencilla","sencillos"],a:"sencillo",why:"Comedor is masculine, so sencillo keeps its -o ending."},
+    {q:"Mi alcoba tiene un baño ____.",choices:["privado","privada","privados"],a:"privado",why:"Baño is masculine, so privado keeps its -o ending, even though the subject alcoba is feminine."},
+    {q:"Los sillones son ____.",choices:["cómodos","cómoda","cómodo"],a:"cómodos",why:"Sillones is masculine plural, so cómodo becomes cómodos."},
+    {q:"La alfombra es ____ y azul marino.",choices:["roja","rojo","rojos"],a:"roja",why:"Alfombra is feminine, so rojo becomes roja."},
+    {q:"Un espejo ____ está en el vestíbulo.",choices:["antiguo","antigua","antiguos"],a:"antiguo",why:"Espejo is masculine, so antiguo keeps its -o ending."},
+    {q:"Hoy es un día ____.",choices:["hermoso","hermosa","hermosos"],a:"hermoso",why:"Día is masculine (an exception ending in -a), so hermoso keeps its -o ending."}
   ]
 };
 
@@ -880,6 +969,30 @@ const listeningBank = {
       {q:"What is the speaker doing there?", a:["la compra","hago la compra"], hint:"Listen for: hago..."},
       {q:"Can the person come?", a:["sí, puedo","puedo","sí"], hint:"Listen for: ¿puedes venir?..."},
       {q:"What does the speaker not know?", a:["qué digo","que digo"], hint:"Listen at the end."}
+    ]
+  },
+  "Lesson 17": {
+    text:"Mi casa es vieja y grande, con muchas ventanas. El comedor es sencillo, con una mesa y seis sillas. La cocina es amplia, con paredes amarillas y gabinetes blancos. Dos sillones y un piano están en la sala. Mis libros, mis cuadernos y mis videos están en el estudio.",
+    meaning:"My house is old and big, with many windows. The dining room is simple, with a table and six chairs. The kitchen is spacious, with yellow walls and white cabinets. Two armchairs and a piano are in the living room. My books, my notebooks, and my videos are in the study.",
+    dictation:["El comedor es sencillo, con una mesa y seis sillas.","Mis libros, mis cuadernos y mis videos están en el estudio."],
+    questions:[
+      {q:"How many chairs are in the dining room?", a:["seis","seis sillas"], hint:"Listen for: una mesa y seis sillas."},
+      {q:"What color are the kitchen walls?", a:["amarillas"], hint:"Listen for: paredes amarillas."},
+      {q:"What two things are in the sala?", a:["dos sillones y un piano","sillones y piano"], hint:"Listen for: en la sala."},
+      {q:"Where are the books and notebooks?", a:["el estudio","en el estudio","estudio"], hint:"Listen at the end."},
+      {q:"How does the speaker describe their house at the start?", a:["vieja y grande","es vieja y grande"], hint:"Listen for: mi casa es..."}
+    ]
+  },
+  "Lesson 18": {
+    text:"Mi casa es vieja y grande, con muchas ventanas. Las paredes son blancas; el exterior es gris. El patio es bonito, con flores todavía. Un espejo antiguo está en el vestíbulo. Hoy es un día hermoso.",
+    meaning:"My house is old and big, with many windows. The walls are white; the exterior is gray. The yard is pretty, with flowers still blooming. An antique mirror is in the entryway. Today is a beautiful day.",
+    dictation:["Mi casa es vieja y grande, con muchas ventanas.","Hoy es un día hermoso."],
+    questions:[
+      {q:"What color is the exterior of the house?", a:["gris"], hint:"Listen for: el exterior es..."},
+      {q:"What color are the walls?", a:["blancas"], hint:"Listen for: las paredes son..."},
+      {q:"What is in the yard?", a:["flores"], hint:"Listen for: el patio es bonito, con..."},
+      {q:"What kind of mirror is in the entryway?", a:["antiguo","un espejo antiguo"], hint:"Listen for: un espejo..."},
+      {q:"How does the speaker describe today?", a:["hermoso","un día hermoso"], hint:"Listen at the end."}
     ]
   }
 };
@@ -1177,6 +1290,41 @@ const quizBank = {
     {q:"I give = ?", a:["doy"], hint:"dar, yo-irregular only"},
     {q:"I see = ?", a:["veo"], hint:"ver, yo-irregular only"},
     {q:"I know = ?", a:["sé"], hint:"saber, yo-irregular only, with an accent"}
+  ],
+  "Lesson 17": [
+    {q:"the bedroom = ?", a:["la alcoba","alcoba"], hint:"feminine noun ending in -a"},
+    {q:"the rug = ?", a:["la alfombra","alfombra"], hint:"feminine noun ending in -a"},
+    {q:"the ballpoint pen = ?", a:["el bolígrafo","bolígrafo"], hint:"masculine noun ending in -o"},
+    {q:"the kitchen = ?", a:["la cocina","cocina"], hint:"feminine noun ending in -a"},
+    {q:"the dining room = ?", a:["el comedor","comedor"], hint:"masculine noun ending in -dor"},
+    {q:"the curtain = ?", a:["la cortina","cortina"], hint:"feminine noun ending in -a"},
+    {q:"the mirror = ?", a:["el espejo","espejo"], hint:"masculine noun ending in -o"},
+    {q:"the stove = ?", a:["la estufa","estufa"], hint:"feminine noun ending in -a"},
+    {q:"the oven = ?", a:["el horno","horno"], hint:"masculine noun ending in -o"},
+    {q:"the refrigerator = ?", a:["la nevera","nevera"], hint:"feminine noun ending in -a"},
+    {q:"the wall = ?", a:["la pared","pared"], hint:"feminine noun ending in a consonant — memorize"},
+    {q:"the yard = ?", a:["el patio","patio"], hint:"masculine noun ending in -o"},
+    {q:"the living room = ?", a:["la sala","sala"], hint:"feminine noun ending in -a"},
+    {q:"the easy chair = ?", a:["el sillón","sillón"], hint:"masculine; plural drops the accent: sillones"},
+    {q:"the entryway = ?", a:["el vestíbulo","vestíbulo"], hint:"masculine noun ending in -o"},
+    {q:"the pencil = ?", a:["el lápiz","lápiz"], hint:"masculine; plural is lápices"}
+  ],
+  "Lesson 18": [
+    {q:"old = ?", a:["viejo"], hint:"regular -o adjective, opposite of nuevo"},
+    {q:"thick = ?", a:["grueso"], hint:"regular -o adjective"},
+    {q:"white = ?", a:["blanco"], hint:"regular -o color adjective"},
+    {q:"gray = ?", a:["gris"], hint:"consonant ending, doesn't change for gender"},
+    {q:"pretty = ?", a:["bonito"], hint:"regular -o adjective"},
+    {q:"antique, old = ?", a:["antiguo"], hint:"regular -o adjective"},
+    {q:"fine, refined = ?", a:["fino"], hint:"regular -o adjective"},
+    {q:"simple = ?", a:["sencillo"], hint:"regular -o adjective"},
+    {q:"spacious = ?", a:["amplio"], hint:"regular -o adjective"},
+    {q:"yellow = ?", a:["amarillo"], hint:"regular -o color adjective"},
+    {q:"clean = ?", a:["limpio"], hint:"regular -o adjective"},
+    {q:"comfortable = ?", a:["cómodo"], hint:"regular -o adjective"},
+    {q:"private = ?", a:["privado"], hint:"regular -o adjective"},
+    {q:"beautiful = ?", a:["hermoso"], hint:"regular -o adjective, stronger than bonito"},
+    {q:"red = ?", a:["rojo"], hint:"regular -o color adjective"}
   ]
 };
 
@@ -1276,6 +1424,18 @@ const grammarNotesBank = {
     {title:"2. Stem-changing verbs", body:"Some verbs change their stem vowel in every form except nosotros/vosotros: e→ie (querer→quiero), o→ue (poder→puedo).", pattern:"stem vowel changes, endings stay regular", example:"Quiero, quieres, quiere, queremos, queréis, quieren.", meaning:"I want, you want, he/she wants, we want, you all want, they want."},
     {title:"3. Hybrid verbs: yo-irregular + stem-change", body:"Tener, venir, and decir combine both patterns: an irregular yo form AND a stem change in the other forms (except nosotros/vosotros).", pattern:"irregular yo + stem change", example:"Tengo, tienes, tiene, tenemos, tenéis, tienen.", meaning:"I have, you have, he/she has, we have, you all have, they have."},
     {title:"4. Fully irregular: ir", body:"Ir (to go) doesn't follow any pattern — its forms come from a different root entirely and must be memorized.", pattern:"voy/vas/va/vamos/vais/van", example:"Voy al cine. Vamos a la playa.", meaning:"I'm going to the movies. We're going to the beach."}
+  ],
+  "Lesson 17": [
+    {title:"1. Most nouns ending in -a are feminine", body:"La cocina, la sala, la alfombra, la nevera, la estufa, and la madera all end in -a and take la.", pattern:"-a → la", example:"La cocina es amplia.", meaning:"The kitchen is spacious."},
+    {title:"2. Most nouns ending in -o are masculine", body:"El estudio, el patio, el espejo, el vestíbulo, el video, el horno, el cuaderno, and el bolígrafo all end in -o and take el.", pattern:"-o → el", example:"El patio es bonito.", meaning:"The yard is pretty."},
+    {title:"3. Nouns ending in -ción are always feminine", body:"La colección follows this reliable pattern, shared by almost every -ción noun in Spanish.", pattern:"-ción → la", example:"La colección está en el estudio.", meaning:"The collection is in the study."},
+    {title:"4. Consonant-ending nouns must be memorized", body:"La pared and el sillón both end in a consonant, so their gender can't be guessed from the ending alone and must be learned with the word.", pattern:"consonant ending → memorize", example:"La pared es blanca. El sillón es cómodo.", meaning:"The wall is white. The easy chair is comfortable."}
+  ],
+  "Lesson 18": [
+    {title:"1. New adjectives follow the same -o/-a/-os/-as pattern", body:"Viejo, blanco, bonito, antiguo, sencillo, amplio, amarillo, limpio, cómodo, privado, hermoso, and rojo are all regular -o adjectives, following the same pattern you learned in Lesson 7 (alto/alta/altos/altas).", pattern:"-o/-a/-os/-as", example:"La casa es vieja. El comedor es sencillo.", meaning:"The house is old. The dining room is simple."},
+    {title:"2. Some colors don't change for gender", body:"Gris ends in a consonant, so — like fácil and difícil from Lesson 7 — it stays the same for masculine and feminine, only adding -es for plural.", pattern:"consonant-ending color: no gender change", example:"El gato gris. La pared gris.", meaning:"The gray cat. The gray wall."},
+    {title:"3. Fino vs. grueso describe material and thickness", body:"Fino (fine/refined) and grueso (thick) are often used to describe furniture and fabric quality, not just size.", pattern:"material/thickness adjectives", example:"Madera fina. Cortinas gruesas.", meaning:"Fine wood. Thick curtains."},
+    {title:"4. Bonito vs. hermoso", body:"Both mean 'pretty/beautiful', but hermoso is stronger and more poetic, while bonito is the everyday, casual word.", pattern:"bonito (casual) vs. hermoso (strong)", example:"El patio es bonito. Hoy es un día hermoso.", meaning:"The yard is pretty. Today is a beautiful day."}
   ]
 };
 
