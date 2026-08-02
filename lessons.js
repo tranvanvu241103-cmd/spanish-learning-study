@@ -250,6 +250,20 @@ const lessonInfo = {
       {spanish:"El patio es bonito, con flores todavía.", english:"The yard is pretty, with flowers still blooming."},
       {spanish:"Hoy es un día hermoso.", english:"Today is a beautiful day."}
     ]
+  },
+  "Lesson 19": {
+    title:"La Familia — Family Members & Possessive Adjectives",
+    level:"A1",
+    vocabulary:"family members and the possessive adjectives mi, tu, su, nuestro",
+    grammar:"possessive adjectives agree with the thing owned, not the owner; de + owner instead of apostrophe-s",
+    listening:"someone describing their family",
+    goal:"After this lesson, you can name the members of a family and say who something belongs to using mi/tu/su/nuestro, agreeing them with the thing owned rather than the owner, and using de + owner where English uses 's.",
+    core:[
+      {spanish:"Mi familia es grande: mis padres, mis hermanos y yo.", english:"My family is big: my parents, my siblings, and me."},
+      {spanish:"Tu tío y tu tía viven en la ciudad con sus dos hijos.", english:"Your uncle and your aunt live in the city with their two children."},
+      {spanish:"Nuestra casa está cerca de la casa de mis abuelos.", english:"Our house is near my grandparents' house."},
+      {spanish:"Su abuela come con nuestra familia los domingos.", english:"His grandmother eats with our family on Sundays."}
+    ]
   }
 };
 
@@ -566,7 +580,26 @@ const baseItems = [
   {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"cómodo",english:"comfortable",vi:"thoải mái",example:"Los sillones son cómodos.",exampleEn:"The armchairs are comfortable.",approx:"ko-mo-do",ipa:"ˈkomoðo",explain:"Cómodo is a regular -o adjective: cómodo, cómoda, cómodos, cómodas.",visual:"😌"},
   {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"privado",english:"private",vi:"riêng tư",example:"Mi alcoba tiene un baño privado.",exampleEn:"My bedroom has a private bathroom.",approx:"pri-ba-do",ipa:"pɾiˈβaðo",explain:"Privado is a regular -o adjective: privado, privada, privados, privadas.",visual:"🔒"},
   {lesson:"Lesson 18",topic:"Regular -o Adjectives",spanish:"hermoso",english:"beautiful",vi:"đẹp, tuyệt đẹp",example:"Hoy es un día hermoso.",exampleEn:"Today is a beautiful day.",approx:"er-mo-so",ipa:"eɾˈmoso",explain:"Hermoso is a regular -o adjective meaning beautiful, similar to bonito but stronger: hermoso, hermosa, hermosos, hermosas.",visual:"🌅"},
-  {lesson:"Lesson 18",topic:"Colors",spanish:"rojo",english:"red",vi:"đỏ",example:"La alfombra es roja.",exampleEn:"The rug is red.",approx:"ro-kho",ipa:"ˈroxo",explain:"Rojo is a regular -o color adjective: rojo, roja, rojos, rojas.",visual:"🔴"}
+  {lesson:"Lesson 18",topic:"Colors",spanish:"rojo",english:"red",vi:"đỏ",example:"La alfombra es roja.",exampleEn:"The rug is red.",approx:"ro-kho",ipa:"ˈroxo",explain:"Rojo is a regular -o color adjective: rojo, roja, rojos, rojas.",visual:"🔴"},
+  {lesson:"Lesson 19",topic:"Family — Immediate",spanish:"la familia",english:"the family",vi:"gia đình",example:"Mi familia es grande.",exampleEn:"My family is big.",approx:"la fa-mi-lia",ipa:"la faˈmilja",explain:"Familia ends in -a, so it is feminine: la familia. The -li- is pronounced like the y in yes when it runs into the a.",visual:"👨‍👩‍👧‍👦"},
+  {lesson:"Lesson 19",topic:"Family — Immediate",spanish:"el padre",english:"the father",vi:"bố / cha",example:"Mi padre es doctor.",exampleEn:"My father is a doctor.",approx:"el pa-dre",ipa:"el ˈpaðɾe",explain:"Padre ends in -e, not -o, but is masculine: el padre. The d between vowels is soft, like the th in this.",visual:"👨"},
+  {lesson:"Lesson 19",topic:"Family — Immediate",spanish:"la madre",english:"the mother",vi:"mẹ",example:"Mi madre es profesora.",exampleEn:"My mother is a teacher.",approx:"la ma-dre",ipa:"la ˈmaðɾe",explain:"Madre ends in -e but is feminine: la madre. It pairs with el padre, so learn the two together.",visual:"👩"},
+  {lesson:"Lesson 19",topic:"Family — Immediate",spanish:"los padres",english:"the parents",vi:"bố mẹ / cha mẹ",example:"Mis padres viven en la ciudad.",exampleEn:"My parents live in the city.",approx:"los pa-dres",ipa:"los ˈpaðɾes",explain:"The masculine plural covers a mixed group: los padres means the parents (father + mother), not only fathers. The same works for los abuelos, los tíos, los hijos.",visual:"👫"},
+  {lesson:"Lesson 19",topic:"Family — Immediate",spanish:"el hijo",english:"the son",vi:"con trai",example:"Su hijo es alto.",exampleEn:"Her son is tall.",approx:"el i-kho",ipa:"el ˈixo",explain:"The h is silent and the j is a throaty kh sound: i-kho. Los hijos means the children (sons and daughters together).",visual:"👦"},
+  {lesson:"Lesson 19",topic:"Family — Immediate",spanish:"la hija",english:"the daughter",vi:"con gái",example:"Nuestra hija estudia español.",exampleEn:"Our daughter studies Spanish.",approx:"la i-kha",ipa:"la ˈixa",explain:"Same silent h and throaty j as hijo; only the ending changes to -a for the feminine.",visual:"👧"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"el abuelo",english:"the grandfather",vi:"ông",example:"Mi abuelo vive con nosotros.",exampleEn:"My grandfather lives with us.",approx:"el a-bwe-lo",ipa:"el aˈβwelo",explain:"The b between vowels is soft, closer to a v made with both lips. Los abuelos means the grandparents.",visual:"👴"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"la abuela",english:"the grandmother",vi:"bà",example:"La casa de mi abuela es vieja.",exampleEn:"My grandmother's house is old.",approx:"la a-bwe-la",ipa:"la aˈβwela",explain:"Abuela ends in -a, so it is feminine, following the regular -o/-a pair with abuelo.",visual:"👵"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"el tío",english:"the uncle",vi:"chú / bác / cậu",example:"Mi tío trabaja en un banco.",exampleEn:"My uncle works at a bank.",approx:"el ti-o",ipa:"el ˈtio",explain:"The accent on í splits the vowels into two syllables: TI-o, not tyo. Los tíos means the aunt and uncle together.",visual:"🧔"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"la tía",english:"the aunt",vi:"cô / dì / bác gái",example:"Mi tía y su esposo viven en la ciudad.",exampleEn:"My aunt and her husband live in the city.",approx:"la ti-a",ipa:"la ˈtia",explain:"Same accented í as tío: TI-a in two syllables.",visual:"👩‍🦰"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"el primo",english:"the cousin",vi:"anh/em họ",example:"Mi primo es mi amigo.",exampleEn:"My cousin is my friend.",approx:"el pri-mo",ipa:"el ˈpɾimo",explain:"Regular -o/-a pair: el primo (male cousin), la prima (female cousin). English uses one word for both.",visual:"🧑"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"el esposo",english:"the husband",vi:"chồng",example:"El esposo de mi tía es doctor.",exampleEn:"My aunt's husband is a doctor.",approx:"el es-po-so",ipa:"el esˈposo",explain:"Regular -o/-a pair with la esposa. Note el esposo de mi tía — Spanish uses de instead of an apostrophe-s.",visual:"🤵"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"la esposa",english:"the wife",vi:"vợ",example:"Su esposa trabaja en el hospital.",exampleEn:"His wife works at the hospital.",approx:"la es-po-sa",ipa:"la esˈposa",explain:"Esposa ends in -a, so it is feminine, the regular partner of el esposo.",visual:"👰"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"el nieto",english:"the grandson",vi:"cháu trai",example:"Los nietos comen con los abuelos.",exampleEn:"The grandchildren eat with the grandparents.",approx:"el nye-to",ipa:"el ˈnjeto",explain:"The ie glides together into one syllable: NYE-to. La nieta is the granddaughter; los nietos covers both.",visual:"👶"},
+  {lesson:"Lesson 19",topic:"Family — Extended",spanish:"el sobrino",english:"the nephew",vi:"cháu trai (con của anh chị em)",example:"Mi sobrino tiene un perro.",exampleEn:"My nephew has a dog.",approx:"el so-bri-no",ipa:"el soˈβɾino",explain:"Regular -o/-a pair: el sobrino (nephew), la sobrina (niece). The b between vowels is soft.",visual:"🧒"},
+  {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"mi",english:"my",vi:"của tôi",example:"Mi hermano y mis hermanas están aquí.",exampleEn:"My brother and my sisters are here.",approx:"mi",ipa:"mi",explain:"Mi has one form for masculine and feminine; add -s only when the thing owned is plural: mi hermano, mis hermanas.",visual:"🙋"},
+  {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"tu",english:"your",vi:"của bạn",example:"¿Dónde está tu madre?",exampleEn:"Where is your mother?",approx:"tu",ipa:"tu",explain:"Tu (your) has no accent; tú (you) from Lesson 8 does. Only the accent tells them apart: tu casa = your house, tú eres = you are.",visual:"👉"},
+  {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"su",english:"his, her, their, your (formal)",vi:"của anh ấy / cô ấy / họ",example:"Su familia vive en Madrid.",exampleEn:"His family lives in Madrid.",approx:"su",ipa:"su",explain:"Su covers his, her, their, and formal your — context decides which. To be explicit, say la familia de él or la familia de ella.",visual:"👥"},
+  {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"nuestro",english:"our",vi:"của chúng tôi",example:"Nuestra casa es pequeña.",exampleEn:"Our house is small.",approx:"nwes-tro",ipa:"ˈnwestɾo",explain:"Nuestro is the only possessive here that changes for gender as well as number: nuestro, nuestra, nuestros, nuestras.",visual:"🏠"}
 ];
 
 const grammarBank = {
@@ -775,6 +808,18 @@ const grammarBank = {
     {q:"La alfombra es ____ y azul marino.",choices:["roja","rojo","rojos"],a:"roja",why:"Alfombra is feminine, so rojo becomes roja."},
     {q:"Un espejo ____ está en el vestíbulo.",choices:["antiguo","antigua","antiguos"],a:"antiguo",why:"Espejo is masculine, so antiguo keeps its -o ending."},
     {q:"Hoy es un día ____.",choices:["hermoso","hermosa","hermosos"],a:"hermoso",why:"Día is masculine (an exception ending in -a), so hermoso keeps its -o ending."}
+  ],
+  "Lesson 19": [
+    {q:"____ hermana es alta.",choices:["Mi","Mis","Mía"],a:"Mi",why:"Hermana is singular, so mi stays singular. Mi never changes for gender — only for number."},
+    {q:"____ padres viven en la ciudad.",choices:["Mis","Mi","Mío"],a:"Mis",why:"Padres is plural, so mi adds -s: mis padres."},
+    {q:"____ casa es grande.",choices:["Nuestra","Nuestro","Nuestros"],a:"Nuestra",why:"Casa is feminine singular, and nuestro is the one possessive that changes for gender: nuestra casa."},
+    {q:"____ abuelos son viejos.",choices:["Nuestros","Nuestras","Nuestro"],a:"Nuestros",why:"Abuelos is masculine plural, so nuestro becomes nuestros."},
+    {q:"¿Dónde está ____ madre?",choices:["tu","tú","tus"],a:"tu",why:"Tu (your) has no accent; tú (you) does. Madre is singular, so no -s."},
+    {q:"____ hijos estudian español.",choices:["Tus","Tu","Tú"],a:"Tus",why:"Hijos is plural, so tu adds -s: tus hijos."},
+    {q:"María y ____ esposo viven aquí.",choices:["su","sus","suyo"],a:"su",why:"Esposo is singular, so su stays singular — su agrees with the thing owned, not with María."},
+    {q:"Ellos leen ____ libros.",choices:["sus","su","suyos"],a:"sus",why:"Libros is plural, so su becomes sus. The number of owners (ellos) does not matter."},
+    {q:"Ana y Luis están en ____ casa.",choices:["su","sus","nuestra"],a:"su",why:"Two owners but only one house — su agrees with casa (singular), not with Ana y Luis."},
+    {q:"Es la casa ____ mis abuelos.",choices:["de","del","de la"],a:"de",why:"Spanish has no apostrophe-s. Use de + owner: la casa de mis abuelos. Del is only de + el, and abuelos takes los, not el."}
   ]
 };
 
@@ -993,6 +1038,18 @@ const listeningBank = {
       {q:"What is in the yard?", a:["flores"], hint:"Listen for: el patio es bonito, con..."},
       {q:"What kind of mirror is in the entryway?", a:["antiguo","un espejo antiguo"], hint:"Listen for: un espejo..."},
       {q:"How does the speaker describe today?", a:["hermoso","un día hermoso"], hint:"Listen at the end."}
+    ]
+  },
+  "Lesson 19": {
+    text:"Mi familia no es muy grande. Mi padre es doctor y mi madre es profesora. Tengo un hermano y una hermana. Nuestra casa está cerca de la casa de mis abuelos. Mi tía y su esposo viven en la ciudad con sus dos hijos. Los domingos comemos con toda la familia.",
+    meaning:"My family is not very big. My father is a doctor and my mother is a teacher. I have a brother and a sister. Our house is near my grandparents' house. My aunt and her husband live in the city with their two children. On Sundays we eat with the whole family.",
+    dictation:["Mi familia no es muy grande.","Nuestra casa está cerca de la casa de mis abuelos."],
+    questions:[
+      {q:"What is the speaker's father's job?", a:["doctor","es doctor"], hint:"Listen for: mi padre es..."},
+      {q:"What is the speaker's mother's job?", a:["profesora","es profesora"], hint:"Listen for: mi madre es..."},
+      {q:"Whose house is near the speaker's house?", a:["mis abuelos","la casa de mis abuelos","abuelos"], hint:"Listen for: cerca de la casa de..."},
+      {q:"Who lives in the city?", a:["mi tía y su esposo","tía y esposo"], hint:"Listen for: ...viven en la ciudad."},
+      {q:"How many children does the aunt have?", a:["dos","dos hijos"], hint:"Listen for: con sus ... hijos."}
     ]
   }
 };
@@ -1325,6 +1382,27 @@ const quizBank = {
     {q:"private = ?", a:["privado"], hint:"regular -o adjective"},
     {q:"beautiful = ?", a:["hermoso"], hint:"regular -o adjective, stronger than bonito"},
     {q:"red = ?", a:["rojo"], hint:"regular -o color adjective"}
+  ],
+  "Lesson 19": [
+    {q:"the family = ?", a:["la familia"], hint:"feminine, ends in -a"},
+    {q:"the father = ?", a:["el padre"], hint:"masculine even though it ends in -e"},
+    {q:"the mother = ?", a:["la madre"], hint:"feminine even though it ends in -e"},
+    {q:"the parents = ?", a:["los padres"], hint:"masculine plural covers father + mother"},
+    {q:"the son = ?", a:["el hijo"], hint:"silent h, throaty j"},
+    {q:"the daughter = ?", a:["la hija"], hint:"silent h, throaty j"},
+    {q:"the grandfather = ?", a:["el abuelo"], hint:"los ___ = the grandparents"},
+    {q:"the grandmother = ?", a:["la abuela"], hint:"regular -o/-a pair"},
+    {q:"the uncle = ?", a:["el tío"], hint:"accented í: TI-o"},
+    {q:"the aunt = ?", a:["la tía"], hint:"accented í: TI-a"},
+    {q:"the cousin (male) = ?", a:["el primo"], hint:"la ___ for a female cousin"},
+    {q:"the husband = ?", a:["el esposo"], hint:"regular -o/-a pair"},
+    {q:"the wife = ?", a:["la esposa"], hint:"regular -o/-a pair"},
+    {q:"the grandson = ?", a:["el nieto"], hint:"ie glides into one syllable: NYE-to"},
+    {q:"the nephew = ?", a:["el sobrino"], hint:"la ___ for a niece"},
+    {q:"my = ?", a:["mi"], hint:"add -s only for plural things"},
+    {q:"your (informal) = ?", a:["tu"], hint:"no accent — the accented form means 'you'"},
+    {q:"his / her / their = ?", a:["su"], hint:"one word covers all three"},
+    {q:"our = ?", a:["nuestro"], hint:"changes for gender AND number"}
   ]
 };
 
@@ -1436,6 +1514,14 @@ const grammarNotesBank = {
     {title:"2. Some colors don't change for gender", body:"Gris ends in a consonant, so — like fácil and difícil from Lesson 7 — it stays the same for masculine and feminine, only adding -es for plural.", pattern:"consonant-ending color: no gender change", example:"El gato gris. La pared gris.", meaning:"The gray cat. The gray wall."},
     {title:"3. Fino vs. grueso describe material and thickness", body:"Fino (fine/refined) and grueso (thick) are often used to describe furniture and fabric quality, not just size.", pattern:"material/thickness adjectives", example:"Madera fina. Cortinas gruesas.", meaning:"Fine wood. Thick curtains."},
     {title:"4. Bonito vs. hermoso", body:"Both mean 'pretty/beautiful', but hermoso is stronger and more poetic, while bonito is the everyday, casual word.", pattern:"bonito (casual) vs. hermoso (strong)", example:"El patio es bonito. Hoy es un día hermoso.", meaning:"The yard is pretty. Today is a beautiful day."}
+  ],
+  "Lesson 19": [
+    {title:"1. Possessives agree with the thing owned, not the owner", body:"This is the opposite of English. In English 'his' and 'her' change with the owner; in Spanish the possessive changes with the noun that follows it. Ellos (they, plural) still say su casa if there is only one house.", pattern:"possessive + noun → agrees with the noun", example:"Ana y Luis están en su casa. Ellos leen sus libros.", meaning:"Ana and Luis are in their house. They read their books."},
+    {title:"2. Mi, tu, su change only for number", body:"These three have one form for masculine and feminine. Add -s when the thing owned is plural: mi/mis, tu/tus, su/sus.", pattern:"mi → mis, tu → tus, su → sus", example:"Mi hermano y mis hermanas. Tu tía y tus primos.", meaning:"My brother and my sisters. Your aunt and your cousins."},
+    {title:"3. Nuestro changes for gender AND number", body:"Nuestro is the only possessive in this lesson with four forms, like a regular -o adjective: nuestro, nuestra, nuestros, nuestras.", pattern:"nuestro/nuestra/nuestros/nuestras", example:"Nuestro patio. Nuestra casa. Nuestros abuelos. Nuestras hijas.", meaning:"Our yard. Our house. Our grandparents. Our daughters."},
+    {title:"4. Tu (your) vs. tú (you) — the accent matters", body:"Tu with no accent is the possessive 'your' and goes before a noun. Tú with an accent is the subject pronoun 'you' from Lesson 8. They sound the same, so the accent is the only signal in writing.", pattern:"tu + noun vs. tú + verb", example:"Tu madre es profesora. Tú eres mi amigo.", meaning:"Your mother is a teacher. You are my friend."},
+    {title:"5. Use de + owner instead of apostrophe-s", body:"Spanish has no 's construction. Flip the phrase around: 'my grandmother's house' becomes la casa de mi abuela (the house of my grandmother). When de is followed by el, they contract to del: la casa del doctor. This also clears up the ambiguity of su — la casa de él (his house) vs. la casa de ella (her house).", pattern:"thing + de + owner (de + el → del)", example:"La casa de mis abuelos. El esposo de mi tía. El carro del doctor.", meaning:"My grandparents' house. My aunt's husband. The doctor's car."},
+    {title:"6. Masculine plural covers mixed groups", body:"A masculine plural family word includes both genders: los padres means the parents (father and mother), not only fathers. The same applies to los abuelos, los tíos, los hijos, los primos, los nietos.", pattern:"masculine plural = mixed group", example:"Mis padres. Mis abuelos. Sus hijos.", meaning:"My parents. My grandparents. Their children."}
   ]
 };
 
