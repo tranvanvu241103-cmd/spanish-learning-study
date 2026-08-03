@@ -639,10 +639,20 @@
   <section id="builder" class="section">
     <div class="card">
       <h2>🔊 Giọng đọc tiếng Tây Ban Nha</h2>
-      <p class="small">Nếu nghe phát âm sai (ví dụ "amiga" thành "amida"), trình duyệt/máy của bạn có thể đang dùng giọng đọc chất lượng thấp. Hãy thử chọn giọng khác bên dưới.</p>
-      <label>Chọn giọng đọc</label>
-      <select id="voiceSelect" onchange="setPreferredVoice(this.value)"></select>
+
+      <label>Giọng đọc từ vựng</label>
+      <select id="clipVoiceSelect" onchange="setClipVoice(this.value)">
+        <option value="female">👩 Nữ — Elvira (Tây Ban Nha)</option>
+        <option value="male">👨 Nam — Álvaro (Tây Ban Nha)</option>
+      </select>
+      <p class="small">Đây là file thu sẵn chất lượng cao. Nghe cả hai giọng giúp bạn quen với nhiều người nói khác nhau, không chỉ một giọng duy nhất. Lựa chọn này áp dụng cho <b>từ vựng</b>; câu ví dụ và bài nghe vẫn dùng giọng nữ.</p>
       <button class="audio" onclick="speak('la amiga')">🔊 Nghe thử: la amiga</button>
+      <button class="audio" onclick="speak('el hermano')">🔊 Nghe thử: el hermano</button>
+
+      <hr>
+      <p class="small">Nếu một từ chưa có file thu sẵn, app dùng giọng của trình duyệt. Nếu nghe phát âm sai (ví dụ "amiga" thành "amida"), hãy thử chọn giọng khác bên dưới.</p>
+      <label>Giọng dự phòng của trình duyệt</label>
+      <select id="voiceSelect" onchange="setPreferredVoice(this.value)"></select>
     </div>
 
     <div class="grid">
@@ -706,6 +716,7 @@ let selectedLesson = localStorage.getItem("spanish_selected_lesson_v3") || "Less
 </script>
 <script src="lessons.js"></script>
 <script src="audio/audioMap.js"></script>
+<script src="audio/audioMapMale.js"></script>
 <script>
 let customItems = JSON.parse(localStorage.getItem("spanish_custom_items_v2") || "[]");
 let notes = JSON.parse(localStorage.getItem("spanish_notes_v2") || "[]");
@@ -950,14 +961,28 @@ if("speechSynthesis" in window){
   speechSynthesis.onvoiceschanged = populateVoiceSelect;
 }
 
+let clipVoice = localStorage.getItem("spanish_clip_voice_v1") === "male" ? "male" : "female";
+
+function setClipVoice(value){
+  clipVoice = value === "male" ? "male" : "female";
+  localStorage.setItem("spanish_clip_voice_v1", clipVoice);
+  syncClipVoiceSelect();
+}
+function syncClipVoiceSelect(){
+  const select = document.getElementById("clipVoiceSelect");
+  if(select) select.value = clipVoice;
+}
 function audioMapLookup(text){
-  if(typeof audioMap === "undefined") return null;
   const key = String(text || "").replace(/\s+/g," ").trim();
-  return audioMap[key] || null;
+  if(clipVoice === "male" && typeof audioMapMale !== "undefined" && audioMapMale[key]){
+    return "audio/male/" + audioMapMale[key];
+  }
+  if(typeof audioMap === "undefined") return null;
+  return audioMap[key] ? "audio/" + audioMap[key] : null;
 }
 function playStaticAudio(text, rate){
-  const file = audioMapLookup(text);
-  if(!file) return false;
+  const src = audioMapLookup(text);
+  if(!src) return false;
   const audio = document.getElementById("ttsAudio");
   if(!audio) return false;
   if("speechSynthesis" in window) speechSynthesis.cancel();
@@ -965,7 +990,7 @@ function playStaticAudio(text, rate){
   audio.onerror = () => speakBrowser(text, rate);
   audio.pause();
   audio.currentTime = 0;
-  audio.src = "audio/" + file;
+  audio.src = src;
   audio.playbackRate = rate;
   audio.play().catch(() => speakBrowser(text, rate));
   return true;
@@ -1018,7 +1043,7 @@ function refreshSection(id){
   if(id==="quiz") renderQuiz();
   if(id==="grammar") renderGrammarPractice();
   if(id==="listening") renderListeningQuiz();
-  if(id==="builder"){ renderNotes(); populateVoiceSelect(); }
+  if(id==="builder"){ renderNotes(); populateVoiceSelect(); syncClipVoiceSelect(); }
   if(id==="review") renderReview();
 }
 
@@ -2171,6 +2196,7 @@ renderFlashcard();
 renderQuiz();
 renderNotes();
 populateVoiceSelect();
+syncClipVoiceSelect();
 restoreProgress();
 </script>
 </body>
