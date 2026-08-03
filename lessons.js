@@ -264,6 +264,20 @@ const lessonInfo = {
       {spanish:"Nuestra casa está cerca de la casa de mis abuelos.", english:"Our house is near my grandparents' house."},
       {spanish:"Su abuela come con nuestra familia los domingos.", english:"His grandmother eats with our family on Sundays."}
     ]
+  },
+  "Lesson 20": {
+    title:"Numbers 21–35 — Counting Past Twenty",
+    level:"A1",
+    vocabulary:"numbers 21–35 + veintiún/veintiuna before a noun",
+    grammar:"veinti- merges 21–29 into one word / written accents on veintidós, veintitrés, veintiséis / treinta y + number from 31 / veintiuno → veintiún, veintiuna",
+    listening:"counting students and objects, giving ages and prices",
+    goal:"After this lesson, you can write the numbers 21–29 as a single veinti- word, place the written accent correctly on veintidós, veintitrés, and veintiséis, join 31–35 with y, and shorten veintiuno to veintiún or veintiuna before a noun.",
+    core:[
+      {spanish:"Hay veinticinco estudiantes en la clase.", english:"There are twenty-five students in the class."},
+      {spanish:"Mi hermano tiene veintitrés años.", english:"My brother is twenty-three years old."},
+      {spanish:"El libro cuesta treinta y dos euros.", english:"The book costs thirty-two euros."},
+      {spanish:"Tengo veintiún libros y veintiuna sillas.", english:"I have twenty-one books and twenty-one chairs."}
+    ]
   }
 };
 
@@ -599,7 +613,24 @@ const baseItems = [
   {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"mi",english:"my",vi:"của tôi",example:"Mi hermano y mis hermanas están aquí.",exampleEn:"My brother and my sisters are here.",approx:"mi",ipa:"mi",explain:"Mi has one form for masculine and feminine; add -s only when the thing owned is plural: mi hermano, mis hermanas.",visual:"🙋"},
   {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"tu",english:"your",vi:"của bạn",example:"¿Dónde está tu madre?",exampleEn:"Where is your mother?",approx:"tu",ipa:"tu",explain:"Tu (your) has no accent; tú (you) from Lesson 8 does. Only the accent tells them apart: tu casa = your house, tú eres = you are.",visual:"👉"},
   {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"su",english:"his, her, their, your (formal)",vi:"của anh ấy / cô ấy / họ",example:"Su familia vive en Madrid.",exampleEn:"His family lives in Madrid.",approx:"su",ipa:"su",explain:"Su covers his, her, their, and formal your — context decides which. To be explicit, say la familia de él or la familia de ella.",visual:"👥"},
-  {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"nuestro",english:"our",vi:"của chúng tôi",example:"Nuestra casa es pequeña.",exampleEn:"Our house is small.",approx:"nwes-tro",ipa:"ˈnwestɾo",explain:"Nuestro is the only possessive here that changes for gender as well as number: nuestro, nuestra, nuestros, nuestras.",visual:"🏠"}
+  {lesson:"Lesson 19",topic:"Possessive Adjectives",spanish:"nuestro",english:"our",vi:"của chúng tôi",example:"Nuestra casa es pequeña.",exampleEn:"Our house is small.",approx:"nwes-tro",ipa:"ˈnwestɾo",explain:"Nuestro is the only possessive here that changes for gender as well as number: nuestro, nuestra, nuestros, nuestras.",visual:"🏠"},
+  {lesson:"Lesson 20",topic:"Numbers 21–25",spanish:"veintiuno",english:"twenty-one",vi:"hai mươi mốt",example:"Veintiuno más uno son veintidós.",exampleEn:"Twenty-one plus one is twenty-two.",approx:"beyn-ti-u-no",ipa:"beintiˈuno",explain:"Veintiuno is written as a single word, not veinte y uno. Standing alone it keeps the -o; before a noun it shortens to veintiún.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 21–25",spanish:"veintidós",english:"twenty-two",vi:"hai mươi hai",example:"Mi hermana tiene veintidós años.",exampleEn:"My sister is twenty-two years old.",approx:"beyn-ti-dos",ipa:"beintiˈðos",explain:"The plain word dos has no accent, but veintidós does: the stress lands on the last syllable and the word ends in -s, which forces a written accent.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 21–25",spanish:"veintitrés",english:"twenty-three",vi:"hai mươi ba",example:"Hay veintitrés estudiantes en la clase.",exampleEn:"There are twenty-three students in the class.",approx:"beyn-ti-tres",ipa:"beintiˈtɾes",explain:"Same rule as veintidós — tres gains an accent once it merges, because the stressed final syllable ends in -s.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 21–25",spanish:"veinticuatro",english:"twenty-four",vi:"hai mươi bốn",example:"Hay veinticuatro sillas en la casa.",exampleEn:"There are twenty-four chairs in the house.",approx:"beyn-ti-kwa-tro",ipa:"beintiˈkwatɾo",explain:"Veinticuatro ends in a vowel with the stress already on the second-to-last syllable, so it needs no written accent.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 21–25",spanish:"veinticinco",english:"twenty-five",vi:"hai mươi lăm",example:"El libro cuesta veinticinco euros.",exampleEn:"The book costs twenty-five euros.",approx:"beyn-ti-sin-ko",ipa:"beintiˈsiŋko",explain:"Cinco keeps its own sound inside veinticinco: in Spain the c sounds like th, in Latin America like s.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 26–29",spanish:"veintiséis",english:"twenty-six",vi:"hai mươi sáu",example:"Mi padre tiene veintiséis libros.",exampleEn:"My father has twenty-six books.",approx:"beyn-ti-seys",ipa:"beintiˈsejs",explain:"Seis becomes veintiséis with an accent — the third and last of the accented twenties, all for the same reason: stressed final syllable ending in -s.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 26–29",spanish:"veintisiete",english:"twenty-seven",vi:"hai mươi bảy",example:"Hay veintisiete plantas en la ventana.",exampleEn:"There are twenty-seven plants in the window.",approx:"beyn-ti-sie-te",ipa:"beintiˈsjete",explain:"No accent here: the ie glides into one syllable and the stress falls second-to-last, which is already the default.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 26–29",spanish:"veintiocho",english:"twenty-eight",vi:"hai mươi tám",example:"Mi profesor tiene veintiocho años.",exampleEn:"My teacher is twenty-eight years old.",approx:"beyn-tio-cho",ipa:"beinˈtjotʃo",explain:"When veinti- meets ocho the two vowels run together into one syllable: say beyn-TIO-cho, not beyn-ti-O-cho.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Numbers 26–29",spanish:"veintinueve",english:"twenty-nine",vi:"hai mươi chín",example:"Febrero tiene veintiocho o veintinueve días.",exampleEn:"February has twenty-eight or twenty-nine days.",approx:"beyn-ti-nwe-be",ipa:"beintiˈnweβe",explain:"Veintinueve is the last of the one-word numbers. Its v sounds close to a soft b, as Spanish v always does.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta",english:"thirty",vi:"ba mươi",example:"Hay treinta días en el mes.",exampleEn:"There are thirty days in the month.",approx:"treyn-ta",ipa:"ˈtɾeinta",explain:"Treinta takes no written accent. The tr is one quick tap of the tongue, not the English tr sound.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta y uno",english:"thirty-one",vi:"ba mươi mốt",example:"Hay treinta y uno en total.",exampleEn:"There are thirty-one in total.",approx:"treyn-ta i u-no",ipa:"ˈtɾeinta i ˈuno",explain:"From thirty upward the merging stops: write three separate words joined by y, never treintayuno.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta y dos",english:"thirty-two",vi:"ba mươi hai",example:"El libro cuesta treinta y dos euros.",exampleEn:"The book costs thirty-two euros.",approx:"treyn-ta i dos",ipa:"ˈtɾeinta i ˈðos",explain:"Dos loses the accent it carried in veintidós — as its own separate word after y, it needs none.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta y tres",english:"thirty-three",vi:"ba mươi ba",example:"Mi profesora tiene treinta y tres años.",exampleEn:"My teacher is thirty-three years old.",approx:"treyn-ta i tres",ipa:"ˈtɾeinta i ˈtɾes",explain:"The y is always written out. Spanish never merges numbers above twenty-nine into a single word.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta y cuatro",english:"thirty-four",vi:"ba mươi tư",example:"Hay treinta y cuatro estudiantes.",exampleEn:"There are thirty-four students.",approx:"treyn-ta i kwa-tro",ipa:"ˈtɾeinta i ˈkwatɾo",explain:"Each part keeps its own stress: TREIN-ta i KWA-tro, with a small pause you can hear on the y.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta y cinco",english:"thirty-five",vi:"ba mươi lăm",example:"La planta cuesta treinta y cinco euros.",exampleEn:"The plant costs thirty-five euros.",approx:"treyn-ta i sin-ko",ipa:"ˈtɾeinta i ˈsiŋko",explain:"The same y pattern continues unchanged all the way up to noventa y nueve (99), so learning it once covers every number to a hundred.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Using Numbers with Nouns",spanish:"veintiún",english:"twenty-one (before a masculine noun)",vi:"hai mươi mốt (trước danh từ giống đực)",example:"Tengo veintiún libros.",exampleEn:"I have twenty-one books.",approx:"beyn-ti-un",ipa:"beintiˈun",explain:"Before a masculine noun veintiuno drops its final -o and takes an accent: veintiún libros — exactly the way uno becomes un.",visual:"🔢"},
+  {lesson:"Lesson 20",topic:"Using Numbers with Nouns",spanish:"veintiuna",english:"twenty-one (before a feminine noun)",vi:"hai mươi mốt (trước danh từ giống cái)",example:"Hay veintiuna sillas en la clase.",exampleEn:"There are twenty-one chairs in the classroom.",approx:"beyn-ti-u-na",ipa:"beintiˈuna",explain:"Before a feminine noun veintiuno becomes veintiuna. It is the only number in the twenties that changes for gender.",visual:"🔢"}
 ];
 
 const grammarBank = {
@@ -820,6 +851,18 @@ const grammarBank = {
     {q:"Ellos leen ____ libros.",choices:["sus","su","suyos"],a:"sus",why:"Libros is plural, so su becomes sus. The number of owners (ellos) does not matter."},
     {q:"Ana y Luis están en ____ casa.",choices:["su","sus","nuestra"],a:"su",why:"Two owners but only one house — su agrees with casa (singular), not with Ana y Luis."},
     {q:"Es la casa ____ mis abuelos.",choices:["de","del","de la"],a:"de",why:"Spanish has no apostrophe-s. Use de + owner: la casa de mis abuelos. Del is only de + el, and abuelos takes los, not el."}
+  ],
+  "Lesson 20": [
+    {q:"Hay ____ estudiantes en la clase.",choices:["veintitrés","veintitres","veinte y tres"],a:"veintitrés",why:"Numbers 21–29 merge into one word, and veintitrés carries a written accent on its final syllable."},
+    {q:"Mi hermana tiene ____ años.",choices:["veintidós","veintidos","veinte y dos"],a:"veintidós",why:"The stress falls on the last syllable and the word ends in -s, so the accent is required: veintidós."},
+    {q:"Tengo ____ libros.",choices:["veintiún","veintiuno","veintiuna"],a:"veintiún",why:"Before a masculine noun veintiuno shortens to veintiún, the same way uno shortens to un."},
+    {q:"Hay ____ sillas en la casa.",choices:["veintiuna","veintiún","veintiuno"],a:"veintiuna",why:"Sillas is feminine, so veintiuno takes its feminine form veintiuna."},
+    {q:"El libro cuesta ____ euros.",choices:["treinta y dos","treintaydos","treintidós"],a:"treinta y dos",why:"From thirty upward, numbers are written as three separate words joined by y."},
+    {q:"Febrero tiene ____ días.",choices:["veintinueve","veinti nueve","veinte y nueve"],a:"veintinueve",why:"Veinti- joins straight onto the digit — no space and no y inside the twenties."},
+    {q:"Mi padre tiene ____ libros.",choices:["veintiséis","veintiseis","veinte y seis"],a:"veintiséis",why:"Seis gains a written accent inside veintiséis because the stressed final syllable ends in -s."},
+    {q:"Hay ____ días en el mes.",choices:["treinta","treínta","treintá"],a:"treinta",why:"Treinta is stressed on the second-to-last syllable and ends in a vowel, so it never takes a written accent."},
+    {q:"Hay ____ en total.",choices:["treinta y uno","treinta y un","treinta y una"],a:"treinta y uno",why:"With no noun after it, the number keeps its full form: treinta y uno."},
+    {q:"El café cuesta ____ euros.",choices:["veinticinco","veinti cinco","veintecinco"],a:"veinticinco",why:"The merged form is built on veinti-, not veinte-, and is written with no space."}
   ]
 };
 
@@ -1050,6 +1093,18 @@ const listeningBank = {
       {q:"Whose house is near the speaker's house?", a:["mis abuelos","la casa de mis abuelos","abuelos"], hint:"Listen for: cerca de la casa de..."},
       {q:"Who lives in the city?", a:["mi tía y su esposo","tía y esposo"], hint:"Listen for: ...viven en la ciudad."},
       {q:"How many children does the aunt have?", a:["dos","dos hijos"], hint:"Listen for: con sus ... hijos."}
+    ]
+  },
+  "Lesson 20": {
+    text:"En mi clase hay veintiocho estudiantes. Mi hermano tiene veintitrés años y estudia con nosotros. El libro de español cuesta treinta y cinco euros. Tengo veintiún libros en la mesa de mi casa. La profesora tiene treinta y dos años. Hay veintiuna sillas y una ventana grande.",
+    meaning:"There are twenty-eight students in my class. My brother is twenty-three years old and studies with us. The Spanish book costs thirty-five euros. I have twenty-one books on the table in my house. The teacher is thirty-two years old. There are twenty-one chairs and one big window.",
+    dictation:["En mi clase hay veintiocho estudiantes.","El libro de español cuesta treinta y cinco euros."],
+    questions:[
+      {q:"How many students are in the class?", a:["veintiocho","veintiocho estudiantes"], hint:"Listen for: en mi clase hay..."},
+      {q:"How old is the brother?", a:["veintitrés","veintitrés años"], hint:"Listen for: mi hermano tiene..."},
+      {q:"How much does the Spanish book cost?", a:["treinta y cinco","treinta y cinco euros"], hint:"Listen for: el libro de español cuesta..."},
+      {q:"How many books does the speaker have?", a:["veintiún","veintiún libros","veintiuno"], hint:"Listen for: tengo ... libros."},
+      {q:"How old is the teacher?", a:["treinta y dos","treinta y dos años"], hint:"Listen at the end, for: la profesora tiene..."}
     ]
   }
 };
@@ -1403,6 +1458,25 @@ const quizBank = {
     {q:"your (informal) = ?", a:["tu"], hint:"no accent — the accented form means 'you'"},
     {q:"his / her / their = ?", a:["su"], hint:"one word covers all three"},
     {q:"our = ?", a:["nuestro"], hint:"changes for gender AND number"}
+  ],
+  "Lesson 20": [
+    {q:"twenty-one = ?", a:["veintiuno"], hint:"one word, no accent"},
+    {q:"twenty-two = ?", a:["veintidós"], hint:"needs a written accent on the -ós"},
+    {q:"twenty-three = ?", a:["veintitrés"], hint:"needs a written accent on the -és"},
+    {q:"twenty-four = ?", a:["veinticuatro"], hint:"one word, no accent"},
+    {q:"twenty-five = ?", a:["veinticinco"], hint:"veinti- + cinco, no accent"},
+    {q:"twenty-six = ?", a:["veintiséis"], hint:"needs a written accent on the -éis"},
+    {q:"twenty-seven = ?", a:["veintisiete"], hint:"one word, no accent"},
+    {q:"twenty-eight = ?", a:["veintiocho"], hint:"the vowels join: beyn-TIO-cho"},
+    {q:"twenty-nine = ?", a:["veintinueve"], hint:"the last of the one-word numbers"},
+    {q:"thirty = ?", a:["treinta"], hint:"no accent; the tr is one quick tap"},
+    {q:"thirty-one = ?", a:["treinta y uno"], hint:"three words with y in the middle"},
+    {q:"thirty-two = ?", a:["treinta y dos"], hint:"three words — dos has no accent here"},
+    {q:"thirty-three = ?", a:["treinta y tres"], hint:"three words with y in the middle"},
+    {q:"thirty-four = ?", a:["treinta y cuatro"], hint:"three words with y in the middle"},
+    {q:"thirty-five = ?", a:["treinta y cinco"], hint:"three words with y in the middle"},
+    {q:"twenty-one (before a masculine noun) = ?", a:["veintiún"], hint:"drops the -o and takes an accent"},
+    {q:"twenty-one (before a feminine noun) = ?", a:["veintiuna"], hint:"the -o becomes -a"}
   ]
 };
 
@@ -1522,6 +1596,13 @@ const grammarNotesBank = {
     {title:"4. Tu (your) vs. tú (you) — the accent matters", body:"Tu with no accent is the possessive 'your' and goes before a noun. Tú with an accent is the subject pronoun 'you' from Lesson 8. They sound the same, so the accent is the only signal in writing.", pattern:"tu + noun vs. tú + verb", example:"Tu madre es profesora. Tú eres mi amigo.", meaning:"Your mother is a teacher. You are my friend."},
     {title:"5. Use de + owner instead of apostrophe-s", body:"Spanish has no 's construction. Flip the phrase around: 'my grandmother's house' becomes la casa de mi abuela (the house of my grandmother). When de is followed by el, they contract to del: la casa del doctor. This also clears up the ambiguity of su — la casa de él (his house) vs. la casa de ella (her house).", pattern:"thing + de + owner (de + el → del)", example:"La casa de mis abuelos. El esposo de mi tía. El carro del doctor.", meaning:"My grandparents' house. My aunt's husband. The doctor's car."},
     {title:"6. Masculine plural covers mixed groups", body:"A masculine plural family word includes both genders: los padres means the parents (father and mother), not only fathers. The same applies to los abuelos, los tíos, los hijos, los primos, los nietos.", pattern:"masculine plural = mixed group", example:"Mis padres. Mis abuelos. Sus hijos.", meaning:"My parents. My grandparents. Their children."}
+  ],
+  "Lesson 20": [
+    {title:"1. Numbers 21–29 are written as one single word", body:"Above twenty, Spanish stops writing numbers as separate pieces and fuses them. Veinte changes to the prefix veinti- and the digit attaches directly to it, with no space and no y: veintiuno, veinticuatro, veintisiete. Writing veinte y uno is a common beginner mistake and is simply wrong.", pattern:"veinti- + digit → one word", example:"veintiuno, veinticuatro, veintisiete, veintinueve", meaning:"twenty-one, twenty-four, twenty-seven, twenty-nine"},
+    {title:"2. Three of the twenties need a written accent", body:"Veintidós, veintitrés and veintiséis are the only ones that take an accent. The reason is the general Spanish stress rule: a word ending in -s is normally stressed on the second-to-last syllable, but in these three the stress falls on the last syllable instead, so an accent is written to mark the exception. The digits dos, tres and seis carry no accent on their own — they gain one only after merging.", pattern:"stressed final syllable + ends in -s → written accent", example:"veintidós, veintitrés, veintiséis", meaning:"twenty-two, twenty-three, twenty-six — the only three of the twenties that take an accent"},
+    {title:"3. From thirty onward, numbers split into three words with y", body:"The merging stops at twenty-nine. Thirty and above are written as the tens word, then y, then the digit — as three separate words. So it is treinta y uno, never treintayuno or treintiuno. This same pattern runs unchanged through the forties, fifties and beyond, so once you learn it here it covers every number up to ninety-nine.", pattern:"tens + y + digit (three words)", example:"treinta y uno, treinta y tres, treinta y cinco", meaning:"thirty-one, thirty-three, thirty-five"},
+    {title:"4. Veintiuno shortens before a noun: veintiún / veintiuna", body:"Standing on its own the number is veintiuno. Put a noun after it and it must change, exactly like uno becomes un in Lesson 11. Before a masculine noun it drops the -o and takes an accent: veintiún libros. Before a feminine noun it becomes veintiuna: veintiuna sillas. The same happens with treinta y un libros and treinta y una sillas.", pattern:"veintiuno → veintiún + masculine noun, veintiuna + feminine noun", example:"Tengo veintiún libros y veintiuna sillas. Hay treinta y una mesas.", meaning:"I have twenty-one books and twenty-one chairs. There are thirty-one tables."},
+    {title:"5. Using these numbers for age and price", body:"The two everyday jobs for these numbers are giving an age and giving a price. Age uses tener from Lesson 11 — Spanish says you have years, not that you are them — so it is tengo veintitrés años, never soy veintitrés. Price uses cuesta plus the number plus euros. Note that años and euros are both masculine plural, so twenty-one before them becomes veintiún.", pattern:"tener + number + años / costar + number + euros", example:"Tengo veintitrés años. Mi hermano tiene veintiún años. El libro cuesta treinta euros.", meaning:"I am twenty-three years old. My brother is twenty-one years old. The book costs thirty euros."}
   ]
 };
 
