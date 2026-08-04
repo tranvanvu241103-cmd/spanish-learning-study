@@ -278,6 +278,20 @@ const lessonInfo = {
       {spanish:"El libro cuesta treinta y dos euros.", english:"The book costs thirty-two euros."},
       {spanish:"Tengo veintiún libros y veintiuna sillas.", english:"I have twenty-one books and twenty-one chairs."}
     ]
+  },
+  "Lesson 21": {
+    title:"Numbers 36–50 — Counting to Fifty",
+    level:"A1",
+    vocabulary:"numbers 36–50 + cuarenta y un/una before a noun",
+    grammar:"tens + y + digit stays three words all the way to 50 / cuarenta and cincuenta do not look like cuatro and cinco / no number in this range takes a written accent / cuarenta y uno → cuarenta y un, cuarenta y una",
+    listening:"ages, prices and quantities between thirty-six and fifty",
+    goal:"After this lesson, you can count from 36 to 50, spell cuarenta and cincuenta correctly even though they no longer look like cuatro and cinco, keep the tens + y + digit pattern in three separate words, and shorten cuarenta y uno to cuarenta y un or cuarenta y una before a noun.",
+    core:[
+      {spanish:"Mi padre tiene cuarenta y cinco años.", english:"My father is forty-five years old."},
+      {spanish:"Hay cuarenta estudiantes en la escuela.", english:"There are forty students in the school."},
+      {spanish:"La mesa cuesta cincuenta euros.", english:"The table costs fifty euros."},
+      {spanish:"Tengo cuarenta y un libros y cuarenta y una sillas.", english:"I have forty-one books and forty-one chairs."}
+    ]
   }
 };
 
@@ -630,7 +644,24 @@ const baseItems = [
   {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta y cuatro",english:"thirty-four",vi:"ba mươi tư",example:"Hay treinta y cuatro estudiantes.",exampleEn:"There are thirty-four students.",approx:"treyn-ta i kwa-tro",ipa:"ˈtɾeinta i ˈkwatɾo",explain:"Each part keeps its own stress: TREIN-ta i KWA-tro, with a small pause you can hear on the y.",visual:"🔢"},
   {lesson:"Lesson 20",topic:"Thirty and Beyond",spanish:"treinta y cinco",english:"thirty-five",vi:"ba mươi lăm",example:"La planta cuesta treinta y cinco euros.",exampleEn:"The plant costs thirty-five euros.",approx:"treyn-ta i sin-ko",ipa:"ˈtɾeinta i ˈsiŋko",explain:"The same y pattern continues unchanged all the way up to noventa y nueve (99), so learning it once covers every number to a hundred.",visual:"🔢"},
   {lesson:"Lesson 20",topic:"Using Numbers with Nouns",spanish:"veintiún",english:"twenty-one (before a masculine noun)",vi:"hai mươi mốt (trước danh từ giống đực)",example:"Tengo veintiún libros.",exampleEn:"I have twenty-one books.",approx:"beyn-ti-un",ipa:"beintiˈun",explain:"Before a masculine noun veintiuno drops its final -o and takes an accent: veintiún libros — exactly the way uno becomes un.",visual:"🔢"},
-  {lesson:"Lesson 20",topic:"Using Numbers with Nouns",spanish:"veintiuna",english:"twenty-one (before a feminine noun)",vi:"hai mươi mốt (trước danh từ giống cái)",example:"Hay veintiuna sillas en la clase.",exampleEn:"There are twenty-one chairs in the classroom.",approx:"beyn-ti-u-na",ipa:"beintiˈuna",explain:"Before a feminine noun veintiuno becomes veintiuna. It is the only number in the twenties that changes for gender.",visual:"🔢"}
+  {lesson:"Lesson 20",topic:"Using Numbers with Nouns",spanish:"veintiuna",english:"twenty-one (before a feminine noun)",vi:"hai mươi mốt (trước danh từ giống cái)",example:"Hay veintiuna sillas en la clase.",exampleEn:"There are twenty-one chairs in the classroom.",approx:"beyn-ti-u-na",ipa:"beintiˈuna",explain:"Before a feminine noun veintiuno becomes veintiuna. It is the only number in the twenties that changes for gender.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 36–39",spanish:"treinta y seis",english:"thirty-six",vi:"ba mươi sáu",example:"Hay treinta y seis días de vacaciones.",exampleEn:"There are thirty-six days of vacation.",approx:"treyn-ta i seys",ipa:"ˈtɾeinta i ˈseis",explain:"Seis carried an accent inside veintiséis, but standing alone after y it needs none: treinta y seis.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 36–39",spanish:"treinta y siete",english:"thirty-seven",vi:"ba mươi bảy",example:"Mi tía tiene treinta y siete años.",exampleEn:"My aunt is thirty-seven years old.",approx:"treyn-ta i sie-te",ipa:"ˈtɾeinta i ˈsjete",explain:"Three separate words, each keeping its own stress: TREIN-ta i SIE-te.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 36–39",spanish:"treinta y ocho",english:"thirty-eight",vi:"ba mươi tám",example:"El libro tiene treinta y ocho páginas.",exampleEn:"The book has thirty-eight pages.",approx:"treyn-ta i o-cho",ipa:"ˈtɾeinta i ˈotʃo",explain:"Unlike veintiocho, the vowels do not merge here — the y keeps ocho as its own separate word.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 36–39",spanish:"treinta y nueve",english:"thirty-nine",vi:"ba mươi chín",example:"Mi profesor tiene treinta y nueve años.",exampleEn:"My teacher is thirty-nine years old.",approx:"treyn-ta i nwe-be",ipa:"ˈtɾeinta i ˈnweβe",explain:"The v in nueve sounds like a soft b, as Spanish v always does. This is the last number of the thirties.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 40–45",spanish:"cuarenta",english:"forty",vi:"bốn mươi",example:"Hay cuarenta estudiantes en la escuela.",exampleEn:"There are forty students in the school.",approx:"kwa-ren-ta",ipa:"kwaˈɾenta",explain:"Forty is cuarenta, not cuatrenta — the t of cuatro disappears. The r is one quick tap of the tongue.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 40–45",spanish:"cuarenta y uno",english:"forty-one",vi:"bốn mươi mốt",example:"Hay cuarenta y uno en total.",exampleEn:"There are forty-one in total.",approx:"kwa-ren-ta i u-no",ipa:"kwaˈɾenta i ˈuno",explain:"With no noun after it the number keeps its full form: cuarenta y uno. Three words, never cuarentayuno.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 40–45",spanish:"cuarenta y dos",english:"forty-two",vi:"bốn mươi hai",example:"Mi padre tiene cuarenta y dos años.",exampleEn:"My father is forty-two years old.",approx:"kwa-ren-ta i dos",ipa:"kwaˈɾenta i ˈðos",explain:"Dos takes no accent as a separate word — the accent only appeared when it merged into veintidós.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 40–45",spanish:"cuarenta y tres",english:"forty-three",vi:"bốn mươi ba",example:"La camisa cuesta cuarenta y tres euros.",exampleEn:"The shirt costs forty-three euros.",approx:"kwa-ren-ta i tres",ipa:"kwaˈɾenta i ˈtɾes",explain:"The tr in tres is a single tap, not the English tr sound. The y is always written out.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 40–45",spanish:"cuarenta y cuatro",english:"forty-four",vi:"bốn mươi tư",example:"Hay cuarenta y cuatro sillas en la sala.",exampleEn:"There are forty-four chairs in the living room.",approx:"kwa-ren-ta i kwa-tro",ipa:"kwaˈɾenta i ˈkwatɾo",explain:"Here you can hear cuatro next to cuarenta and notice how far apart they have drifted in spelling.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 40–45",spanish:"cuarenta y cinco",english:"forty-five",vi:"bốn mươi lăm",example:"Mi madre tiene cuarenta y cinco años.",exampleEn:"My mother is forty-five years old.",approx:"kwa-ren-ta i sin-ko",ipa:"kwaˈɾenta i ˈsiŋko",explain:"In Spain the c of cinco sounds like th, in Latin America like s — the same choice you already made in Lesson 20.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 46–50",spanish:"cuarenta y seis",english:"forty-six",vi:"bốn mươi sáu",example:"El mes tiene cuarenta y seis horas de clase.",exampleEn:"The month has forty-six hours of class.",approx:"kwa-ren-ta i seys",ipa:"kwaˈɾenta i ˈseis",explain:"No accent anywhere in this number — the twenties were the only place accents were needed.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 46–50",spanish:"cuarenta y siete",english:"forty-seven",vi:"bốn mươi bảy",example:"Hay cuarenta y siete libros en la mesa.",exampleEn:"There are forty-seven books on the table.",approx:"kwa-ren-ta i sie-te",ipa:"kwaˈɾenta i ˈsjete",explain:"The ie of siete glides into one syllable: SIE-te, not si-E-te.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 46–50",spanish:"cuarenta y ocho",english:"forty-eight",vi:"bốn mươi tám",example:"El programa dura cuarenta y ocho minutos.",exampleEn:"The program lasts forty-eight minutes.",approx:"kwa-ren-ta i o-cho",ipa:"kwaˈɾenta i ˈotʃo",explain:"The ch of ocho is one sound, the same ch as in English cheese.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 46–50",spanish:"cuarenta y nueve",english:"forty-nine",vi:"bốn mươi chín",example:"Mi abuelo tiene cuarenta y nueve libros.",exampleEn:"My grandfather has forty-nine books.",approx:"kwa-ren-ta i nwe-be",ipa:"kwaˈɾenta i ˈnweβe",explain:"The last number before fifty. After this the tens word changes to cincuenta.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Numbers 46–50",spanish:"cincuenta",english:"fifty",vi:"năm mươi",example:"La mesa cuesta cincuenta euros.",exampleEn:"The table costs fifty euros.",approx:"sin-kwen-ta",ipa:"sinˈkwenta",explain:"Fifty is cincuenta, not cincoenta — cinco loses its -o and gains -uenta. Same first sound as cinco: th in Spain, s in Latin America.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Using Numbers with Nouns",spanish:"cuarenta y un",english:"forty-one (before a masculine noun)",vi:"bốn mươi mốt (trước danh từ giống đực)",example:"Tengo cuarenta y un libros.",exampleEn:"I have forty-one books.",approx:"kwa-ren-ta i un",ipa:"kwaˈɾenta i ˈun",explain:"Before a masculine noun uno drops its -o: cuarenta y un libros. Unlike veintiún it takes no accent, because it is still its own short word.",visual:"🔢"},
+  {lesson:"Lesson 21",topic:"Using Numbers with Nouns",spanish:"cuarenta y una",english:"forty-one (before a feminine noun)",vi:"bốn mươi mốt (trước danh từ giống cái)",example:"Hay cuarenta y una sillas en la escuela.",exampleEn:"There are forty-one chairs in the school.",approx:"kwa-ren-ta i u-na",ipa:"kwaˈɾenta i ˈuna",explain:"Before a feminine noun uno becomes una: cuarenta y una sillas. Only the uno part ever changes for gender.",visual:"🔢"}
 ];
 
 const grammarBank = {
@@ -863,6 +894,18 @@ const grammarBank = {
     {q:"Hay ____ días en el mes.",choices:["treinta","treínta","treintá"],a:"treinta",why:"Treinta is stressed on the second-to-last syllable and ends in a vowel, so it never takes a written accent."},
     {q:"Hay ____ en total.",choices:["treinta y uno","treinta y un","treinta y una"],a:"treinta y uno",why:"With no noun after it, the number keeps its full form: treinta y uno."},
     {q:"El café cuesta ____ euros.",choices:["veinticinco","veinti cinco","veintecinco"],a:"veinticinco",why:"The merged form is built on veinti-, not veinte-, and is written with no space."}
+  ],
+  "Lesson 21": [
+    {q:"Hay ____ estudiantes en la escuela.",choices:["cuarenta","cuatrenta","cuarienta"],a:"cuarenta",why:"Forty is cuarenta. The t of cuatro disappears — cuatrenta is not a Spanish word."},
+    {q:"La mesa cuesta ____ euros.",choices:["cincuenta","cincoenta","cinquenta"],a:"cincuenta",why:"Fifty is cincuenta: cinco loses its -o and gains -uenta."},
+    {q:"Mi padre tiene ____ años.",choices:["cuarenta y dos","cuarentaydos","cuarentidós"],a:"cuarenta y dos",why:"From thirty upward numbers stay three separate words joined by y — the veinti- merging never returns."},
+    {q:"Tengo ____ libros.",choices:["cuarenta y un","cuarenta y uno","cuarenta y una"],a:"cuarenta y un",why:"Libros is masculine, so uno drops its -o: cuarenta y un libros."},
+    {q:"Hay ____ sillas en la sala.",choices:["cuarenta y una","cuarenta y un","cuarenta y uno"],a:"cuarenta y una",why:"Sillas is feminine, so uno becomes una: cuarenta y una sillas."},
+    {q:"Hay ____ en total.",choices:["cuarenta y uno","cuarenta y un","cuarenta y una"],a:"cuarenta y uno",why:"With no noun after it, the number keeps its full form: cuarenta y uno."},
+    {q:"Mi tía tiene ____ años.",choices:["treinta y siete","treintaisiete","treinta siete"],a:"treinta y siete",why:"The y is always written out between the tens word and the digit."},
+    {q:"El libro tiene ____ páginas.",choices:["treinta y ocho","treintiocho","treinta ocho"],a:"treinta y ocho",why:"Unlike veintiocho, the vowels do not merge here — y keeps ocho separate."},
+    {q:"Hay ____ días de vacaciones.",choices:["treinta y seis","treinta y séis","treintiséis"],a:"treinta y seis",why:"Seis takes an accent only inside veintiséis. As its own word after y it needs none."},
+    {q:"El programa dura ____ minutos.",choices:["cuarenta y ocho","cuarenta y ócho","cuarentiocho"],a:"cuarenta y ocho",why:"No number between 36 and 50 carries a written accent."}
   ]
 };
 
@@ -1105,6 +1148,18 @@ const listeningBank = {
       {q:"How much does the Spanish book cost?", a:["treinta y cinco","treinta y cinco euros"], hint:"Listen for: el libro de español cuesta..."},
       {q:"How many books does the speaker have?", a:["veintiún","veintiún libros","veintiuno"], hint:"Listen for: tengo ... libros."},
       {q:"How old is the teacher?", a:["treinta y dos","treinta y dos años"], hint:"Listen at the end, for: la profesora tiene..."}
+    ]
+  },
+  "Lesson 21": {
+    text:"En la escuela hay cuarenta estudiantes. Mi padre tiene cuarenta y cinco años y mi tía tiene treinta y siete. La mesa grande cuesta cincuenta euros. Tengo cuarenta y un libros en mi casa. El programa de español dura cuarenta y ocho minutos. Hay cuarenta y una sillas en la sala.",
+    meaning:"There are forty students in the school. My father is forty-five years old and my aunt is thirty-seven. The big table costs fifty euros. I have forty-one books in my house. The Spanish program lasts forty-eight minutes. There are forty-one chairs in the living room.",
+    dictation:["En la escuela hay cuarenta estudiantes.","La mesa grande cuesta cincuenta euros."],
+    questions:[
+      {q:"How many students are in the school?", a:["cuarenta","cuarenta estudiantes"], hint:"Listen for: en la escuela hay..."},
+      {q:"How old is the father?", a:["cuarenta y cinco","cuarenta y cinco años"], hint:"Listen for: mi padre tiene..."},
+      {q:"How old is the aunt?", a:["treinta y siete","treinta y siete años"], hint:"Listen for: y mi tía tiene..."},
+      {q:"How much does the big table cost?", a:["cincuenta","cincuenta euros"], hint:"Listen for: la mesa grande cuesta..."},
+      {q:"How long does the Spanish program last?", a:["cuarenta y ocho","cuarenta y ocho minutos"], hint:"Listen for: el programa de español dura..."}
     ]
   }
 };
@@ -1477,6 +1532,25 @@ const quizBank = {
     {q:"thirty-five = ?", a:["treinta y cinco"], hint:"three words with y in the middle"},
     {q:"twenty-one (before a masculine noun) = ?", a:["veintiún"], hint:"drops the -o and takes an accent"},
     {q:"twenty-one (before a feminine noun) = ?", a:["veintiuna"], hint:"the -o becomes -a"}
+  ],
+  "Lesson 21": [
+    {q:"thirty-six = ?", a:["treinta y seis"], hint:"three words — seis has no accent here"},
+    {q:"thirty-seven = ?", a:["treinta y siete"], hint:"three words with y in the middle"},
+    {q:"thirty-eight = ?", a:["treinta y ocho"], hint:"the vowels do not merge — y keeps ocho separate"},
+    {q:"thirty-nine = ?", a:["treinta y nueve"], hint:"the last number of the thirties"},
+    {q:"forty = ?", a:["cuarenta"], hint:"the t of cuatro disappears"},
+    {q:"forty-one = ?", a:["cuarenta y uno"], hint:"full form, with no noun after it"},
+    {q:"forty-two = ?", a:["cuarenta y dos"], hint:"three words — dos has no accent"},
+    {q:"forty-three = ?", a:["cuarenta y tres"], hint:"the tr is one quick tap"},
+    {q:"forty-four = ?", a:["cuarenta y cuatro"], hint:"cuarenta and cuatro side by side"},
+    {q:"forty-five = ?", a:["cuarenta y cinco"], hint:"three words with y in the middle"},
+    {q:"forty-six = ?", a:["cuarenta y seis"], hint:"no accent anywhere in this number"},
+    {q:"forty-seven = ?", a:["cuarenta y siete"], hint:"the ie glides into one syllable"},
+    {q:"forty-eight = ?", a:["cuarenta y ocho"], hint:"the ch is one sound"},
+    {q:"forty-nine = ?", a:["cuarenta y nueve"], hint:"the last number before fifty"},
+    {q:"fifty = ?", a:["cincuenta"], hint:"cinco loses its -o and gains -uenta"},
+    {q:"forty-one (before a masculine noun) = ?", a:["cuarenta y un"], hint:"uno drops the -o, no accent"},
+    {q:"forty-one (before a feminine noun) = ?", a:["cuarenta y una"], hint:"the -o becomes -a"}
   ]
 };
 
@@ -1603,6 +1677,13 @@ const grammarNotesBank = {
     {title:"3. From thirty onward, numbers split into three words with y", body:"The merging stops at twenty-nine. Thirty and above are written as the tens word, then y, then the digit — as three separate words. So it is treinta y uno, never treintayuno or treintiuno. This same pattern runs unchanged through the forties, fifties and beyond, so once you learn it here it covers every number up to ninety-nine.", pattern:"tens + y + digit (three words)", example:"treinta y uno, treinta y tres, treinta y cinco", meaning:"thirty-one, thirty-three, thirty-five"},
     {title:"4. Veintiuno shortens before a noun: veintiún / veintiuna", body:"Standing on its own the number is veintiuno. Put a noun after it and it must change, exactly like uno becomes un in Lesson 11. Before a masculine noun it drops the -o and takes an accent: veintiún libros. Before a feminine noun it becomes veintiuna: veintiuna sillas. The same happens with treinta y un libros and treinta y una sillas.", pattern:"veintiuno → veintiún + masculine noun, veintiuna + feminine noun", example:"Tengo veintiún libros y veintiuna sillas. Hay treinta y una mesas.", meaning:"I have twenty-one books and twenty-one chairs. There are thirty-one tables."},
     {title:"5. Using these numbers for age and price", body:"The two everyday jobs for these numbers are giving an age and giving a price. Age uses tener from Lesson 11 — Spanish says you have years, not that you are them — so it is tengo veintitrés años, never soy veintitrés. Price uses cuesta plus the number plus euros. Note that años and euros are both masculine plural, so twenty-one before them becomes veintiún.", pattern:"tener + number + años / costar + number + euros", example:"Tengo veintitrés años. Mi hermano tiene veintiún años. El libro cuesta treinta euros.", meaning:"I am twenty-three years old. My brother is twenty-one years old. The book costs thirty euros."}
+  ],
+  "Lesson 21": [
+    {title:"1. The tens + y + digit pattern never changes again", body:"Lesson 20 stopped at thirty-five, but the pattern it taught keeps running untouched from 31 all the way to 99. Write the tens word, then y, then the digit — always three separate words. There is no second merging point: cuarentaidós and cuarentidós are not Spanish. Learn this once and you can build every number below one hundred.", pattern:"tens word + y + digit (three words)", example:"treinta y seis, cuarenta y dos, cuarenta y nueve", meaning:"thirty-six, forty-two, forty-nine"},
+    {title:"2. Cuarenta and cincuenta do not look like cuatro and cinco", body:"The tens words are built from the digits but drift in spelling, and this is where most beginner mistakes happen. Cuatro (4) becomes cuarenta (40) — the t is gone, so cuatrenta is wrong. Cinco (5) becomes cincuenta (50) — the -o becomes -uenta, so cincoenta is wrong. Compare with treinta, which also does not look like tres. Memorise the three tens words on their own, separately from the digits.", pattern:"cuatro → cuarenta, cinco → cincuenta", example:"Hay cuarenta estudiantes. La mesa cuesta cincuenta euros.", meaning:"There are forty students. The table costs fifty euros."},
+    {title:"3. No number from 36 to 50 takes a written accent", body:"The only accents in the whole number system so far were veintidós, veintitrés and veintiséis, and they existed purely because those digits merged onto veinti- and pulled the stress to the final syllable. Once numbers are written as separate words again, each part carries its own natural stress and no accent is needed. So it is treinta y seis, never treinta y séis, and cuarenta y ocho, never cuarenta y ócho.", pattern:"separate words → no written accent", example:"treinta y seis, cuarenta y seis, cuarenta y ocho", meaning:"thirty-six, forty-six, forty-eight — all written with no accent"},
+    {title:"4. Cuarenta y uno shortens before a noun: cuarenta y un / cuarenta y una", body:"The rule from Lesson 20 applies here too, but slightly more simply. Standing alone the number is cuarenta y uno. Before a masculine noun, uno drops its -o: cuarenta y un libros — and unlike veintiún it takes no accent, because un is still its own separate short word. Before a feminine noun it becomes cuarenta y una: cuarenta y una sillas. Only the uno part ever changes; cuarenta itself is fixed.", pattern:"cuarenta y uno → cuarenta y un + masc. noun, cuarenta y una + fem. noun", example:"Tengo cuarenta y un libros y cuarenta y una sillas. Hay cuarenta y un estudiantes.", meaning:"I have forty-one books and forty-one chairs. There are forty-one students."},
+    {title:"5. Reading the tens word first tells you the whole number", body:"Because the tens word always comes first, you can identify the size of a number the moment you hear treinta, cuarenta or cincuenta — before the digit even arrives. Train your ear on the three tens words first, then on the digit that follows the y. This is exactly how the listening passage in this lesson is built: every number starts with a tens word you already know.", pattern:"listen for the tens word, then the digit after y", example:"cuarenta y cinco años, cincuenta euros, treinta y siete años", meaning:"forty-five years old, fifty euros, thirty-seven years old"}
   ]
 };
 

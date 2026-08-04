@@ -330,5 +330,22 @@ const audioMapMale = {
   "treinta y cuatro": "2931891d9be2.mp3",
   "treinta y cinco": "522401d74b28.mp3",
   "veintiún": "ac455a1c3c34.mp3",
-  "veintiuna": "22e5dae18fbc.mp3"
+  "veintiuna": "22e5dae18fbc.mp3",
+  "treinta y seis": "e0cb762c8646.mp3",
+  "treinta y siete": "2fc2eafafdc2.mp3",
+  "treinta y ocho": "7b3d9e63eb47.mp3",
+  "treinta y nueve": "19fee788346b.mp3",
+  "cuarenta": "fcdd42d1d8ea.mp3",
+  "cuarenta y uno": "9e0e7beb4d4d.mp3",
+  "cuarenta y dos": "7b506ed60be7.mp3",
+  "cuarenta y tres": "6566e10d372c.mp3",
+  "cuarenta y cuatro": "e8b0ec1caea4.mp3",
+  "cuarenta y cinco": "a7dfe37f67e9.mp3",
+  "cuarenta y seis": "c73849ef14eb.mp3",
+  "cuarenta y siete": "fdbc3261af2c.mp3",
+  "cuarenta y ocho": "df6d344b4ad5.mp3",
+  "cuarenta y nueve": "49907187c66b.mp3",
+  "cincuenta": "ead4617a7658.mp3",
+  "cuarenta y un": "f22d7957b671.mp3",
+  "cuarenta y una": "b1138abe5b2f.mp3"
 };
