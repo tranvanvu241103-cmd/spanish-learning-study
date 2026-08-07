@@ -347,5 +347,20 @@ const audioMapMale = {
   "cuarenta y nueve": "49907187c66b.mp3",
   "cincuenta": "ead4617a7658.mp3",
   "cuarenta y un": "f22d7957b671.mp3",
-  "cuarenta y una": "b1138abe5b2f.mp3"
+  "cuarenta y una": "b1138abe5b2f.mp3",
+  "el pan": "8fed913df038.mp3",
+  "el agua": "67c6a3f4277b.mp3",
+  "la leche": "268372c5eea1.mp3",
+  "el arroz": "ee308151004a.mp3",
+  "el pollo": "49fb98e983b0.mp3",
+  "el pescado": "63276f92a6c1.mp3",
+  "el queso": "344aeac3652f.mp3",
+  "el huevo": "4b7d29f26aea.mp3",
+  "la fruta": "bbc86f92a961.mp3",
+  "la verdura": "9e3abd054d33.mp3",
+  "el azúcar": "392f2623e2f4.mp3",
+  "la sal": "3bd613a7bae9.mp3",
+  "el desayuno": "f6c217ceb892.mp3",
+  "el almuerzo": "54281988828b.mp3",
+  "la cena": "49415896442e.mp3"
 };

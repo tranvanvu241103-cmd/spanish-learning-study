@@ -292,6 +292,20 @@ const lessonInfo = {
       {spanish:"La mesa cuesta cincuenta euros.", english:"The table costs fifty euros."},
       {spanish:"Tengo cuarenta y un libros y cuarenta y una sillas.", english:"I have forty-one books and forty-one chairs."}
     ]
+  },
+  "Lesson 22": {
+    title:"La Comida y las Bebidas — Food, Drinks, and Gustar",
+    level:"A1",
+    vocabulary:"everyday foods, drinks, and meal names",
+    grammar:"the verb gustar — agrees with the thing liked, uses indirect object pronouns (me, te, le, nos, les), and needs a + person for clarity",
+    listening:"someone describing their daily meals and food preferences",
+    goal:"After this lesson, you can name common foods, drinks, and meals, and say what you like or dislike using gustar, agreeing it correctly with singular or plural things and using indirect object pronouns instead of a subject pronoun.",
+    core:[
+      {spanish:"Me gusta el pan pero no me gustan los huevos.", english:"I like bread but I don't like eggs."},
+      {spanish:"¿Te gusta el pescado o prefieres el pollo?", english:"Do you like fish or do you prefer chicken?"},
+      {spanish:"A mi hermano le gusta la fruta con el desayuno.", english:"My brother likes fruit with breakfast."},
+      {spanish:"Nos gusta la cena en familia los domingos.", english:"We like family dinner on Sundays."}
+    ]
   }
 };
 
@@ -661,7 +675,22 @@ const baseItems = [
   {lesson:"Lesson 21",topic:"Numbers 46–50",spanish:"cuarenta y nueve",english:"forty-nine",vi:"bốn mươi chín",example:"Mi abuelo tiene cuarenta y nueve libros.",exampleEn:"My grandfather has forty-nine books.",approx:"kwa-ren-ta i nwe-be",ipa:"kwaˈɾenta i ˈnweβe",explain:"The last number before fifty. After this the tens word changes to cincuenta.",visual:"🔢"},
   {lesson:"Lesson 21",topic:"Numbers 46–50",spanish:"cincuenta",english:"fifty",vi:"năm mươi",example:"La mesa cuesta cincuenta euros.",exampleEn:"The table costs fifty euros.",approx:"sin-kwen-ta",ipa:"sinˈkwenta",explain:"Fifty is cincuenta, not cincoenta — cinco loses its -o and gains -uenta. Same first sound as cinco: th in Spain, s in Latin America.",visual:"🔢"},
   {lesson:"Lesson 21",topic:"Using Numbers with Nouns",spanish:"cuarenta y un",english:"forty-one (before a masculine noun)",vi:"bốn mươi mốt (trước danh từ giống đực)",example:"Tengo cuarenta y un libros.",exampleEn:"I have forty-one books.",approx:"kwa-ren-ta i un",ipa:"kwaˈɾenta i ˈun",explain:"Before a masculine noun uno drops its -o: cuarenta y un libros. Unlike veintiún it takes no accent, because it is still its own short word.",visual:"🔢"},
-  {lesson:"Lesson 21",topic:"Using Numbers with Nouns",spanish:"cuarenta y una",english:"forty-one (before a feminine noun)",vi:"bốn mươi mốt (trước danh từ giống cái)",example:"Hay cuarenta y una sillas en la escuela.",exampleEn:"There are forty-one chairs in the school.",approx:"kwa-ren-ta i u-na",ipa:"kwaˈɾenta i ˈuna",explain:"Before a feminine noun uno becomes una: cuarenta y una sillas. Only the uno part ever changes for gender.",visual:"🔢"}
+  {lesson:"Lesson 21",topic:"Using Numbers with Nouns",spanish:"cuarenta y una",english:"forty-one (before a feminine noun)",vi:"bốn mươi mốt (trước danh từ giống cái)",example:"Hay cuarenta y una sillas en la escuela.",exampleEn:"There are forty-one chairs in the school.",approx:"kwa-ren-ta i u-na",ipa:"kwaˈɾenta i ˈuna",explain:"Before a feminine noun uno becomes una: cuarenta y una sillas. Only the uno part ever changes for gender.",visual:"🔢"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"el pan",english:"the bread",vi:"bánh mì",example:"Como pan por la mañana.",exampleEn:"I eat bread in the morning.",approx:"el pan",ipa:"el pan",explain:"Pan ends in a consonant; like most nouns of this shape, it defaults to masculine: el pan.",visual:"🍞"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"el agua",english:"the water",vi:"nước",example:"Bebo agua todos los días.",exampleEn:"I drink water every day.",approx:"el a-gwa",ipa:"el ˈaɣwa",explain:"Agua is feminine, but a stressed word-initial a forces el instead of la in the singular so the two a-sounds don't collide — say el agua, but las aguas in the plural.",visual:"💧"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"la leche",english:"the milk",vi:"sữa",example:"Me gusta la leche con el desayuno.",exampleEn:"I like milk with breakfast.",approx:"la le-che",ipa:"la ˈletʃe",explain:"Leche ends in -e, so its gender isn't predictable from the ending alone — learn it as la leche.",visual:"🥛"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"el arroz",english:"the rice",vi:"cơm / gạo",example:"Hay arroz y pollo en la mesa.",exampleEn:"There's rice and chicken on the table.",approx:"el a-rros",ipa:"el aˈrros",explain:"The rr in arroz is always a strong trilled r, different from the single tapped r in words like pero.",visual:"🍚"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"el pollo",english:"the chicken",vi:"thịt gà",example:"No me gusta el pollo frío.",exampleEn:"I don't like cold chicken.",approx:"el po-yo",ipa:"el ˈpoʝo",explain:"Double ll sounds like the y in yes: PO-yo, not PO-lo.",visual:"🍗"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"el pescado",english:"the fish (food)",vi:"cá",example:"Prefiero el pescado al pollo.",exampleEn:"I prefer fish over chicken.",approx:"el pes-ka-do",ipa:"el pesˈkaðo",explain:"The d between vowels is soft, almost disappearing: pes-KA-o.",visual:"🐟"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"el queso",english:"the cheese",vi:"phô mai",example:"El queso está en la nevera.",exampleEn:"The cheese is in the fridge.",approx:"el ke-so",ipa:"el ˈkeso",explain:"Qu before e or i is always a hard k sound, never kw: KE-so.",visual:"🧀"},
+  {lesson:"Lesson 22",topic:"Food & Drinks",spanish:"el huevo",english:"the egg",vi:"trứng",example:"Como un huevo en el desayuno.",exampleEn:"I eat an egg for breakfast.",approx:"el we-bo",ipa:"el ˈweβo",explain:"The h is silent and ue glides into one syllable: WE-vo, with a soft b/v sound.",visual:"🥚"},
+  {lesson:"Lesson 22",topic:"Fruits, Vegetables & Seasonings",spanish:"la fruta",english:"the fruit",vi:"trái cây",example:"Me gustan las frutas frescas.",exampleEn:"I like fresh fruits.",approx:"la fru-ta",ipa:"la ˈfɾuta",explain:"The fr cluster uses the tapped r, the same as in francés — never the trilled rr.",visual:"🍎"},
+  {lesson:"Lesson 22",topic:"Fruits, Vegetables & Seasonings",spanish:"la verdura",english:"the vegetable",vi:"rau",example:"Como verdura todos los días.",exampleEn:"I eat vegetables every day.",approx:"la ber-du-ra",ipa:"la beɾˈðuɾa",explain:"The v sounds like a soft b, the same shift as in vivir or verano: ber-DU-ra.",visual:"🥦"},
+  {lesson:"Lesson 22",topic:"Fruits, Vegetables & Seasonings",spanish:"el azúcar",english:"the sugar",vi:"đường",example:"No quiero azúcar en el café.",exampleEn:"I don't want sugar in the coffee.",approx:"a-su-kar",ipa:"aˈsukaɾ",explain:"Azúcar keeps its accent on ú even though it ends in a consonant — an exception to the normal stress rule; the z is pronounced like s here, the same seseo as in luz.",visual:"🍬"},
+  {lesson:"Lesson 22",topic:"Fruits, Vegetables & Seasonings",spanish:"la sal",english:"the salt",vi:"muối",example:"La sopa necesita sal.",exampleEn:"The soup needs salt.",approx:"la sal",ipa:"la sal",explain:"A short, simple word — one syllable, feminine: la sal.",visual:"🧂"},
+  {lesson:"Lesson 22",topic:"Meals",spanish:"el desayuno",english:"the breakfast",vi:"bữa sáng",example:"El desayuno es a las siete.",exampleEn:"Breakfast is at seven.",approx:"el de-sa-yu-no",ipa:"el desaˈʝuno",explain:"Desayuno comes from the verb desayunar (to have breakfast) — literally 'breaking the fast', the same idea as English breakfast.",visual:"🍳"},
+  {lesson:"Lesson 22",topic:"Meals",spanish:"el almuerzo",english:"the lunch",vi:"bữa trưa",example:"El almuerzo es a la una.",exampleEn:"Lunch is at one o'clock.",approx:"el al-mwer-so",ipa:"el alˈmwerso",explain:"In Spain almuerzo can mean a late-morning snack, while in Latin America it usually means the midday meal — context decides.",visual:"🥪"},
+  {lesson:"Lesson 22",topic:"Meals",spanish:"la cena",english:"the dinner",vi:"bữa tối",example:"Cenamos a las nueve.",exampleEn:"We have dinner at nine.",approx:"la se-na",ipa:"la ˈsena",explain:"Cena is feminine and short; the related verb is cenar (to have dinner).",visual:"🍽️"}
 ];
 
 const grammarBank = {
@@ -906,6 +935,18 @@ const grammarBank = {
     {q:"El libro tiene ____ páginas.",choices:["treinta y ocho","treintiocho","treinta ocho"],a:"treinta y ocho",why:"Unlike veintiocho, the vowels do not merge here — y keeps ocho separate."},
     {q:"Hay ____ días de vacaciones.",choices:["treinta y seis","treinta y séis","treintiséis"],a:"treinta y seis",why:"Seis takes an accent only inside veintiséis. As its own word after y it needs none."},
     {q:"El programa dura ____ minutos.",choices:["cuarenta y ocho","cuarenta y ócho","cuarentiocho"],a:"cuarenta y ocho",why:"No number between 36 and 50 carries a written accent."}
+  ],
+  "Lesson 22": [
+    {q:"Me ____ el pan.",choices:["gusta","gustan","gusto"],a:"gusta",why:"Pan is singular, so gustar stays in its singular form gusta — gustar agrees with the thing liked, not with me."},
+    {q:"Me ____ los huevos.",choices:["gusta","gustan","gusto"],a:"gustan",why:"Huevos is plural, so gustar becomes gustan — a plural thing liked always takes gustan, never gusta."},
+    {q:"¿Te ____ el pescado?",choices:["gusta","gustas","gustan"],a:"gusta",why:"Pescado is singular; te (informal you) never changes gustar's own form — only the thing liked does."},
+    {q:"A mi hermano le ____ la fruta.",choices:["gusta","gustan","gustas"],a:"gusta",why:"Fruta is singular, so le gusta. Le stays the same whether one person or several people like something — only gusta/gustan changes."},
+    {q:"____ gusta el café, pero no me gustan los huevos.",choices:["Me","Mi","Yo"],a:"Me",why:"Gustar always needs an indirect object pronoun (me, te, le, nos, os, les) before it — never yo gusto."},
+    {q:"Nos ____ las verduras.",choices:["gusta","gustan","gustamos"],a:"gustan",why:"Verduras is plural, so gustar takes its plural form gustan, matching los huevos and las frutas."},
+    {q:"A ellos les ____ el arroz.",choices:["gusta","gustan","gustas"],a:"gusta",why:"Arroz is singular, so les gusta — les does not change gustar's form on its own."},
+    {q:"____ gusta el queso.",choices:["Le","Lo","La"],a:"Le",why:"Gustar uses indirect object pronouns (me/te/le/nos/os/les), not direct object pronouns like lo/la."},
+    {q:"No me ____ la leche fría.",choices:["gusta","gustan","gustas"],a:"gusta",why:"Leche is singular and feminine; the negative no simply goes before me — the verb form itself doesn't change."},
+    {q:"A nosotros nos ____ cenar temprano.",choices:["gusta","gustan","gustamos"],a:"gusta",why:"When gustar is followed by an infinitive (cenar), it always stays in the singular gusta form, even if more than one thing is implied."}
   ]
 };
 
@@ -1160,6 +1201,18 @@ const listeningBank = {
       {q:"How old is the aunt?", a:["treinta y siete","treinta y siete años"], hint:"Listen for: y mi tía tiene..."},
       {q:"How much does the big table cost?", a:["cincuenta","cincuenta euros"], hint:"Listen for: la mesa grande cuesta..."},
       {q:"How long does the Spanish program last?", a:["cuarenta y ocho","cuarenta y ocho minutos"], hint:"Listen for: el programa de español dura..."}
+    ]
+  },
+  "Lesson 22": {
+    text:"Todos los días desayuno pan y huevo, y bebo leche o agua. Para el almuerzo, como arroz con pollo o pescado, y siempre hay verdura en el plato. Me gusta el queso, pero no me gusta mucho la fruta. Para la cena, comemos algo ligero, sin azúcar ni sal en exceso.",
+    meaning:"Every day I have bread and egg for breakfast, and I drink milk or water. For lunch, I eat rice with chicken or fish, and there's always vegetable on the plate. I like cheese, but I don't like fruit very much. For dinner, we eat something light, without too much sugar or salt.",
+    dictation:["Todos los días desayuno pan y huevo, y bebo leche o agua.","Me gusta el queso, pero no me gusta mucho la fruta."],
+    questions:[
+      {q:"What does the speaker drink for breakfast?", a:["leche o agua","leche","agua"], hint:"Listen for: y bebo..."},
+      {q:"What does the speaker eat for lunch with rice?", a:["pollo o pescado","pollo","pescado"], hint:"Listen for: como arroz con..."},
+      {q:"Does the speaker like cheese?", a:["sí","me gusta el queso","yes"], hint:"Listen for: Me gusta el..."},
+      {q:"Does the speaker like fruit very much?", a:["no","no mucho","no le gusta mucho"], hint:"Listen for: no me gusta mucho la..."},
+      {q:"What is dinner like?", a:["ligero","algo ligero","light"], hint:"Listen for: comemos algo..."}
     ]
   }
 };
@@ -1551,6 +1604,23 @@ const quizBank = {
     {q:"fifty = ?", a:["cincuenta"], hint:"cinco loses its -o and gains -uenta"},
     {q:"forty-one (before a masculine noun) = ?", a:["cuarenta y un"], hint:"uno drops the -o, no accent"},
     {q:"forty-one (before a feminine noun) = ?", a:["cuarenta y una"], hint:"the -o becomes -a"}
+  ],
+  "Lesson 22": [
+    {q:"bread = ?", a:["el pan"], hint:"masculine, ends in a consonant"},
+    {q:"water = ?", a:["el agua"], hint:"feminine noun that takes el in the singular"},
+    {q:"milk = ?", a:["la leche"], hint:"ends in -e, feminine"},
+    {q:"rice = ?", a:["el arroz"], hint:"strong trilled rr"},
+    {q:"chicken = ?", a:["el pollo"], hint:"double ll sounds like y"},
+    {q:"fish (food) = ?", a:["el pescado"], hint:"soft d between vowels"},
+    {q:"cheese = ?", a:["el queso"], hint:"qu is always a hard k"},
+    {q:"egg = ?", a:["el huevo"], hint:"silent h, ue glides together"},
+    {q:"fruit = ?", a:["la fruta"], hint:"tapped r, like francés"},
+    {q:"vegetable = ?", a:["la verdura"], hint:"v sounds like a soft b"},
+    {q:"sugar = ?", a:["el azúcar"], hint:"keeps its accent on ú"},
+    {q:"salt = ?", a:["la sal"], hint:"short, one syllable"},
+    {q:"breakfast = ?", a:["el desayuno"], hint:"from the verb desayunar"},
+    {q:"lunch = ?", a:["el almuerzo"], hint:"related to almorzar"},
+    {q:"dinner = ?", a:["la cena"], hint:"related to cenar"}
   ]
 };
 
@@ -1684,6 +1754,13 @@ const grammarNotesBank = {
     {title:"3. No number from 36 to 50 takes a written accent", body:"The only accents in the whole number system so far were veintidós, veintitrés and veintiséis, and they existed purely because those digits merged onto veinti- and pulled the stress to the final syllable. Once numbers are written as separate words again, each part carries its own natural stress and no accent is needed. So it is treinta y seis, never treinta y séis, and cuarenta y ocho, never cuarenta y ócho.", pattern:"separate words → no written accent", example:"treinta y seis, cuarenta y seis, cuarenta y ocho", meaning:"thirty-six, forty-six, forty-eight — all written with no accent"},
     {title:"4. Cuarenta y uno shortens before a noun: cuarenta y un / cuarenta y una", body:"The rule from Lesson 20 applies here too, but slightly more simply. Standing alone the number is cuarenta y uno. Before a masculine noun, uno drops its -o: cuarenta y un libros — and unlike veintiún it takes no accent, because un is still its own separate short word. Before a feminine noun it becomes cuarenta y una: cuarenta y una sillas. Only the uno part ever changes; cuarenta itself is fixed.", pattern:"cuarenta y uno → cuarenta y un + masc. noun, cuarenta y una + fem. noun", example:"Tengo cuarenta y un libros y cuarenta y una sillas. Hay cuarenta y un estudiantes.", meaning:"I have forty-one books and forty-one chairs. There are forty-one students."},
     {title:"5. Reading the tens word first tells you the whole number", body:"Because the tens word always comes first, you can identify the size of a number the moment you hear treinta, cuarenta or cincuenta — before the digit even arrives. Train your ear on the three tens words first, then on the digit that follows the y. This is exactly how the listening passage in this lesson is built: every number starts with a tens word you already know.", pattern:"listen for the tens word, then the digit after y", example:"cuarenta y cinco años, cincuenta euros, treinta y siete años", meaning:"forty-five years old, fifty euros, thirty-seven years old"}
+  ],
+  "Lesson 22": [
+    {title:"1. Gustar agrees with the thing liked, not the person who likes it", body:"This works just like the possessives in Lesson 19, but for verbs: gustar changes to match the noun that follows it, not the person doing the liking.", pattern:"gustar agrees with the noun that follows", example:"Me gusta el pan. Me gustan los huevos.", meaning:"I like bread. I like eggs."},
+    {title:"2. Gustar always needs an indirect object pronoun", body:"You can't say yo gusto. Gustar is always paired with me, te, le, nos, os, or les right before it — the pronoun shows who is doing the liking.", pattern:"me/te/le/nos/os/les + gusta(n)", example:"Te gusta el queso. Les gusta la fruta.", meaning:"You like cheese. They like fruit."},
+    {title:"3. Singular vs. plural: gusta or gustan", body:"One thing liked takes gusta; more than one thing liked takes gustan — no matter how many people are doing the liking.", pattern:"gusta (singular) / gustan (plural)", example:"Nos gusta el arroz. Nos gustan las verduras.", meaning:"We like rice. We like vegetables."},
+    {title:"4. A + person clarifies or emphasizes le/les", body:"Le and les can each mean several different things (him, her, you-formal, them), so Spanish often adds a + name/pronoun for clarity or emphasis — the same fix Lesson 19 used for the ambiguous su.", pattern:"A + person, le/les + gusta(n)", example:"A mi hermano le gusta la fruta. A ellos les gusta el pescado.", meaning:"My brother likes fruit. They like fish."},
+    {title:"5. El agua: a feminine noun that uses el in the singular", body:"Agua is feminine (las aguas, agua fría), but Spanish avoids stacking two stressed a-sounds in a row, so a handful of feminine nouns that start with a stressed a- or ha- take el instead of la in the singular only. The plural reverts to las as normal.", pattern:"el/un + feminine noun starting with stressed a-/ha-", example:"el agua fría, un agua fresca, but las aguas", meaning:"the cold water, a fresh water, but the waters — plural goes back to las"}
   ]
 };
 
