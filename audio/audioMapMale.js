@@ -362,5 +362,20 @@ const audioMapMale = {
   "la sal": "3bd613a7bae9.mp3",
   "el desayuno": "f6c217ceb892.mp3",
   "el almuerzo": "54281988828b.mp3",
-  "la cena": "49415896442e.mp3"
+  "la cena": "49415896442e.mp3",
+  "el papel": "e8dfaf6c6b2a.mp3",
+  "el jardín": "f94f62e3c49d.mp3",
+  "el autobús": "1fe77ddaa918.mp3",
+  "la nariz": "75812ae5711b.mp3",
+  "la voz": "f359faacba0c.mp3",
+  "el maestro": "102c328b8ff9.mp3",
+  "la maestra": "71fa1fe1b157.mp3",
+  "el enfermero": "461cc2a3227c.mp3",
+  "la enfermera": "fdebd9bf47cb.mp3",
+  "el actor": "e0312b7480c8.mp3",
+  "la actriz": "c5ee67d7dda2.mp3",
+  "el rey": "85738e3705d3.mp3",
+  "la reina": "6abd2bc851f0.mp3",
+  "el estudiante": "93d6ae4abc05.mp3",
+  "el artista": "677187602d08.mp3"
 };

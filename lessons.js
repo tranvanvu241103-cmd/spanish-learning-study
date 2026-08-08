@@ -306,6 +306,20 @@ const lessonInfo = {
       {spanish:"A mi hermano le gusta la fruta con el desayuno.", english:"My brother likes fruit with breakfast."},
       {spanish:"Nos gusta la cena en familia los domingos.", english:"We like family dinner on Sundays."}
     ]
+  },
+  "Lesson 23": {
+    title:"Concordancia de Género — Noun & Adjective Gender: Rules, Exceptions, and Memory Tricks",
+    level:"A2",
+    vocabulary:"gender-changing profession nouns, irregular gender pairs, and common-gender nouns",
+    grammar:"systematic masculine/feminine noun endings (LONERS and D-ión-Z-A mnemonics) combined with adjective agreement (regular -o/-a, invariable -e/consonant, and irregular pairs)",
+    listening:"someone describing family members' professions using correctly gendered nouns and adjectives",
+    goal:"After this lesson, you can predict a Spanish noun's gender from its ending using the LONERS and D-ión-Z-A memory tricks, form the feminine of profession nouns both regularly (-o→-a) and irregularly (actor→actriz, rey→reina), recognize common-gender nouns (estudiante, artista) that don't change spelling, and make adjectives agree correctly with all of these nouns.",
+    core:[
+      {spanish:"El maestro es simpático y la maestra es simpática.", english:"The (male) teacher is nice and the (female) teacher is nice."},
+      {spanish:"El rey es bueno y la reina es buena.", english:"The king is good and the queen is good."},
+      {spanish:"El actor es alto y la actriz es alta.", english:"The actor is tall and the actress is tall."},
+      {spanish:"El estudiante es feliz y la estudiante es feliz.", english:"The (male) student is happy and the (female) student is happy."}
+    ]
   }
 };
 
@@ -690,7 +704,22 @@ const baseItems = [
   {lesson:"Lesson 22",topic:"Fruits, Vegetables & Seasonings",spanish:"la sal",english:"the salt",vi:"muối",example:"La sopa necesita sal.",exampleEn:"The soup needs salt.",approx:"la sal",ipa:"la sal",explain:"A short, simple word — one syllable, feminine: la sal.",visual:"🧂"},
   {lesson:"Lesson 22",topic:"Meals",spanish:"el desayuno",english:"the breakfast",vi:"bữa sáng",example:"El desayuno es a las siete.",exampleEn:"Breakfast is at seven.",approx:"el de-sa-yu-no",ipa:"el desaˈʝuno",explain:"Desayuno comes from the verb desayunar (to have breakfast) — literally 'breaking the fast', the same idea as English breakfast.",visual:"🍳"},
   {lesson:"Lesson 22",topic:"Meals",spanish:"el almuerzo",english:"the lunch",vi:"bữa trưa",example:"El almuerzo es a la una.",exampleEn:"Lunch is at one o'clock.",approx:"el al-mwer-so",ipa:"el alˈmwerso",explain:"In Spain almuerzo can mean a late-morning snack, while in Latin America it usually means the midday meal — context decides.",visual:"🥪"},
-  {lesson:"Lesson 22",topic:"Meals",spanish:"la cena",english:"the dinner",vi:"bữa tối",example:"Cenamos a las nueve.",exampleEn:"We have dinner at nine.",approx:"la se-na",ipa:"la ˈsena",explain:"Cena is feminine and short; the related verb is cenar (to have dinner).",visual:"🍽️"}
+  {lesson:"Lesson 22",topic:"Meals",spanish:"la cena",english:"the dinner",vi:"bữa tối",example:"Cenamos a las nueve.",exampleEn:"We have dinner at nine.",approx:"la se-na",ipa:"la ˈsena",explain:"Cena is feminine and short; the related verb is cenar (to have dinner).",visual:"🍽️"},
+  {lesson:"Lesson 23",topic:"Masculine Endings — LONERS",spanish:"el papel",english:"the paper",vi:"giấy / tờ giấy",example:"El papel es blanco.",exampleEn:"The paper is white.",approx:"el pa-pel",ipa:"el paˈpel",explain:"Papel ends in -l, one of the LONERS endings (L-O-N-E-R-S) that usually signal a masculine noun. (Kết thúc bằng -l — một trong các đuôi của mẹo LONERS — nên là giống đực.)",visual:"📄"},
+  {lesson:"Lesson 23",topic:"Masculine Endings — LONERS",spanish:"el jardín",english:"the garden",vi:"khu vườn",example:"El jardín es amplio.",exampleEn:"The garden is spacious.",approx:"el khar-dín",ipa:"el xarˈdin",explain:"Jardín ends in -n, another LONERS ending, so it's masculine like papel and autobús below. (Kết thúc bằng -n cũng thuộc mẹo LONERS nên là giống đực.)",visual:"🌷"},
+  {lesson:"Lesson 23",topic:"Masculine Endings — LONERS",spanish:"el autobús",english:"the bus",vi:"xe buýt",example:"El autobús es grande.",exampleEn:"The bus is big.",approx:"el au-to-bús",ipa:"el awtoˈβus",explain:"Autobús ends in singular -s, the last LONERS letter — the S only applies to singular nouns, since plural nouns always end in -s too. (Đuôi -s ở số ít cũng là giống đực theo mẹo LONERS; quy tắc này không áp dụng cho danh từ số nhiều.)",visual:"🚌"},
+  {lesson:"Lesson 23",topic:"Feminine Endings — D-ión-Z-A",spanish:"la nariz",english:"the nose",vi:"cái mũi",example:"La nariz es bonita.",exampleEn:"The nose is pretty.",approx:"la na-ris",ipa:"la naˈɾis",explain:"Nariz ends in -z, a common feminine ending — remember the D-ión-Z-A trick: -dad/-tad, -ción/-sión, -z, -a are usually feminine. (Kết thúc bằng -z thường là giống cái, theo mẹo D-ión-Z-A.)",visual:"👃"},
+  {lesson:"Lesson 23",topic:"Feminine Endings — D-ión-Z-A",spanish:"la voz",english:"the voice",vi:"giọng nói",example:"La voz es buena.",exampleEn:"The voice is good.",approx:"la bos",ipa:"la bos",explain:"Voz also ends in -z, so it's feminine just like nariz above — the same D-ión-Z-A pattern. (Voz cũng kết thúc bằng -z nên là giống cái, giống như nariz.)",visual:"🎤"},
+  {lesson:"Lesson 23",topic:"Professions — Regular -o/-a Change",spanish:"el maestro",english:"the (male) teacher",vi:"thầy giáo",example:"El maestro es inteligente.",exampleEn:"The teacher is intelligent.",approx:"el ma-es-tro",ipa:"el maˈestɾo",explain:"Maestro ends in -o, the single most reliable masculine ending in Spanish. (Kết thúc bằng -o là dấu hiệu giống đực đáng tin cậy nhất.)",visual:"👨‍🏫"},
+  {lesson:"Lesson 23",topic:"Professions — Regular -o/-a Change",spanish:"la maestra",english:"the (female) teacher",vi:"cô giáo",example:"La maestra es simpática.",exampleEn:"The teacher is nice.",approx:"la ma-es-tra",ipa:"la maˈestɾa",explain:"Change -o to -a to make a profession noun feminine: maestro → maestra — the exact same pattern as the adjective alto → alta from Lesson 7. (Đổi -o thành -a để chuyển giống đực sang giống cái, giống hệt quy tắc tính từ alto → alta ở Bài 7.)",visual:"👩‍🏫"},
+  {lesson:"Lesson 23",topic:"Professions — Regular -o/-a Change",spanish:"el enfermero",english:"the (male) nurse",vi:"y tá (nam)",example:"El enfermero es trabajador.",exampleEn:"The nurse is hardworking.",approx:"el en-fer-me-ro",ipa:"el enferˈmeɾo",explain:"Enfermero ends in -o, so it's masculine, following the same pattern as maestro above. (Enfermero kết thúc bằng -o nên là giống đực, giống mẫu của maestro.)",visual:"👨‍⚕️"},
+  {lesson:"Lesson 23",topic:"Professions — Regular -o/-a Change",spanish:"la enfermera",english:"the (female) nurse",vi:"y tá (nữ)",example:"La enfermera es trabajadora.",exampleEn:"The nurse is hardworking.",approx:"la en-fer-me-ra",ipa:"la enferˈmeɾa",explain:"-o → -a again: enfermero → enfermera. Notice the adjective trabajadora also had to change to agree — nouns and adjectives share the same gender rules. (Tính từ đi kèm cũng đổi giống theo danh từ — danh từ và tính từ dùng chung quy tắc.)",visual:"👩‍⚕️"},
+  {lesson:"Lesson 23",topic:"Irregular Gender Pairs",spanish:"el actor",english:"the actor",vi:"nam diễn viên",example:"El actor es alto.",exampleEn:"The actor is tall.",approx:"el ac-tor",ipa:"el akˈtoɾ",explain:"Actor ends in a consonant (-r), a LONERS ending, so it's masculine even without an -o. (Actor kết thúc bằng phụ âm -r nhưng vẫn là giống đực theo mẹo LONERS.)",visual:"🎬"},
+  {lesson:"Lesson 23",topic:"Irregular Gender Pairs",spanish:"la actriz",english:"the actress",vi:"nữ diễn viên",example:"La actriz es alta.",exampleEn:"The actress is tall.",approx:"la ac-triz",ipa:"la akˈtɾis",explain:"The feminine of actor is irregular: actor → actriz (not 'actora'), using a special -triz ending — memorize this pair as an exception. (Actriz là ngoại lệ, dùng đuôi -triz đặc biệt thay vì -o/-a thông thường — phải học thuộc.)",visual:"🎭"},
+  {lesson:"Lesson 23",topic:"Irregular Gender Pairs",spanish:"el rey",english:"the king",vi:"nhà vua / vua",example:"El rey es viejo.",exampleEn:"The king is old.",approx:"el rey",ipa:"el rej",explain:"Rey (king) and reina (queen) are two completely different words, not formed by changing an ending — the same kind of pair as hombre/mujer. (Rey và reina là hai từ hoàn toàn khác nhau, giống như cặp hombre/mujer.)",visual:"👑"},
+  {lesson:"Lesson 23",topic:"Irregular Gender Pairs",spanish:"la reina",english:"the queen",vi:"nữ hoàng / hoàng hậu",example:"La reina es buena.",exampleEn:"The queen is good.",approx:"la rey-na",ipa:"la ˈrejna",explain:"Reina is the separate feminine word paired with rey — always learn irregular pairs like this together. (Học rey và reina thành một cặp, không suy luận từ đuôi từ.)",visual:"👸"},
+  {lesson:"Lesson 23",topic:"Common-Gender Nouns",spanish:"el estudiante",english:"the student (male or female)",vi:"học sinh / sinh viên (dùng chung cho cả nam và nữ)",example:"El estudiante es feliz.",exampleEn:"The student is happy.",approx:"el es-tu-dian-te",ipa:"el estuˈðjante",explain:"Estudiante ends in -e, so — like the adjective inteligente — it keeps the exact same spelling for men and women; only el/la changes. This is called a common-gender noun. (Estudiante không đổi dạng theo giới tính, chỉ có mạo từ el/la thay đổi — gọi là danh từ đồng giống.)",visual:"🧑‍🎓"},
+  {lesson:"Lesson 23",topic:"Common-Gender Nouns",spanish:"el artista",english:"the artist (male or female)",vi:"nghệ sĩ (dùng chung cho cả nam và nữ)",example:"El artista es simpático.",exampleEn:"The artist is nice.",approx:"el ar-tis-ta",ipa:"el aɾˈtista",explain:"Artista ends in -a but can still be masculine: el artista. Nouns ending in -ista (like turista, periodista) are common-gender — a real exception to the '-a = feminine' rule. (Từ kết thúc bằng -ista có thể là giống đực dù kết thúc bằng -a — ngoại lệ quan trọng cần nhớ.)",visual:"🎨"}
 ];
 
 const grammarBank = {
@@ -947,6 +976,18 @@ const grammarBank = {
     {q:"____ gusta el queso.",choices:["Le","Lo","La"],a:"Le",why:"Gustar uses indirect object pronouns (me/te/le/nos/os/les), not direct object pronouns like lo/la."},
     {q:"No me ____ la leche fría.",choices:["gusta","gustan","gustas"],a:"gusta",why:"Leche is singular and feminine; the negative no simply goes before me — the verb form itself doesn't change."},
     {q:"A nosotros nos ____ cenar temprano.",choices:["gusta","gustan","gustamos"],a:"gusta",why:"When gustar is followed by an infinitive (cenar), it always stays in the singular gusta form, even if more than one thing is implied."}
+  ],
+  "Lesson 23": [
+    {q:"El maestro es alto. La maestra es ____.",choices:["alta","alto","altos"],a:"alta",why:"Alta must agree with maestra, which is feminine, so alto changes to alta. (Alta phải hợp giống với maestra (giống cái) nên alto đổi thành alta.)"},
+    {q:"____ enfermera es muy trabajadora.",choices:["La","El","Los"],a:"La",why:"Enfermera ends in -a and refers to a woman, so it takes la, not el. (Enfermera kết thúc bằng -a và chỉ người nữ nên dùng la, không dùng el.)"},
+    {q:"El actor es simpático. La actriz es ____.",choices:["simpática","simpático","simpáticos"],a:"simpática",why:"Simpático must match actriz (feminine), changing to simpática — the same -o/-a rule as adjectives in Lesson 7. (Simpático phải hợp giống với actriz (giống cái) nên đổi thành simpática.)"},
+    {q:"El rey es viejo. ____ es vieja.",choices:["La reina","El rey","La reyna"],a:"La reina",why:"Reina is the separate feminine word for rey, not a modified spelling — 'reyna' is not correct. (Reina là từ giống cái riêng biệt của rey, không phải 'reyna'.)"},
+    {q:"____ actriz es buena.",choices:["La","El","Los"],a:"La",why:"Actriz ends in -triz, an irregular feminine ending, so it takes la. (Actriz kết thúc bằng -triz nên dùng la.)"},
+    {q:"El estudiante es feliz. La estudiante es ____.",choices:["feliz","felisa","felices"],a:"feliz",why:"Feliz ends in -z, an invariable adjective ending — it never changes for gender, only for number. (Feliz kết thúc bằng -z, không đổi theo giống, chỉ đổi theo số nhiều.)"},
+    {q:"____ artista es simpático.",choices:["El","La","Los"],a:"El",why:"Artista ends in -a but can be masculine — context (simpático) tells us to use el, not la. (Artista kết thúc bằng -a nhưng có thể là giống đực — 'simpático' cho biết cần dùng el.)"},
+    {q:"El papel es blanco y la pared es ____.",choices:["blanca","blanco","blancos"],a:"blanca",why:"Blanca agrees with pared (feminine), so blanco changes to blanca. (Blanca hợp giống với pared (giống cái) nên đổi từ blanco.)"},
+    {q:"____ jardín es amplio.",choices:["El","La","Los"],a:"El",why:"Jardín ends in -n, a LONERS ending, so it's masculine: el jardín. (Jardín kết thúc bằng -n nên là giống đực theo mẹo LONERS.)"},
+    {q:"____ voz es buena.",choices:["La","El","Las"],a:"La",why:"Voz ends in -z, a D-ión-Z-A ending, so it's feminine: la voz. (Voz kết thúc bằng -z nên là giống cái theo mẹo D-ión-Z-A.)"}
   ]
 };
 
@@ -1213,6 +1254,18 @@ const listeningBank = {
       {q:"Does the speaker like cheese?", a:["sí","me gusta el queso","yes"], hint:"Listen for: Me gusta el..."},
       {q:"Does the speaker like fruit very much?", a:["no","no mucho","no le gusta mucho"], hint:"Listen for: no me gusta mucho la..."},
       {q:"What is dinner like?", a:["ligero","algo ligero","light"], hint:"Listen for: comemos algo..."}
+    ]
+  },
+  "Lesson 23": {
+    text:"Mi padre es maestro y mi madre es enfermera. Mi hermano es actor y su esposa es actriz. Mi tío es artista y vive en la ciudad. Yo soy estudiante y soy feliz.",
+    meaning:"My father is a teacher and my mother is a nurse. My brother is an actor and his wife is an actress. My uncle is an artist and he lives in the city. I am a student and I am happy.",
+    dictation:["Mi padre es maestro y mi madre es enfermera.","Yo soy estudiante y soy feliz."],
+    questions:[
+      {q:"What is the father's profession?", a:["maestro","es maestro","teacher"], hint:"Listen for: Mi padre es..."},
+      {q:"What is the mother's profession?", a:["enfermera","es enfermera","nurse"], hint:"Listen for: mi madre es..."},
+      {q:"What is the brother's profession?", a:["actor","es actor","actor"], hint:"Listen for: Mi hermano es..."},
+      {q:"Who is an actress?", a:["su esposa","la esposa","his wife"], hint:"Listen for: y su esposa es..."},
+      {q:"How does the speaker (yo) feel?", a:["feliz","soy feliz","happy"], hint:"Listen for: soy..."}
     ]
   }
 };
@@ -1621,6 +1674,23 @@ const quizBank = {
     {q:"breakfast = ?", a:["el desayuno"], hint:"from the verb desayunar"},
     {q:"lunch = ?", a:["el almuerzo"], hint:"related to almorzar"},
     {q:"dinner = ?", a:["la cena"], hint:"related to cenar"}
+  ],
+  "Lesson 23": [
+    {q:"paper = ?", a:["el papel"], hint:"masculine, LONERS -l ending (đuôi -l, mẹo LONERS)"},
+    {q:"garden = ?", a:["el jardín"], hint:"masculine, LONERS -n ending (đuôi -n, mẹo LONERS)"},
+    {q:"bus = ?", a:["el autobús"], hint:"masculine, LONERS singular -s ending (đuôi -s số ít, mẹo LONERS)"},
+    {q:"nose = ?", a:["la nariz"], hint:"feminine, -z ending (đuôi -z, mẹo D-ión-Z-A)"},
+    {q:"voice = ?", a:["la voz"], hint:"feminine, -z ending (đuôi -z, mẹo D-ión-Z-A)"},
+    {q:"teacher (male) = ?", a:["el maestro"], hint:"masculine, ends in -o (đuôi -o, giống đực)"},
+    {q:"teacher (female) = ?", a:["la maestra"], hint:"-o → -a for the feminine (đổi -o thành -a)"},
+    {q:"nurse (male) = ?", a:["el enfermero"], hint:"masculine, ends in -o (đuôi -o, giống đực)"},
+    {q:"nurse (female) = ?", a:["la enfermera"], hint:"-o → -a for the feminine (đổi -o thành -a)"},
+    {q:"actor = ?", a:["el actor"], hint:"masculine, consonant -r ending (đuôi -r, giống đực)"},
+    {q:"actress = ?", a:["la actriz"], hint:"irregular: -triz, not -a (ngoại lệ: -triz, không phải -a)"},
+    {q:"king = ?", a:["el rey"], hint:"irregular pair with reina (cặp bất quy tắc với reina)"},
+    {q:"queen = ?", a:["la reina"], hint:"irregular pair with rey (cặp bất quy tắc với rey)"},
+    {q:"student = ?", a:["el estudiante","la estudiante"], hint:"common-gender -e noun, article changes (đồng giống, chỉ đổi mạo từ)"},
+    {q:"artist = ?", a:["el artista","la artista"], hint:"common-gender -ista noun, article changes (đồng giống, chỉ đổi mạo từ)"}
   ]
 };
 
@@ -1761,6 +1831,13 @@ const grammarNotesBank = {
     {title:"3. Singular vs. plural: gusta or gustan", body:"One thing liked takes gusta; more than one thing liked takes gustan — no matter how many people are doing the liking.", pattern:"gusta (singular) / gustan (plural)", example:"Nos gusta el arroz. Nos gustan las verduras.", meaning:"We like rice. We like vegetables."},
     {title:"4. A + person clarifies or emphasizes le/les", body:"Le and les can each mean several different things (him, her, you-formal, them), so Spanish often adds a + name/pronoun for clarity or emphasis — the same fix Lesson 19 used for the ambiguous su.", pattern:"A + person, le/les + gusta(n)", example:"A mi hermano le gusta la fruta. A ellos les gusta el pescado.", meaning:"My brother likes fruit. They like fish."},
     {title:"5. El agua: a feminine noun that uses el in the singular", body:"Agua is feminine (las aguas, agua fría), but Spanish avoids stacking two stressed a-sounds in a row, so a handful of feminine nouns that start with a stressed a- or ha- take el instead of la in the singular only. The plural reverts to las as normal.", pattern:"el/un + feminine noun starting with stressed a-/ha-", example:"el agua fría, un agua fresca, but las aguas", meaning:"the cold water, a fresh water, but the waters — plural goes back to las"}
+  ],
+  "Lesson 23": [
+    {title:"1. Masculine endings — the LONERS trick", body:"Most masculine nouns end in one of the LONERS letters: L, O, N, E, R, or S (singular only). -O is by far the most reliable (el maestro, el libro), but -L, -N, -R, and singular -S also usually signal masculine: el papel, el jardín, el actor, el autobús.<br><br>🇻🇳 Phần lớn danh từ giống đực kết thúc bằng một trong các chữ cái của mẹo LONERS: L, O, N, E, R, S (chỉ áp dụng cho số ít). Đuôi -O là dấu hiệu đáng tin cậy nhất (el maestro, el libro), nhưng -L, -N, -R và -S số ít cũng thường là giống đực: el papel, el jardín, el actor, el autobús.", pattern:"el + noun ending in -o/-l/-n/-r/-s (LONERS)", example:"El papel, el jardín, el actor, el autobús.", meaning:"The paper, the garden, the actor, the bus."},
+    {title:"2. Feminine endings — the D-ión-Z-A trick", body:"Most feminine nouns end in one of: -DAD/-TAD, -CIÓN/-SIÓN, -Z, or -A — remember it as the word D-IÓN-Z-A. You already know -ción/-sión (canción) and -dad/-tad (ciudad) from Lesson 4; this lesson adds -z (nariz, voz).<br><br>🇻🇳 Phần lớn danh từ giống cái kết thúc bằng: -DAD/-TAD, -CIÓN/-SIÓN, -Z, hoặc -A — nhớ bằng từ khóa D-IÓN-Z-A. Bạn đã biết -ción/-sión (canción) và -dad/-tad (ciudad) từ Bài 4; bài này thêm đuôi -z (nariz, voz).", pattern:"la + noun ending in -dad/-tad/-ción/-sión/-z/-a", example:"La nariz, la voz, la ciudad, la canción.", meaning:"The nose, the voice, the city, the song."},
+    {title:"3. Profession nouns: regular -o → -a change", body:"Many profession/role nouns ending in -o simply swap to -a for the feminine, exactly like adjectives: maestro→maestra, enfermero→enfermera. This is the same -o/-a pattern you learned for adjectives (alto→alta) in Lesson 7 — nouns and adjectives share the same core rule.<br><br>🇻🇳 Nhiều danh từ chỉ nghề nghiệp kết thúc bằng -o chỉ cần đổi thành -a để thành giống cái, giống hệt tính từ: maestro→maestra, enfermero→enfermera. Đây chính là quy tắc -o/-a bạn đã học ở tính từ (alto→alta) trong Bài 7 — danh từ và tính từ dùng chung quy tắc gốc này.", pattern:"-o (masc.) → -a (fem.)", example:"El maestro → la maestra. El enfermero → la enfermera.", meaning:"The (male) teacher → the (female) teacher. The (male) nurse → the (female) nurse."},
+    {title:"4. Irregular pairs to memorize whole", body:"Some very common nouns don't follow any ending rule — memorize the pair as a whole. Actor→actriz uses a special -triz ending (not -a). Rey→reina and hombre→mujer are completely different words for each gender.<br><br>🇻🇳 Một số danh từ rất thông dụng không theo quy tắc đuôi từ nào cả — phải học thuộc cả cặp. Actor→actriz dùng đuôi đặc biệt -triz (không phải -a). Rey→reina và hombre→mujer là hai từ hoàn toàn khác nhau cho mỗi giống.", pattern:"irregular pair (memorize together)", example:"El actor y la actriz. El rey y la reina.", meaning:"The actor and the actress. The king and the queen."},
+    {title:"5. Common-gender nouns: -e and -ista don't change", body:"Nouns ending in -e (estudiante) or -ista (artista) use the SAME spelling for men and women — only the article el/la changes to show gender. This mirrors two-form adjectives like inteligente, which also don't change for gender (Lesson 7).<br><br>🇻🇳 Danh từ kết thúc bằng -e (estudiante) hoặc -ista (artista) dùng chung một cách viết cho cả nam và nữ — chỉ có mạo từ el/la đổi để thể hiện giống. Điều này giống với tính từ hai dạng như inteligente, cũng không đổi theo giống (Bài 7).", pattern:"el/la + noun ending in -e/-ista (same spelling)", example:"El estudiante / la estudiante. El artista / la artista.", meaning:"The (male) student / the (female) student. The (male) artist / the (female) artist."}
   ]
 };
 

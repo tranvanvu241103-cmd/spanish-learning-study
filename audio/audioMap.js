@@ -922,5 +922,20 @@ const audioMap = {
   "Todos los días desayuno pan y huevo, y bebo leche o agua.": "99b5fbf3e60f.mp3",
   "Para el almuerzo, como arroz con pollo o pescado, y siempre hay verdura en el plato.": "ecacb01b5fad.mp3",
   "Me gusta el queso, pero no me gusta mucho la fruta.": "145dc6d76ea0.mp3",
-  "Para la cena, comemos algo ligero, sin azúcar ni sal en exceso.": "372245894b39.mp3"
+  "Para la cena, comemos algo ligero, sin azúcar ni sal en exceso.": "372245894b39.mp3",
+  "el papel": "e8dfaf6c6b2a.mp3",
+  "el jardín": "f94f62e3c49d.mp3",
+  "el autobús": "1fe77ddaa918.mp3",
+  "la nariz": "75812ae5711b.mp3",
+  "la voz": "f359faacba0c.mp3",
+  "el maestro": "102c328b8ff9.mp3",
+  "la maestra": "71fa1fe1b157.mp3",
+  "el enfermero": "461cc2a3227c.mp3",
+  "la enfermera": "fdebd9bf47cb.mp3",
+  "el actor": "e0312b7480c8.mp3",
+  "la actriz": "c5ee67d7dda2.mp3",
+  "el rey": "85738e3705d3.mp3",
+  "la reina": "6abd2bc851f0.mp3",
+  "el estudiante": "93d6ae4abc05.mp3",
+  "el artista": "677187602d08.mp3"
 };
